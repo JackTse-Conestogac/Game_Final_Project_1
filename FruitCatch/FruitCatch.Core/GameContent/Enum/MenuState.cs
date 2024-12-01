@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FruitCatch.Core.GameContent.Entities
+namespace FruitCatch.Core.GameContent.Enum
 {
-    public class GameObject
+    public enum MenuState
     {
-
-
+        Open,
+        Close
     }
 }
