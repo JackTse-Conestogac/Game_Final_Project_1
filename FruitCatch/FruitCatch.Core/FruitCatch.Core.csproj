@@ -10,7 +10,4 @@
   <ItemGroup>
     <ProjectReference Include="..\FruitCore.GameAssets\FruitCatch.GameAssets\FruitCatch.GameAssets.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameContent\Scenes\" />
-  </ItemGroup>
 </Project>

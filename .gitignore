@@ -35,7 +35,7 @@ Installers/Linux/tmp_run/
 *.csproj.csdat
 ipch/
 obj/
-[Bb]in
+# [Bb]in
 [Dd]ebug*/
 [Rr]elease*/
 Ankh.NoLoad
