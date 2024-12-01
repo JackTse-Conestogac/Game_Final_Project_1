@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitCatch.Core", "FruitCatch.Core\FruitCatch.Core.csproj", "{514A4873-5970-45BF-87CF-69483F17701F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitCatch.GameAssets", "FruitCore.GameAssets\FruitCatch.GameAssets\FruitCatch.GameAssets.csproj", "{9AB02DE3-5516-4A93-882B-57A31C781F50}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FruitCatch.Installer", "FruitCatch.Installer\FruitCatch.Installer.vdproj", "{82972880-410E-409A-B348-446AFC71AF2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitCatch.Desktop", "FruitCatch.Desktop\FruitCatch.Desktop\FruitCatch.Desktop.csproj", "{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitCatch.Andriod", "FruitCatch.Andriod\FruitCatch.Andriod\FruitCatch.Andriod.csproj", "{F02FA335-224C-4BD3-913E-6F83D9B68AD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{514A4873-5970-45BF-87CF-69483F17701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{514A4873-5970-45BF-87CF-69483F17701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{514A4873-5970-45BF-87CF-69483F17701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{514A4873-5970-45BF-87CF-69483F17701F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB02DE3-5516-4A93-882B-57A31C781F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB02DE3-5516-4A93-882B-57A31C781F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB02DE3-5516-4A93-882B-57A31C781F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB02DE3-5516-4A93-882B-57A31C781F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82972880-410E-409A-B348-446AFC71AF2A}.Debug|Any CPU.ActiveCfg = Debug
+		{82972880-410E-409A-B348-446AFC71AF2A}.Release|Any CPU.ActiveCfg = Release
+		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F02FA335-224C-4BD3-913E-6F83D9B68AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02FA335-224C-4BD3-913E-6F83D9B68AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02FA335-224C-4BD3-913E-6F83D9B68AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02FA335-224C-4BD3-913E-6F83D9B68AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E929ADC-7D81-431A-998F-65698086279A}
+	EndGlobalSection
+EndGlobal
