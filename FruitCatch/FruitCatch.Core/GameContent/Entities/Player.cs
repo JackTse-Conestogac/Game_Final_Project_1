@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FruitCatch.Core.GameContent.Entities
 {
-    internal class Player
+    public class Player
     {
+
     }
 }

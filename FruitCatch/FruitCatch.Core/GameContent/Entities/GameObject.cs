@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FruitCatch.Core.GameContent.Entities
 {
-    public class GameObject
+    public abstract class GameObject
     {
-
+        
 
     }
 }

@@ -13,8 +13,6 @@ namespace FruitCatch.Core.GameContent.Assets
         //public static SpriteFont ScoreFont { get; private set; }
         //public static Texture2D SantaClause { get; private set; }
 
-
-
         public static void Load(ContentManager content)
         {
             //SantaClause = content.Load<Texture2D>("Image/santa-clause");

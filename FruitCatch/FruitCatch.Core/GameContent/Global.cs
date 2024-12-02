@@ -10,7 +10,7 @@ namespace FruitCatch.Core.GameContent
 {
     public class Global
     {
-        static public Global _instance;
+        public static Global Instance { get; private set; }
 
         public DateTime DateTime {  get; set; }
 
@@ -19,8 +19,6 @@ namespace FruitCatch.Core.GameContent
         public Levels CurrentLevel { get; set; }
 
         public int Score { get; set; }
-
-
 
     }
 }
