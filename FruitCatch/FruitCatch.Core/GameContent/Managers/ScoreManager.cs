@@ -8,7 +8,7 @@ namespace FruitCatch.Core.GameContent.Managers
 {
     public class ScoreManager
     {
-
+        public ScoreManager() { }
 
     }
 }

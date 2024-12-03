@@ -26,13 +26,13 @@ namespace FruitCatch.Core
 
 
         //Platform
-        private Platform _platform = Platform.WINDOWS;
+        private Platform _platform;
 
         // Current Screen
         GameScreen screen;
 
 
-        public FruitCatchGame()
+        public FruitCatchGame(Platform platform)
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferWidth = Settings.SCREEN_WIDTH * Settings.PIXEL_RATIO;
@@ -42,6 +42,7 @@ namespace FruitCatch.Core
 
             Content.RootDirectory = "Content";
 
+            _platform = platform;
 
             // Platform
             if (_platform == Platform.ANDRIOD)

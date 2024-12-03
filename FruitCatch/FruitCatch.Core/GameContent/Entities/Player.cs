@@ -9,5 +9,6 @@ namespace FruitCatch.Core.GameContent.Entities
     public class Player
     {
 
+        public Player() { }
     }
 }

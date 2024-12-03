@@ -10,14 +10,13 @@ namespace FruitCatch.Core.GameContent.Globals
 {
     public class Global
     {
+        private int _playTime = 10;
+
         public static Global INSTANCE { get; private set; }
-
+        public string CurrentPlayName { get;  set; } 
         public DateTime DateTime { get; set; }
-
-        public int Timer { get; set; }
-
+        public int PlayTime { get { return _playTime; } set { _playTime = value; } }
         public Levels CurrentLevel { get; set; }
-
         public int Score { get; set; }
 
     }
