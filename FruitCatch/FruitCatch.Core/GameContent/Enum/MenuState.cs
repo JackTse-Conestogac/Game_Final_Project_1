@@ -8,7 +8,11 @@ namespace FruitCatch.Core.GameContent.Enum
 {
     public enum MenuState
     {
-        Open,
-        Close
+        StartScreen,
+        PlayScreen,
+        GameEndScreen,
+        AboutScreen,
+        HelpScreen,
+        Quit,
     }
 }

@@ -1,3 +1,3 @@
 ﻿
-using var game = new FruitCatch.Core.FruitCatchGameManager();
+using var game = new FruitCatch.Core.FruitCatchGame();
 game.Run();

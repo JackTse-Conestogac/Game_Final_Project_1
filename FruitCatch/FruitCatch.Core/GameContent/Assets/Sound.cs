@@ -13,14 +13,26 @@ namespace FruitCatch.Core.GameContent.Assets
     public class Sound
     {
         public static Song Music { get; private set; }
-        //public static SoundEffect CoinSound { get; private set; }
+        public static Dictionary<string, SoundEffect> Sounds { get; private set; }
 
 
         public static void Load(ContentManager content)
         {
             Music = content.Load<Song>("Audio/jingle-bells");
 
-            //CoinSound = content.Load<SoundEffect>("Audio/");
+            Sounds = new Dictionary<string, SoundEffect>();
+
+            List<string> soundList = new List<string>() { 
+               
+            };
+
+
+            foreach(string sfx in soundList)
+            {
+                Sounds.Add(sfx, content.Load<SoundEffect>("Audio" + sfx));
+            }
+            
+
         }
     }
 }

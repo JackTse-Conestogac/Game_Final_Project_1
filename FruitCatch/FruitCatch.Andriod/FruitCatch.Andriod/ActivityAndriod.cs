@@ -19,14 +19,14 @@ namespace FruitCatch.Andriod
     )]
     public class ActivityAndriod : AndroidGameActivity
     {
-        private FruitCatchGameManager _game;
+        private FruitCatchGame _game;
         private View _view;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            _game = new FruitCatchGameManager();
+            _game = new FruitCatchGame();
             _view = _game.Services.GetService(typeof(View)) as View;
 
             SetContentView(_view);
