@@ -15,6 +15,7 @@ namespace FruitCatch.Core.GameContent.Assets
         public static SpriteFont ScoreFont { get; private set; }
         public static SpriteFont RegularFont { get; private set; }
         public static SpriteFont HilightFont { get; private set; }
+        public static SpriteFont GameTitleFont { get; private set; }
 
 
         public static void Load(ContentManager content)
@@ -22,7 +23,7 @@ namespace FruitCatch.Core.GameContent.Assets
             RegularFont = content.Load<SpriteFont>("Fonts/RegularFont");
             HilightFont = content.Load<SpriteFont>("Fonts/HilightFont");
             ScoreFont = content.Load<SpriteFont>("Fonts/ScoreFont");
-
+            GameTitleFont = content.Load<SpriteFont>("Fonts/GameTitleFont");
         }
     }
 }

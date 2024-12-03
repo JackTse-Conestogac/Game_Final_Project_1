@@ -15,7 +15,6 @@ namespace FruitCatch.Core.GameContent.Assets
         public static Song Music { get; private set; }
         public static Dictionary<string, SoundEffect> Sounds { get; private set; }
 
-
         public static void Load(ContentManager content)
         {
             Music = content.Load<Song>("Audio/jingle-bells");
@@ -25,7 +24,6 @@ namespace FruitCatch.Core.GameContent.Assets
             List<string> soundList = new List<string>() { 
                
             };
-
 
             foreach(string sfx in soundList)
             {

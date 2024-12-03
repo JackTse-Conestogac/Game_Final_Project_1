@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Conestoga College/Sem3 - Game Programming Data Structure/Assignment/Final Project/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-gold-bars-48.png</SourceFile>
+  <SourceFile>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-gold-bars-48.png</SourceFile>
   <SourceTime>2024-12-01T13:55:52-05:00</SourceTime>
-  <DestFile>C:/Conestoga College/Sem3 - Game Programming Data Structure/Assignment/Final Project/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/bin/DesktopGL/Content/Images/icons8-gold-bars-48.xnb</DestFile>
-  <DestTime>2024-12-01T16:12:28.2020343-05:00</DestTime>
+  <DestFile>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/bin/DesktopGL/Content/Images/icons8-gold-bars-48.xnb</DestFile>
+  <DestTime>2024-12-03T10:11:39.7492295-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

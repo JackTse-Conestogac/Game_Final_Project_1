@@ -19,21 +19,7 @@ namespace FruitCatch.Core.GameContent.Screens
         protected GameScreen(Sprite background)
         {
             this.background = background;
-            //hide();
         }
-
-        //public virtual void hide()
-        //{
-        //    Visible = false;
-        //    Enabled = false;
-        //}
-
-        //public virtual void show()
-        //{
-        //    Enabled = true;
-        //    Visible = true;
-        //}
-
 
         public virtual void Update(GameTime gameTime, InputHandler input, FruitCatchGame game){}
 

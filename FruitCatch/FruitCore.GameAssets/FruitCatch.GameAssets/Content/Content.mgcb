@@ -19,6 +19,13 @@
 /processorParam:Quality=Best
 /build:Audio/jingle-bells.mp3
 
+#begin Fonts/GameTitleFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/GameTitleFont.spritefont
+
 #begin Fonts/HilightFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

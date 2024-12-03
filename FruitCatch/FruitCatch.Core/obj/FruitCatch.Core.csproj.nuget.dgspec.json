@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {}
+    "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {}
   },
   "projects": {
-    "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {
+    "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj",
         "projectName": "FruitCatch.Core",
-        "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj",
+        "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj",
         "packagesPath": "C:\\Users\\Jkt\\.nuget\\packages\\",
-        "outputPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\obj\\",
+        "outputPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
-                "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj"
+              "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
+                "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
+    "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
+        "projectUniqueName": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
         "projectName": "FruitCatch.GameAssets",
-        "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
+        "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
         "packagesPath": "C:\\Users\\Jkt\\.nuget\\packages\\",
-        "outputPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\obj\\",
+        "outputPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

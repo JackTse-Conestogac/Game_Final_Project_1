@@ -25,7 +25,6 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
-            //_sprite = background.SetTexture();
             int buttonWidth = 50; // Example button width
             int buttonHeight = 50; // Example button height
             int buttonSpacing = 20; // Space between buttons

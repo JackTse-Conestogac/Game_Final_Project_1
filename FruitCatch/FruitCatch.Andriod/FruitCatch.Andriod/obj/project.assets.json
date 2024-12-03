@@ -381,11 +381,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\FruitCatch.Andriod.csproj",
+      "projectUniqueName": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\FruitCatch.Andriod.csproj",
       "projectName": "FruitCatch.Andriod",
-      "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\FruitCatch.Andriod.csproj",
+      "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\FruitCatch.Andriod.csproj",
       "packagesPath": "C:\\Users\\Jkt\\.nuget\\packages\\",
-      "outputPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\obj\\",
+      "outputPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Andriod\\FruitCatch.Andriod\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -407,11 +407,11 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "projectReferences": {
-            "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {
-              "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj"
+            "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj": {
+              "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCatch.Core\\FruitCatch.Core.csproj"
             },
-            "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
-              "projectPath": "C:\\Conestoga College\\Sem3 - Game Programming Data Structure\\Assignment\\Final Project\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj"
+            "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj": {
+              "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj"
             }
           }
         }

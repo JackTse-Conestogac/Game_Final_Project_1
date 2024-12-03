@@ -127,7 +127,7 @@ namespace FruitCatch.Core
                     this.screen = new StartScreen(new Sprite("cave1"));
                     break;
                 case MenuState.PlayScreen:
-                    this.screen = new PlayScreen(new Sprite("cave2"));
+                    this.screen = new PlayScreen(new Sprite("icons8-silver-bars-48"));
                     break;
                 case MenuState.HelpScreen:
                     this.screen = new HelpScreen(new Sprite("cave3"));
@@ -136,7 +136,7 @@ namespace FruitCatch.Core
                     this.screen = new AboutScreen(new Sprite("icons8-ruby-64"));
                     break;
                 case MenuState.GameEndScreen:
-                    this.screen = new GameEndScreen(new Sprite("cave3"));
+                    this.screen = new GameEndScreen(new Sprite("cave2"));
                     break;
                 case MenuState.Quit:
                     Exit();
