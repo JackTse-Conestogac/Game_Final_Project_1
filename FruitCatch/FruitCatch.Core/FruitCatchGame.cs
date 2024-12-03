@@ -69,7 +69,7 @@ namespace FruitCatch.Core
 
             InputHandler.Instance = new InputHandler();
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Play(Sound.Music);
+            MediaPlayer.Play(AudioSource.Music);
 
         }
 
@@ -83,9 +83,10 @@ namespace FruitCatch.Core
 
             // Load assets content
 
-            Arts.Load(Content);
+            ArtSource.Load(Content);
+            AudioSource.Load(Content);
             Fonts.Load(Content);
-            Sound.Load(Content);
+            
 
             // Menu
             screen = new StartScreen(new Sprite("cave1"));

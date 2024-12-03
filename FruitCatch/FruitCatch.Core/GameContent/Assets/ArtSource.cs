@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace FruitCatch.Core.GameContent.Assets
 {
-    public class Arts
+    public class ArtSource
     {
         public static Dictionary<string, Texture2D> IMAGES {  get; set; }
 

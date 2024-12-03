@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FruitCatch.Core.GameContent.Assets
 {
-    public class Sound
+    public class AudioSource
     {
         public static Song Music { get; private set; }
         public static Dictionary<string, SoundEffect> Sounds { get; private set; }
@@ -21,13 +21,13 @@ namespace FruitCatch.Core.GameContent.Assets
 
             Sounds = new Dictionary<string, SoundEffect>();
 
-            List<string> soundList = new List<string>() { 
-               
+            List<string> soundList = new List<string>() {
+               "UI_StartGame",
             };
 
             foreach(string sfx in soundList)
             {
-                Sounds.Add(sfx, content.Load<SoundEffect>("Audio" + sfx));
+                Sounds.Add(sfx, content.Load<SoundEffect>("Audio/" + sfx));
             }
             
 

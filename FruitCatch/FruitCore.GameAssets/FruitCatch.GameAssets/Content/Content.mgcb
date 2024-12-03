@@ -19,6 +19,12 @@
 /processorParam:Quality=Best
 /build:Audio/jingle-bells.mp3
 
+#begin Audio/UI_StartGame.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_StartGame.wav
+
 #begin Fonts/GameTitleFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

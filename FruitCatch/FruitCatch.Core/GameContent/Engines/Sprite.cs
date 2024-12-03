@@ -86,7 +86,7 @@ namespace FruitCatch.Core.GameContent.Engines
             //    this.texture.Width * Settings.PIXEL_RATIO,
             //    this.texture.Height * Settings.PIXEL_RATIO);
 
-            this.texture = Arts.IMAGES[img];
+            this.texture = ArtSource.IMAGES[img];
             this.color = Color.White;
             this.rotation = 0f;
             this.imgOrientation = imgOrientation;

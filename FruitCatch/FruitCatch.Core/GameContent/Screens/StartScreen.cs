@@ -70,6 +70,7 @@ namespace FruitCatch.Core.GameContent.Screens
             if (startGameButton.IsPressed())
             {
                 Console.WriteLine("Start Game selected.");
+                AudioSource.Sounds["UI_StartGame"].Play();
                 game.ChangeMenu(MenuState.PlayScreen);
             }
             if (helpButton.IsPressed())
