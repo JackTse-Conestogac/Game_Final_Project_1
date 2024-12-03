@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/RegularFont.spritefont</SourceFile>
-  <SourceTime>2024-12-01T20:25:49.5864003-05:00</SourceTime>
+  <SourceTime>2024-12-03T16:03:26.7954792-05:00</SourceTime>
   <DestFile>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/bin/DesktopGL/Fonts/RegularFont.xnb</DestFile>
-  <DestTime>2024-12-03T11:59:45.6089648-05:00</DestTime>
+  <DestTime>2024-12-03T16:03:43.3993914-05:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

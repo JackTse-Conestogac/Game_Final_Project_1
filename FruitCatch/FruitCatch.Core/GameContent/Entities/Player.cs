@@ -17,6 +17,8 @@ namespace FruitCatch.Core.GameContent.Entities
         private Vector2 _position;
         private Vector2 _speed;
 
+        public int HealthBar = 100;
+
         public Player(Vector2 position, Vector2 speed ,Sprite _sprite) : base((int)position.X, (int)position.Y, _sprite) 
         {
             _position = position;
