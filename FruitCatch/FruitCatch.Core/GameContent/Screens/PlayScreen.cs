@@ -41,18 +41,18 @@ namespace FruitCatch.Core.GameContent.Screens
 
             t_Text = $"Timer: {Global.Time:HH:mm:ss}";
             timerFont = Fonts.ScoreFont;
-            timerTextPosition = new Vector2(Settings.SCREEN_WIDTH - 200, 30);
+            timerTextPosition = new Vector2(Settings.SCREEN_WIDTH + 800, 30);
             timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
-            //l_Text = $"Level: {Global.CurrentLevel}";
-            //levelFont = Fonts.ScoreFont;
-            //levelTextPosition = new Vector2(Settings.SCREEN_WIDTH - 500, 30);
-            //levelText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
+            l_Text = $"Level: {Global.CurrentLevel}";
+            levelFont = Fonts.ScoreFont;
+            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH - 500, 30);
+            levelText = new Text(l_Text, levelFont, levelTextPosition, Color.Cyan);
 
-            //s_Text = $"Score: {Global.Time}";
-            //scoreFont = Fonts.ScoreFont;
-            //scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 900, 30);
-            //scoreText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
+            s_Text = $"Score: {Global.Score}";
+            scoreFont = Fonts.ScoreFont;
+            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 900, 30);
+            scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.Cyan);
 
         }
 
@@ -61,16 +61,16 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Update(gameTime, input, game);
             Global.Time = Global.Time.AddMilliseconds(gameTime.ElapsedGameTime.TotalMilliseconds);
             this.timerText.Update(gameTime, $"Timer: {Global.Time:HH:mm:ss}");
-            //this.levelText.Update(gameTime, $"Level: {Global.CurrentLevel}");
-            //this.scoreText.Update(gameTime, $"Score: {Global.Score}");
+            this.levelText.Update(gameTime, $"Level: {Global.CurrentLevel}");
+            this.scoreText.Update(gameTime, $"Score: {Global.Score}");
 
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
             this.timerText.Draw(spriteBatch);
-            //this.levelText.Draw(spriteBatch);
-            //this.scoreText.Draw(spriteBatch);
+            this.levelText.Draw(spriteBatch);
+            this.scoreText.Draw(spriteBatch);
 
 
             //this.player.Draw(spriteBatch);
