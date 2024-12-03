@@ -4,8 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/GameTitleFont.spritefont</File>
     <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/jingle-bells.mp3</File>
+    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_StartGame.wav</File>
+    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/GameTitleFont.spritefont</File>
     <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/HilightFont.spritefont</File>
     <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/RegularFont.spritefont</File>
     <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/ScoreFont.spritefont</File>
@@ -27,6 +28,27 @@
     <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-topaz-48.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
