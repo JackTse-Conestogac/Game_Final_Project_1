@@ -129,7 +129,7 @@ namespace FruitCatch.Core
                     this.screen = new StartScreen(new Sprite("cave1"));
                     break;
                 case MenuState.PlayScreen:
-                    this.screen = new PlayScreen(new Sprite("icons8-silver-bars-48"));
+                    this.screen = new PlayScreen(new Sprite("cave3"));
                     break;
                 case MenuState.HelpScreen:
                     this.screen = new HelpScreen(new Sprite("cave3"));

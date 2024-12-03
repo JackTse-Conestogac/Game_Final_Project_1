@@ -80,9 +80,9 @@ namespace FruitCatch.Core.GameContent.Engines
             //this.color = Color.White;
             //this.rotation = 0f;
             //this.imgOrientation = imgOrientation;
-            //this.position = new Vector2(0, 0);
-            //this.destinationRectangle = new Rectangle((x + (int)this.position.X) * Settings.PIXEL_RATIO,
-            //    (y + (int)this.position.Y) * Settings.PIXEL_RATIO,
+            //this._position = new Vector2(0, 0);
+            //this.destinationRectangle = new Rectangle((x + (int)this._position.X) * Settings.PIXEL_RATIO,
+            //    (y + (int)this._position.Y) * Settings.PIXEL_RATIO,
             //    this.texture.Width * Settings.PIXEL_RATIO,
             //    this.texture.Height * Settings.PIXEL_RATIO);
 
@@ -101,8 +101,8 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public virtual void Update(int x, int y)
         {
-            //this.destinationRectangle.X = (x + (int)this.position.X) * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Y = (y + (int)this.position.Y) * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.X = (x + (int)this._position.X) * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.Y = (y + (int)this._position.Y) * Settings.PIXEL_RATIO;
             //this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
             //this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
 

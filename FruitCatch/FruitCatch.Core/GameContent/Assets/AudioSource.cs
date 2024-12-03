@@ -29,7 +29,7 @@ namespace FruitCatch.Core.GameContent.Assets
             {
                 Sounds.Add(sfx, content.Load<SoundEffect>("Audio/" + sfx));
             }
-            
+
 
         }
     }

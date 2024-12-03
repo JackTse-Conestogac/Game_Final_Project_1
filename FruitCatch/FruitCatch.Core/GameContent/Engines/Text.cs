@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Input;
 
 namespace FruitCatch.Core.GameContent.Engines
 {
@@ -25,6 +26,10 @@ namespace FruitCatch.Core.GameContent.Engines
             this.color = color;
         }
 
+        public void Update(GameTime gameTime, string newtext)
+        {
+            text = newtext;
+        }
 
         public void Draw(SpriteBatch spriteBatch)
         {
