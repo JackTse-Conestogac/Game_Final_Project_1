@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Input;
 
 namespace FruitCatch.Core.GameContent.Engines
 {
@@ -20,6 +21,9 @@ namespace FruitCatch.Core.GameContent.Engines
         private bool isFocused;
         private double blinkTime;
         private bool showCursor;
+
+        private double keyPressDelay = 100; // Delay in milliseconds
+        private double keyPressTimer = 0;
 
         public InputTextBox(SpriteFont font, Vector2 position, int width, int height, Color textColor, Color boxColor)
         {
@@ -39,8 +43,17 @@ namespace FruitCatch.Core.GameContent.Engines
             return userInput.ToString();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, InputHandler input)
         {
+            if (input.IsLeftMouseButtonClicked() && boxRectangle.Contains(input.GetMousePosition()))
+            {
+                Focus();
+            }
+            else if (input.IsLeftMouseButtonClicked())
+            {
+                Unfocus();
+            }
+
             // Toggle cursor visibility
             blinkTime += gameTime.ElapsedGameTime.TotalMilliseconds;
             if (blinkTime >= 500)
@@ -52,22 +65,30 @@ namespace FruitCatch.Core.GameContent.Engines
             // Handle keyboard input
             if (isFocused)
             {
-                KeyboardState keyboardState = Keyboard.GetState();
-                foreach (var key in keyboardState.GetPressedKeys())
+                keyPressTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                if (keyPressTimer >= keyPressDelay)
                 {
-                    if (key == Keys.Back && userInput.Length > 0)
+                    KeyboardState keyboardState = Keyboard.GetState();
+
+                    foreach (var key in input.GetPressedKeys())
                     {
-                        userInput.Remove(userInput.Length - 1, 1);
+                        if (key == Keys.Back && userInput.Length > 0)
+                        {
+                            userInput.Remove(userInput.Length - 1, 1);
+                        }
+                        else if (key == Keys.Enter)
+                        {
+                            isFocused = false; // End input on Enter
+                        }
+                        else
+                        {
+                            char keyChar = GetCharFromKey(key, keyboardState);
+                            if (keyChar != '\0') userInput.Append(keyChar);
+                        }
                     }
-                    else if (key == Keys.Enter)
-                    {
-                        isFocused = false; // End input on Enter
-                    }
-                    else
-                    {
-                        char keyChar = GetCharFromKey(key);
-                        if (keyChar != '\0') userInput.Append(keyChar);
-                    }
+
+                    keyPressTimer = 0; // Reset timer after processing keys
                 }
             }
         }
@@ -99,11 +120,42 @@ namespace FruitCatch.Core.GameContent.Engines
             isFocused = false;
         }
 
-        private char GetCharFromKey(Keys key)
+        private char GetCharFromKey(Keys key, KeyboardState keyboardState)
         {
-            if (key >= Keys.A && key <= Keys.Z) return (char)key; // Convert A-Z keys
-            if (key >= Keys.D0 && key <= Keys.D9) return (char)(key - Keys.D0 + '0'); // Convert 0-9 keys
-            return '\0'; // Default case
+            bool isShiftPressed = keyboardState.IsKeyDown(Keys.LeftShift) || keyboardState.IsKeyDown(Keys.RightShift);
+
+            if (key >= Keys.A && key <= Keys.Z)
+            {
+                // Convert A-Z keys and adjust for shift
+                return (char)(isShiftPressed ? key : key + 32); // 32 is the ASCII difference between uppercase and lowercase
+            }
+            if (key >= Keys.D0 && key <= Keys.D9)
+            {
+                // Handle number keys and special characters with shift
+                if (isShiftPressed)
+                {
+                    return key switch
+                    {
+                        Keys.D1 => '!',
+                        Keys.D2 => '@',
+                        Keys.D3 => '#',
+                        Keys.D4 => '$',
+                        Keys.D5 => '%',
+                        Keys.D6 => '^',
+                        Keys.D7 => '&',
+                        Keys.D8 => '*',
+                        Keys.D9 => '(',
+                        Keys.D0 => ')',
+                        _ => '\0'
+                    };
+                }
+                return (char)(key - Keys.D0 + '0'); // Convert 0-9 keys
+            }
+            if (key == Keys.Space) return ' '; // Handle space bar
+            if (key == Keys.OemPeriod) return '.'; // Handle period
+            if (key == Keys.OemComma) return ','; // Handle comma
+
+            return '\0'; // Default case for unsupported keys
         }
     }
 }

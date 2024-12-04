@@ -20,7 +20,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button helpButton;
         private Button aboutButton;
         private Button quitButton;
-        private Button gameEndButton;
+        private Button scoreBoardButton;
 
         private Text gameTitle;
 
@@ -32,8 +32,9 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string startButtonText = "START GAME";
         private const string helpButtonText = "HELP";
         private const string aboutButtonText = "ABOUT";
+        private const string gameEndButtonText = "HIGHEST SCORE";
         private const string quitButtonText = "QUIT";
-        private const string gameEndButtonText = "GAME END (For Debug)";
+        
 
 
         public StartScreen(Sprite bg) :base(bg)
@@ -53,8 +54,8 @@ namespace FruitCatch.Core.GameContent.Screens
             startGameButton = new Button(centerX, centerY - 100, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
             helpButton = new Button(centerX, centerY, buttonWidth, buttonHeight, textFont, helpButtonText, Color.Cyan);
             aboutButton = new Button(centerX, centerY + 100, buttonWidth, buttonHeight, textFont, aboutButtonText, Color.Cyan);
-            quitButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
-            gameEndButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Cyan);
+            scoreBoardButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Cyan);
+            quitButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -65,13 +66,13 @@ namespace FruitCatch.Core.GameContent.Screens
             this.helpButton.Update(gameTime, input);
             this.aboutButton.Update(gameTime, input);
             this.quitButton.Update(gameTime, input);
-            this.gameEndButton.Update(gameTime, input);
+            this.scoreBoardButton.Update(gameTime, input);
 
             if (startGameButton.IsPressed())
             {
                 Console.WriteLine("Start Game selected.");
-                AudioSource.Sounds["UI_StartGame"].Play();
-                game.ChangeMenu(MenuState.PlayScreen);
+                AudioSource.Sounds["UI_Button_Click"].Play();
+                game.ChangeMenu(MenuState.PlayerInfoScreen);
             }
             if (helpButton.IsPressed())
             {
@@ -86,6 +87,13 @@ namespace FruitCatch.Core.GameContent.Screens
                 game.ChangeMenu(MenuState.AboutScreen);
             }
 
+            if (scoreBoardButton.IsPressed())
+            {
+                Console.WriteLine("Score Board selected.");
+                AudioSource.Sounds["UI_Button_Click"].Play();
+                game.ChangeMenu(MenuState.ScoreBoardScreen);
+            }
+
             if (quitButton.IsPressed())
             {
                 Console.WriteLine("Quit selected.");
@@ -93,11 +101,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 game.ChangeMenu(MenuState.Quit);
             }
 
-            if (gameEndButton.IsPressed())
-            {
-                Console.WriteLine("About selected.");
-                game.ChangeMenu(MenuState.GameEndScreen);
-            }
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -108,7 +112,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.helpButton.Draw(spriteBatch);
             this.aboutButton.Draw(spriteBatch); 
             this.quitButton.Draw(spriteBatch);
-            this.gameEndButton.Draw(spriteBatch);
+            this.scoreBoardButton.Draw(spriteBatch);
         }
     }
 }

@@ -79,9 +79,9 @@ namespace FruitCatch.Core.GameContent.Screens
             HealthBarPosition = new Vector2(10, 90);
             HealthBarText = new Text(hb_Text, HealthBarFont, HealthBarPosition, Color.Cyan);
 
-            l_Text = $"Level: {Global.CurrentLevel}";
+            l_Text = $"{Global.CurrentLevel}";
             levelFont = Fonts.ScoreFont;
-            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 150, 10);
+            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 50, 10);
             levelText = new Text(l_Text, levelFont, levelTextPosition, Color.Cyan);
 
             s_Text = $"Score: {Global.Score}";
@@ -102,7 +102,7 @@ namespace FruitCatch.Core.GameContent.Screens
             itemSpawnTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // Generate an item every second
-            if (itemSpawnTimer >= 1f)
+            if (itemSpawnTimer >= 0.3f)
             {
                 itemGenerator.GenerateItem();
                 itemSpawnTimer = 0f;
@@ -124,7 +124,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             this.timerText.Update(gameTime, $"Timer: {countDown}");
             this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar} X: {player.Position.X} Y: {player.Position.Y}" );
-            this.levelText.Update(gameTime, $"Level: {Global.CurrentLevel}");
+            this.levelText.Update(gameTime, $"{Global.CurrentLevel}");
             this.scoreText.Update(gameTime, $"Score: {Global.Score}");
 
             // Update player control

@@ -14,6 +14,8 @@ namespace FruitCatch.Core.GameContent.Engines
     {
 
         private string text;
+        public string TextString { get { return text ; }set { text = value; } }
+
         private SpriteFont font;
         private Vector2 position;
         private Color color;

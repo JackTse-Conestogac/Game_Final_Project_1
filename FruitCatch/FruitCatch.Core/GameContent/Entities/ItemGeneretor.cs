@@ -50,7 +50,7 @@ namespace FruitCatch.Core.GameContent.Entities
             {
                 Item item = items[i];
 
-                item.Fall(500f, gameTime);
+                item.Fall(600f, gameTime); // item Fall speed
 
                 if (item.IsOffScreen())
                 {

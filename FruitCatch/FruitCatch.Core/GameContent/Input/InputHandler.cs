@@ -40,7 +40,10 @@ namespace FruitCatch.Core.GameContent.Input
         {
             return currentKeyState.IsKeyDown(key);
         }
-
+        public Keys[] GetPressedKeys()
+        {
+            return currentKeyState.GetPressedKeys();
+        }
 
         // Mouse Control
         public bool IsLeftMouseButtonDown()

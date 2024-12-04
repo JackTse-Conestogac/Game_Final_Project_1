@@ -104,7 +104,6 @@ namespace FruitCatch.Core
             InputHandler.Instance.Update(); // VERIFIED
             screen.Update(gameTime, InputHandler.Instance, this); // VERIFIED
 
-
             // Check Game End 
             if (screen is PlayScreen playScreen)
             {
@@ -151,6 +150,9 @@ namespace FruitCatch.Core
                 case MenuState.StartScreen:
                     this.screen = new StartScreen(new Sprite("cave1"));
                     break;
+                case MenuState.PlayerInfoScreen:
+                    this.screen = new PlayerInfoScreen(new Sprite("cave1"));
+                    break;
                 case MenuState.PlayScreen:
                     this.screen = new PlayScreen(new Sprite("cave3"));
                     break;
@@ -160,11 +162,14 @@ namespace FruitCatch.Core
                 case MenuState.AboutScreen:
                     this.screen = new AboutScreen(new Sprite("icons8-ruby-64"));
                     break;
+                case MenuState.ScoreBoardScreen:
+                    this.screen = new ScoreBoardScreen(new Sprite("icons8-topaz-48"));
+                    break;
                 case MenuState.GameEndScreen:
-                    this.screen = new GameEndScreen(new Sprite("cave2"));
+                    this.screen = new GameEndScreen(new Sprite("cave3"));
                     break;
                 case MenuState.GameOverScreen:
-                    this.screen = new GameOverScreen(new Sprite("cave3"));
+                    this.screen = new GameOverScreen(new Sprite("cave2"));
                     break;
                 case MenuState.Quit:
                     Exit();
