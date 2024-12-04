@@ -33,28 +33,28 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string helpButtonText = "HELP";
         private const string aboutButtonText = "ABOUT";
         private const string quitButtonText = "QUIT";
-        private const string gameEndButtonText = "GAME END";
+        private const string gameEndButtonText = "GAME END (For Debug)";
 
 
         public StartScreen(Sprite bg) :base(bg)
         {
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
-            int buttonSpacing = 20; // Space between buttons
-            int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
-            int startY = 180; // Starting Y-coordinate
 
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH - 180, 100);
+            int buttonWidth = 200; // Assuming 200px width
+            int buttonHeight = 50; // Assuming 50px height
+            int centerX = (Settings.SCREEN_WIDTH - buttonWidth) / 2 ; // Centered horizontally
+            int centerY = (Settings.SCREEN_HEIGHT - buttonHeight) / 2;
+
+            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 300, 30);
             textFont = Fonts.RegularFont;
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
-            
 
-            this.startGameButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, startButtonText, Color.Black);
-            this.helpButton = new Button(startX, startY + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, textFont, helpButtonText, Color.Black);
-            this.aboutButton = new Button(startX, startY + 2 * (buttonHeight + buttonSpacing), buttonWidth, buttonHeight, textFont, aboutButtonText, Color.Black);
-            this.quitButton = new Button(startX, startY + 3 * (buttonHeight + buttonSpacing), buttonWidth, buttonHeight, textFont, quitButtonText, Color.Black);
-            this.gameEndButton = new Button(startX, startY + 4 * (buttonHeight + buttonSpacing), buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Black);
+            
+            startGameButton = new Button(centerX, centerY - 100, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
+            helpButton = new Button(centerX, centerY, buttonWidth, buttonHeight, textFont, helpButtonText, Color.Cyan);
+            aboutButton = new Button(centerX, centerY + 100, buttonWidth, buttonHeight, textFont, aboutButtonText, Color.Cyan);
+            quitButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
+            gameEndButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Cyan);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)

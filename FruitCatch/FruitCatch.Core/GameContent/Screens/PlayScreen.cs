@@ -17,10 +17,15 @@ namespace FruitCatch.Core.GameContent.Screens
 {
     public class PlayScreen : GameScreen
     {
+        // Global
         private ScoreManager _scoreManager;
-        private Player player;
         private int countDown;
         private float elapsedTime;
+
+        // 
+        private Player player;
+        private Vector2 playerStartPosition;
+        private float playerSpeed;
 
         // Text Attributes
         private string t_Text;
@@ -43,8 +48,12 @@ namespace FruitCatch.Core.GameContent.Screens
         public PlayScreen(Sprite background) : base(background)
         {
             // Initialize Player
-            //player = new Player();
+            
+            playerSpeed = 1500f; // Pixels per second
+            playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975);
+            player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
 
+    
             // Initialize countdown timer
             countDown = Global.PlayTime; 
             elapsedTime = 0;
@@ -52,22 +61,23 @@ namespace FruitCatch.Core.GameContent.Screens
             // Initialize Text
             t_Text = $"Timer: {countDown}";
             timerFont = Fonts.ScoreFont;
-            timerTextPosition = new Vector2(Settings.SCREEN_WIDTH + 650, 30);
+            timerTextPosition = new Vector2(10, 10); // Left aligned
+
             timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
-            hb_Text = $"Health: {countDown}";
+            hb_Text = $"Health: {player.HealthBar}";
             HealthBarFont = Fonts.ScoreFont;
-            HealthBarPosition = new Vector2(Settings.SCREEN_WIDTH - 50, 30);
+            HealthBarPosition = new Vector2(10, 90);
             HealthBarText = new Text(hb_Text, HealthBarFont, HealthBarPosition, Color.Cyan);
 
             l_Text = $"Level: {Global.CurrentLevel}";
             levelFont = Fonts.ScoreFont;
-            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH - 600, 30);
+            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 150, 10);
             levelText = new Text(l_Text, levelFont, levelTextPosition, Color.Cyan);
 
             s_Text = $"Score: {Global.Score}";
             scoreFont = Fonts.ScoreFont;
-            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 900, 30);
+            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 250, 10);
             scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.Cyan);
 
         }
@@ -89,13 +99,16 @@ namespace FruitCatch.Core.GameContent.Screens
                 timerText.Update(gameTime, $"Timer: {countDown}");
             }
 
-
             this.timerText.Update(gameTime, $"Timer: {countDown}");
-            this.HealthBarText.Update(gameTime, $"Health: {countDown}");
+            this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar} X: {player.Position.X} Y: {player.Position.Y}" );
             this.levelText.Update(gameTime, $"Level: {Global.CurrentLevel}");
             this.scoreText.Update(gameTime, $"Score: {Global.Score}");
 
+            // Update player control
+            this.player.Update(gameTime, input);
+
         }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
@@ -106,7 +119,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.levelText.Draw(spriteBatch);
             this.scoreText.Draw(spriteBatch);
 
-            //this.player.Draw(spriteBatch);
+            this.player.Draw(spriteBatch);
         }
     }
 }

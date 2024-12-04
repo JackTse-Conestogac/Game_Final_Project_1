@@ -42,8 +42,8 @@ namespace FruitCatch.Core.GameContent.Engines
             this.height = height;
             
             // Set collision rectangle size
-            this.collision.Width = width * Settings.PIXEL_RATIO;    
-            this.collision.Height = height * Settings.PIXEL_RATIO;  
+            this.collision.Width = width ;    
+            this.collision.Height = height;  
 
         }
 
@@ -59,8 +59,8 @@ namespace FruitCatch.Core.GameContent.Engines
             this.height = height;
 
             // Set collision rectangle size
-            this.collision.Width = width * Settings.PIXEL_RATIO;    
-            this.collision.Height = height * Settings.PIXEL_RATIO;  
+            this.collision.Width = width;    
+            this.collision.Height = height;  
         }
 
         public Button(int x, int y, int width, int height) : base(x, y, new Sprite("icons8-ruby-64"))
@@ -72,8 +72,8 @@ namespace FruitCatch.Core.GameContent.Engines
             this.height = height;
 
             // Set collision rectangle size
-            this.collision.Width = width * Settings.PIXEL_RATIO;
-            this.collision.Height = height * Settings.PIXEL_RATIO;
+            this.collision.Width = width;
+            this.collision.Height = height;
         }
 
         public Button(int x, int y, int width, int height, SpriteFont font, string text, Color? textColor) : base(x, y, new Sprite("icons8-ruby-64"))
@@ -88,8 +88,8 @@ namespace FruitCatch.Core.GameContent.Engines
             this.height = height;
 
             // Set collision rectangle size
-            this.collision.Width = width * Settings.PIXEL_RATIO;    // Adjusted
-            this.collision.Height = height * Settings.PIXEL_RATIO;  // Adjusted
+            this.collision.Width = width;    // Adjusted
+            this.collision.Height = height;  // Adjusted
         }
 
         public override void Update(GameTime gameTime, InputHandler input)
@@ -98,6 +98,8 @@ namespace FruitCatch.Core.GameContent.Engines
             {
                 throw new ArgumentNullException(nameof(input), "Input handler cannot be null.");
             }
+
+            sprite.Position = new Vector2(collision.X, collision.Y);
 
             if (collision.Contains(input.GetMousePosition()))
             {
@@ -135,39 +137,21 @@ namespace FruitCatch.Core.GameContent.Engines
         {
             base.Draw(spriteBatch);
 
-            if (!string.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(text) && font != null)
             {
+                // Measure the text size
                 Vector2 textSize = font.MeasureString(text);
-                Vector2 textOrigin = textSize / 2f;
 
-                Vector2 buttonCenter = new Vector2(
-                    collision.X + collision.Width / 2f,
-                    collision.Y + collision.Height / 2f
-                    //collision.X + collision.Width,
-                    //collision.Y + collision.Height
-                    //collision.X + (collision.Width - textSize.X) / 2,
-                    //collision.Y + (collision.Height - textSize.Y) / 2
+                // Calculate centered position
+                Vector2 textPosition = new Vector2(
+                    collision.X + (collision.Width - textSize.X) / 2,
+                    collision.Y + (collision.Height - textSize.Y) / 2
                 );
-              
-                //Vector2 textPosition = new Vector2(
-                //    collision.X + (collision.Width - textSize.X) / 2,
-                //    collision.Y + (collision.Height - textSize.Y) / 2
-                //);
-                
-                //spriteBatch.DrawString(font, text, textPosition, textColor);
 
-                spriteBatch.DrawString(
-                    font,
-                    text,
-                    buttonCenter,
-                    textColor,
-                    0f,
-                    textOrigin,
-                    Settings.PIXEL_RATIO, // Apply scaling if necessary
-                    SpriteEffects.None,
-                    0f
-                );
+                // Draw the text
+                spriteBatch.DrawString(font, text, textPosition, textColor);
             }
+
         }
 
 

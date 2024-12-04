@@ -20,6 +20,8 @@ namespace FruitCatch.Core.GameContent.Engines
         protected Vector2 position;
         protected SpriteEffects imgOrientation;
 
+        public Vector2 Position { get { return position; } set { position = value; } }
+
         public Point GetTextureSize()
         {
             return new Point(this.destinationRectangle.Width, this.destinationRectangle.Height);
@@ -91,11 +93,18 @@ namespace FruitCatch.Core.GameContent.Engines
             this.rotation = 0f;
             this.imgOrientation = imgOrientation;
 
+            //this.destinationRectangle = new Rectangle(
+            //    x * Settings.PIXEL_RATIO,
+            //    y * Settings.PIXEL_RATIO,
+            //    this.texture.Width * Settings.PIXEL_RATIO,
+            //    this.texture.Height * Settings.PIXEL_RATIO
+            //);
+
             this.destinationRectangle = new Rectangle(
-                x * Settings.PIXEL_RATIO,
-                y * Settings.PIXEL_RATIO,
-                this.texture.Width * Settings.PIXEL_RATIO,
-                this.texture.Height * Settings.PIXEL_RATIO
+                x ,
+                y ,
+                this.texture.Width,
+                this.texture.Height
             );
         }
 
@@ -106,15 +115,21 @@ namespace FruitCatch.Core.GameContent.Engines
             //this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
             //this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
 
-            this.destinationRectangle.X = x * Settings.PIXEL_RATIO;
-            this.destinationRectangle.Y = y * Settings.PIXEL_RATIO;
-            this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
-            this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.X = x * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.Y = y * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
+            //this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
+
+            this.destinationRectangle.X = x;
+            this.destinationRectangle.Y = y;
+            this.destinationRectangle.Width = this.texture.Width;
+            this.destinationRectangle.Height = this.texture.Height;
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.texture, this.destinationRectangle, null, this.color, this.rotation, this.position, this.imgOrientation, 0f);
+            //spriteBatch.Draw(this.texture, this.destinationRectangle, null, this.color, this.rotation, this.position, this.imgOrientation, 0f);
+            spriteBatch.Draw(this.texture, this.position, null, this.color, this.rotation, Vector2.Zero, 1f, this.imgOrientation, 0f);
         }
 
     }

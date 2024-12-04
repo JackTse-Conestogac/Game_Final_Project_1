@@ -13,7 +13,6 @@ namespace FruitCatch.Core.GameContent.Assets
     {
         public static Dictionary<string, Texture2D> IMAGES {  get; set; }
 
-
         public static void Load(ContentManager content)
         {
             IMAGES = new Dictionary<string, Texture2D>();

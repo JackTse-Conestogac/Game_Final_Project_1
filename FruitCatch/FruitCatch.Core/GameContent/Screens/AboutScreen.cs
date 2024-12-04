@@ -29,7 +29,7 @@ namespace FruitCatch.Core.GameContent.Screens
             int buttonHeight = 50; // Example button height
             int buttonSpacing = 20; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
-            int startY = 480; // Starting Y-coordinate
+            int startY = 900; // Starting Y-coordinate
 
 
             // Create Button

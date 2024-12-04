@@ -29,9 +29,9 @@ namespace FruitCatch.Core.GameContent.Screens
 
             int buttonWidth = 50; // Example button width
             int buttonHeight = 50; // Example button height
-            int buttonSpacing = 200; // Space between buttons
+            int buttonSpacing = 500; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - 250) / 2; // Horizontal center
-            int startY = 480; // Starting Y-coordinate
+            int startY = 900; // Starting Y-coordinate
 
 
             // Create Button
@@ -54,7 +54,9 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (restartGameButton.IsPressed())
             {
+                AudioSource.Sounds["UI_StartGame"].Play();
                 game.ChangeMenu(MenuState.PlayScreen);
+
             }
 
         }

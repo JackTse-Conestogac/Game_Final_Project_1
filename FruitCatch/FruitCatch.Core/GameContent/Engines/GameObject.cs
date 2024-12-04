@@ -15,6 +15,8 @@ namespace FruitCatch.Core.GameContent.Engines
         protected Rectangle collision;
         protected Sprite sprite;
 
+        public Sprite Sprite { get { return sprite; } set { sprite = value; } }
+
         protected int logicalX; 
         protected int logicalY;
 
@@ -29,21 +31,21 @@ namespace FruitCatch.Core.GameContent.Engines
             //this.sprite.Update(x, y);
 
             this.sprite = sprite;
-            this.logicalX = x; // Added
-            this.logicalY = y; // Added
+            this.logicalX = x;
+            this.logicalY = y; 
 
             int width = 0;
             int height = 0;
 
             if (sprite != null)
             {
-                width = sprite.GetTextureOriginalSize().X * Settings.PIXEL_RATIO;
-                height = sprite.GetTextureOriginalSize().Y * Settings.PIXEL_RATIO;
+                width = sprite.GetTextureOriginalSize().X;
+                height = sprite.GetTextureOriginalSize().Y;
             }
 
             this.collision = new Rectangle(
-                x * Settings.PIXEL_RATIO,
-                y * Settings.PIXEL_RATIO,
+                x,
+                y,
                 width,
                 height
             );
@@ -63,8 +65,8 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public virtual void Update(GameTime gameTime, InputHandler input)
         {
-            collision.X = logicalX * Settings.PIXEL_RATIO;
-            collision.Y = logicalY * Settings.PIXEL_RATIO;
+            collision.X = logicalX;
+            collision.Y = logicalY;
             if (sprite != null)
             {
                 sprite.Update(logicalX, logicalY); // Adjusted

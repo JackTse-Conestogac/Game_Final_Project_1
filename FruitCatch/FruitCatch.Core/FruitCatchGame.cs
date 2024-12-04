@@ -35,8 +35,8 @@ namespace FruitCatch.Core
         public FruitCatchGame(Platform platform)
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferWidth = Settings.SCREEN_WIDTH * Settings.PIXEL_RATIO;
-            _graphics.PreferredBackBufferHeight = Settings.SCREEN_HEIGHT * Settings.PIXEL_RATIO;
+            _graphics.PreferredBackBufferWidth = Settings.SCREEN_WIDTH;
+            _graphics.PreferredBackBufferHeight = Settings.SCREEN_HEIGHT;
             _graphics.IsFullScreen = Settings.IS_FULLSCREEN;
             this.IsFixedTimeStep = true;
 
@@ -89,7 +89,7 @@ namespace FruitCatch.Core
             
 
             // Menu
-            screen = new StartScreen(new Sprite("cave1"));
+            screen = new StartScreen(new Sprite("icons8-spider-96"));
            
         }
 
@@ -100,9 +100,8 @@ namespace FruitCatch.Core
             //    Exit();
 
             // TODO: Add your update logic here
-            InputHandler.Instance.Update();
-
-            screen.Update(gameTime, InputHandler.Instance, this);
+            InputHandler.Instance.Update(); // VERIFIED
+            screen.Update(gameTime, InputHandler.Instance, this); // VERIFIED
 
             base.Update(gameTime);
         }
@@ -126,10 +125,10 @@ namespace FruitCatch.Core
             switch (menu)
             {
                 case MenuState.StartScreen:
-                    this.screen = new StartScreen(new Sprite("cave1"));
+                    this.screen = new StartScreen(new Sprite("icons8-spider-96"));
                     break;
                 case MenuState.PlayScreen:
-                    this.screen = new PlayScreen(new Sprite("cave3"));
+                    this.screen = new PlayScreen(new Sprite("icons8-stone-48"));
                     break;
                 case MenuState.HelpScreen:
                     this.screen = new HelpScreen(new Sprite("cave3"));
