@@ -20,20 +20,29 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button backButton;
         private InputTextBox inputTextBox;
         private SpriteFont textFont;
+        private SpriteFont textFontBold;
 
         private const string startButtonText = "START";
         private const string backButtonText = "BACK TO MENU";
+        private Text caption;
         private Text error;
+        private string captionText = "Enter your name :";
         private string errorText = "";
+
+
+        // Button Cooldown 
+        private double ButtonCooldown = 200; 
+        private double ButtonTimer = 0;
 
 
         public PlayerInfoScreen(Sprite background) : base(background)
         {
             //Text
             textFont = Fonts.RegularFont;
+            textFontBold = Fonts.HilightFont;
 
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
+            int buttonWidth = 50; //  button width
+            int buttonHeight = 50; //  button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 650; // Starting Y-coordinate
@@ -41,16 +50,20 @@ namespace FruitCatch.Core.GameContent.Screens
             // Create Button
             Vector2 inputPosition = new Vector2(startX -260, startY - 100);
             this.inputTextBox = new InputTextBox(textFont, inputPosition, 600, 50, Color.Black, Color.White);
+            
             this.startGameButton = new Button(startX +150, startY, buttonWidth, buttonHeight, textFont, startButtonText, Color.Black);
             this.backButton = new Button(startX - 150, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
 
-            Vector2 errortextPosition = new Vector2(startX - 300, startY + 100);
+            // Text
+            Vector2 captionPosition = new Vector2(startX - 260, startY - 150);
+            this.caption = new Text(captionText, textFontBold, captionPosition, Color.Black);
+            Vector2 errortextPosition = new Vector2(startX - 150, startY + 100);
             this.error = new Text(errorText, textFont, errortextPosition, Color.Red);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
         {
-            
+            ButtonTimer += gameTime.ElapsedGameTime.TotalMilliseconds;
 
             this.inputTextBox.Update(gameTime, input);
             this.startGameButton.Update(gameTime, input);
@@ -64,12 +77,12 @@ namespace FruitCatch.Core.GameContent.Screens
             }
 
 
-            if (startGameButton.IsPressed())
+            if (startGameButton.IsPressed() && ButtonTimer >= ButtonCooldown)
             {
+                ButtonTimer = 0; // Reset cooldown timer
                 string playerName = inputTextBox.GetText();
                 if (!string.IsNullOrEmpty(playerName))
                 {
-
                     Global.CurrentPlayName = playerName;
                     AudioSource.Sounds["UI_StartGame"].Play();
                     game.ChangeMenu(MenuState.PlayScreen);
@@ -80,7 +93,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 }
             }
 
-            if(backButton.IsPressed())
+            if (backButton.IsPressed())
             {
                
 
@@ -92,9 +105,14 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            //Text
+            this.caption.Draw(spriteBatch);
+
+            // Button and input text box
             this.inputTextBox.Draw(spriteBatch);
             this.startGameButton.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
+
 
             if (!string.IsNullOrEmpty(errorText))
             {

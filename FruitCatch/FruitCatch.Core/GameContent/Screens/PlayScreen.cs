@@ -123,7 +123,7 @@ namespace FruitCatch.Core.GameContent.Screens
             }
 
             this.timerText.Update(gameTime, $"Timer: {countDown}");
-            this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar} X: {player.Position.X} Y: {player.Position.Y}" );
+            this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar}");
             this.levelText.Update(gameTime, $"{Global.CurrentLevel}");
             this.scoreText.Update(gameTime, $"Score: {Global.Score}");
 

@@ -127,7 +127,7 @@ namespace FruitCatch.Core.GameContent.Engines
             if (key >= Keys.A && key <= Keys.Z)
             {
                 // Convert A-Z keys and adjust for shift
-                return (char)(isShiftPressed ? key : key + 32); // 32 is the ASCII difference between uppercase and lowercase
+                return (char)(isShiftPressed ? key : key + 32);
             }
             if (key >= Keys.D0 && key <= Keys.D9)
             {
