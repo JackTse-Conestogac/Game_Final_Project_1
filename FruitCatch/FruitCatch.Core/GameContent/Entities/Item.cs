@@ -1,4 +1,6 @@
-﻿using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Data;
+using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using Microsoft.Xna.Framework;
@@ -44,13 +46,26 @@ namespace FruitCatch.Core.GameContent.Entities
 
         public int GetItemReward()
         {
-            return _type switch
+            int reward = _type switch
             {
-                ItemType.Coin => 10,
+                ItemType.Coin => 20,
                 ItemType.Jewserly => 50,
                 ItemType.Stone => -5,
+                ItemType.Spider => -10,
+                ItemType.Silver => 15,
+                ItemType.Snake => -30,
                 _ => 0
             };
+
+            // Assign Sound Effect 
+            string soundEffect = AudioSource.GetSoundEffectForItemType(_type);
+            if (!string.IsNullOrEmpty(soundEffect))
+            {
+                AudioSource.Sounds[soundEffect].Play();
+            }
+
+
+            return reward;
         }
     }
 }

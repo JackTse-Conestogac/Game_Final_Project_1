@@ -13,19 +13,18 @@ using System.Threading.Tasks;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
-    public class GameEndScreen : GameScreen
+    public class GameOverScreen : GameScreen
     {
-        private Global _global;
+
         private Button backButton;
         private Button contineGameButton;
         private SpriteFont textFont;
         private const string backButtonText = "BACK TO Menu";
-        private const string restartGameButtonText = "CONTINUE GAME";
+        private const string restartGameButtonText = "RESTART GAME";
 
 
-        public GameEndScreen(Sprite background) : base(background)
+        public GameOverScreen(Sprite background) : base(background)
         {
-            _global = new Global();
             //Text
             textFont = Fonts.RegularFont;
 
@@ -37,8 +36,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Cyan);
-            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Cyan);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Black);
 
         }
 
@@ -60,15 +59,13 @@ namespace FruitCatch.Core.GameContent.Screens
             {
                 AudioSource.Sounds["UI_StartGame"].Play();
 
-                if(Global.CurrentLevel == Levels.Level1)
+                if (Global.CurrentLevel == Levels.Level3)
                 {
-                    Global.CurrentLevel = Levels.Level2;
+
+                    Global.CurrentLevel = Levels.Level1;
+                    Global.InitialProperties();
                 }
-                else if(Global.CurrentLevel == Levels.Level2)
-                {
-                    Global.CurrentLevel = Levels.Level3;
-                }
-                
+               
                 game.ChangeMenu(MenuState.PlayScreen);
 
             }

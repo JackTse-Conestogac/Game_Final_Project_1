@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Audio;
+﻿using FruitCatch.Core.GameContent.Enum;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -14,6 +15,8 @@ namespace FruitCatch.Core.GameContent.Assets
     {
         public static Song Music { get; private set; }
         public static Dictionary<string, SoundEffect> Sounds { get; private set; }
+
+        private static Dictionary<ItemType, string> itemTypeSounds;
 
         public static void Load(ContentManager content)
         {
@@ -35,7 +38,21 @@ namespace FruitCatch.Core.GameContent.Assets
                 Sounds.Add(sfx, content.Load<SoundEffect>("Audio/" + sfx));
             }
 
+            itemTypeSounds = new Dictionary<ItemType, string>
+            {
+            { ItemType.Coin, "Player_GainCoin" },
+            { ItemType.Silver, "Player_GainCoin" },
+            { ItemType.Jewserly, "Player_GainCoin" },
+            { ItemType.Stone, "UI_GameEnd" },
+            { ItemType.Snake, "UI_GameEnd" },
+            { ItemType.Spider, "UI_GameEnd" }
+            };
 
+        }
+
+        public static string GetSoundEffectForItemType(ItemType itemType)
+        {
+            return itemTypeSounds.ContainsKey(itemType) ? itemTypeSounds[itemType] : null;
         }
     }
 }

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Entities;
-using FruitCatch.Core.GameContent.Managers;
 using System.Threading;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -17,9 +16,11 @@ namespace FruitCatch.Core.GameContent.Screens
 {
     public class PlayScreen : GameScreen
     {
+        public static PlayScreen Instance { get; private set; }
+
         // Global
-        private ScoreManager _scoreManager;
-        private int countDown;
+        private int countDown = 0;
+        public int CountDown { get { return countDown; } }
         private float elapsedTime;
 
         // Player
@@ -54,7 +55,7 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             // Initialize Player
             
-            playerSpeed = 1500f; // Pixels per second
+            playerSpeed = 1800f; // Pixels per second
             playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975);
             player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
 
@@ -69,7 +70,7 @@ namespace FruitCatch.Core.GameContent.Screens
             // Initialize Text
             t_Text = $"Timer: {countDown}";
             timerFont = Fonts.ScoreFont;
-            timerTextPosition = new Vector2(10, 15); // Left aligned
+            timerTextPosition = new Vector2(10, 15);
 
             timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
@@ -85,7 +86,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             s_Text = $"Score: {Global.Score}";
             scoreFont = Fonts.ScoreFont;
-            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 250, 10);
+            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 300, 10);
             scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.Cyan);
 
         }
@@ -93,6 +94,9 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
         {
             base.Update(gameTime, input, game);
+
+            // Pause the game when CountDown is 0
+            if (countDown <= 0) return;
 
             // Items Spawning
             itemSpawnTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;

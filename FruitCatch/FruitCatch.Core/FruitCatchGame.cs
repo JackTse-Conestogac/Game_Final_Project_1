@@ -11,7 +11,6 @@ using FruitCatch.Core.GameContent.Input;
 using FruitCatch.Core.GameContent.Screens;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Engines;
-using FruitCatch.Core.GameContent.Managers;
 using System.Threading.Tasks;
 
 
@@ -27,6 +26,7 @@ namespace FruitCatch.Core
 
         //Platform
         private Platform _platform;
+        public Platform Platform { get { return _platform; } }
 
         // Current Screen
         GameScreen screen;
@@ -39,6 +39,7 @@ namespace FruitCatch.Core
             _graphics.PreferredBackBufferHeight = Settings.SCREEN_HEIGHT;
             _graphics.IsFullScreen = Settings.IS_FULLSCREEN;
             this.IsFixedTimeStep = true;
+            Global.InitialProperties();
 
             Content.RootDirectory = "Content";
 
@@ -103,6 +104,27 @@ namespace FruitCatch.Core
             InputHandler.Instance.Update(); // VERIFIED
             screen.Update(gameTime, InputHandler.Instance, this); // VERIFIED
 
+
+            // Check Game End 
+            if (screen is PlayScreen playScreen)
+            {
+                if (playScreen.CountDown == 0)
+                {
+                    // Transition to GameEndScreen when countdown is 0
+                    if(Global.CurrentLevel == Levels.Level3)
+                    {
+
+                        ChangeMenu(MenuState.GameOverScreen);
+                    }
+                    else
+                    {
+                        ChangeMenu(MenuState.GameEndScreen);
+                    }
+                    
+                    return; // Stop further updates
+                }
+            }
+
             base.Update(gameTime);
         }
 
@@ -119,6 +141,8 @@ namespace FruitCatch.Core
 
             base.Draw(gameTime);
         }
+
+
 
         public void ChangeMenu(MenuState menu)
         {
@@ -138,6 +162,9 @@ namespace FruitCatch.Core
                     break;
                 case MenuState.GameEndScreen:
                     this.screen = new GameEndScreen(new Sprite("cave2"));
+                    break;
+                case MenuState.GameOverScreen:
+                    this.screen = new GameOverScreen(new Sprite("cave3"));
                     break;
                 case MenuState.Quit:
                     Exit();

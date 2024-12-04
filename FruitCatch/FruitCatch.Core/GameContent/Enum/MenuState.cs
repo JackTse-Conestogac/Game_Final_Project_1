@@ -11,6 +11,7 @@ namespace FruitCatch.Core.GameContent.Enum
         StartScreen,
         PlayScreen,
         GameEndScreen,
+        GameOverScreen,
         AboutScreen,
         HelpScreen,
         Quit,

@@ -10,14 +10,22 @@ namespace FruitCatch.Core.GameContent.Globals
 {
     public class Global
     {
-
         public static Global INSTANCE { get; private set; }
-        public static string CurrentPlayName { get;  set; } 
+        public static string CurrentPlayName { get; set; } = string.Empty;
+
         public static DateTime Time { get; set; } = DateTime.Now;
         
-        public static int PlayTime = 60;
+        public static int PlayTime = 5;
         public static Levels CurrentLevel { get; set; }
         public static int Score { get; set; } = 0;
 
+
+        public static void InitialProperties()
+        {
+            CurrentPlayName = string.Empty;
+            CurrentLevel = Levels.Level1;
+            PlayTime = 5;
+            Score = 0;
+        }
     }
 }

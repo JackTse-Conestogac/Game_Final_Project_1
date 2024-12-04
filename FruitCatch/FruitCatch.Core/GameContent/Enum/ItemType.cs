@@ -10,6 +10,9 @@ namespace FruitCatch.Core.GameContent.Enum
     {
         Coin,
         Jewserly,
-        Stone
+        Stone,
+        Spider,
+        Silver,
+        Snake
     }
 }

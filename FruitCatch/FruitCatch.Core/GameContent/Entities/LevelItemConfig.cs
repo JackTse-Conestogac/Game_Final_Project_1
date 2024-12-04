@@ -14,10 +14,10 @@ namespace FruitCatch.Core.GameContent.Entities
         static LevelItemConfig()
         {
             // Configure items for each level
-            levelItems[Levels.Level1] = new List<ItemType> { ItemType.Coin, ItemType.Stone }; // Level 1: Only Coins
-            levelItems[Levels.Level2] = new List<ItemType> { ItemType.Coin, ItemType.Stone }; // Level 2: Coins and Jewelry
-            levelItems[Levels.Level3] = new List<ItemType> { ItemType.Jewserly }; // Level 3: Coins and Jewelry
-            // Add more levels as needed
+            levelItems[Levels.Level1] = new List<ItemType> { ItemType.Silver , ItemType.Stone}; 
+            levelItems[Levels.Level2] = new List<ItemType> { ItemType.Coin, ItemType.Spider }; 
+            levelItems[Levels.Level3] = new List<ItemType> { ItemType.Jewserly , ItemType.Snake}; 
+         
         }
 
         public static List<ItemType> GetItemsForLevel(Levels level)

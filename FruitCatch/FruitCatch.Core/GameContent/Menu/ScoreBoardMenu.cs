@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FruitCatch.Core.GameContent.Managers
+namespace FruitCatch.Core.GameContent.Menu
 {
-    public class DataManager
+    internal class ScoreBoardMenu
     {
-
     }
 }
