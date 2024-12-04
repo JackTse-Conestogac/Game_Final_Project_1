@@ -26,6 +26,10 @@ namespace FruitCatch.Core.GameContent.Entities
             logicalY += (int)(speed * gameTime.ElapsedGameTime.TotalSeconds);
             sprite.Position = new Vector2(logicalX, logicalY);
 
+            // Sync collision rectangle
+            collision.X = logicalX; 
+            collision.Y = logicalY;
+
         }
 
         public bool IsOffScreen()

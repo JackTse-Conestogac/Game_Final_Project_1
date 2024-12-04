@@ -89,8 +89,8 @@ namespace FruitCatch.Core.GameContent.Engines
             this.height = height;
 
             // Set collision rectangle size
-            this.collision.Width = width;    // Adjusted
-            this.collision.Height = height;  // Adjusted
+            this.collision.Width = width;    
+            this.collision.Height = height;  
         }
 
         public override void Update(GameTime gameTime, InputHandler input)

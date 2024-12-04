@@ -59,7 +59,10 @@ namespace FruitCatch.Core.GameContent.Entities
             _position.Y = MathHelper.Clamp(_position.Y, 0, Settings.SCREEN_HEIGHT - playerHeight);
             logicalX = (int)_position.X;
             logicalY = (int)_position.Y;
-            
+
+            collision.X = logicalX; // Update collision rectangle
+            collision.Y = logicalY;
+
             sprite.Position = _position;
 
             Console.WriteLine($"Player Position: {_position}");
