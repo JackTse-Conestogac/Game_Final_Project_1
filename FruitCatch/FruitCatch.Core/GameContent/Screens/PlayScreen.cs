@@ -22,10 +22,15 @@ namespace FruitCatch.Core.GameContent.Screens
         private int countDown;
         private float elapsedTime;
 
-        // 
+        // Player
         private Player player;
         private Vector2 playerStartPosition;
         private float playerSpeed;
+
+        // Items
+        private ItemGeneretor itemGenerator;
+        private float itemSpawnTimer;
+
 
         // Text Attributes
         private string t_Text;
@@ -53,7 +58,10 @@ namespace FruitCatch.Core.GameContent.Screens
             playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975);
             player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
 
-    
+            // Item Spawn
+            itemGenerator = new ItemGeneretor(player);
+            itemSpawnTimer = 0f;
+
             // Initialize countdown timer
             countDown = Global.PlayTime; 
             elapsedTime = 0;
@@ -61,7 +69,7 @@ namespace FruitCatch.Core.GameContent.Screens
             // Initialize Text
             t_Text = $"Timer: {countDown}";
             timerFont = Fonts.ScoreFont;
-            timerTextPosition = new Vector2(10, 10); // Left aligned
+            timerTextPosition = new Vector2(10, 15); // Left aligned
 
             timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
@@ -86,6 +94,17 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             base.Update(gameTime, input, game);
 
+            // Items Spawning
+            itemSpawnTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // Generate an item every second
+            if (itemSpawnTimer >= 1f)
+            {
+                itemGenerator.GenerateItem();
+                itemSpawnTimer = 0f;
+            }
+
+
             //Timer Update Logic
             elapsedTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -106,6 +125,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Update player control
             this.player.Update(gameTime, input);
+            this.itemGenerator.Update(gameTime);
 
         }
 
@@ -120,6 +140,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.scoreText.Draw(spriteBatch);
 
             this.player.Draw(spriteBatch);
+            this.itemGenerator.Draw(spriteBatch);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace FruitCatch.Core.GameContent.Enum
     public enum ItemType
     {
         Coin,
-        Jewserly
+        Jewserly,
+        Stone
     }
 }

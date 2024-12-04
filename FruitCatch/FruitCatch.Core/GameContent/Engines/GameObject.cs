@@ -25,10 +25,6 @@ namespace FruitCatch.Core.GameContent.Engines
 
         protected GameObject(int x, int y, Sprite sprite)
         {
-            //this.sprite = sprite;
-            //Point textureSize = sprite.GetTextureSize();
-            //this.collision = new Rectangle(x * Settings.PIXEL_RATIO, y * Settings.PIXEL_RATIO, textureSize.X, textureSize.Y);
-            //this.sprite.Update(x, y);
 
             this.sprite = sprite;
             this.logicalX = x;
@@ -55,7 +51,6 @@ namespace FruitCatch.Core.GameContent.Engines
                 this.sprite.Update(x, y);
             }
 
-
         }
 
         public bool CollisionWith(GameObject obj)
@@ -69,7 +64,7 @@ namespace FruitCatch.Core.GameContent.Engines
             collision.Y = logicalY;
             if (sprite != null)
             {
-                sprite.Update(logicalX, logicalY); // Adjusted
+                sprite.Update(logicalX, logicalY); 
             }
         }
 

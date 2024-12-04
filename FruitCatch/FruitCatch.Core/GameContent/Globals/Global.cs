@@ -15,7 +15,7 @@ namespace FruitCatch.Core.GameContent.Globals
         public static string CurrentPlayName { get;  set; } 
         public static DateTime Time { get; set; } = DateTime.Now;
         
-        public static int PlayTime = 10;
+        public static int PlayTime = 60;
         public static Levels CurrentLevel { get; set; }
         public static int Score { get; set; } = 0;
 
