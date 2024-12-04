@@ -48,6 +48,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
+                AudioSource.Sounds["UI_Back"].Play();
                 game.ChangeMenu(MenuState.StartScreen);
             }
         }

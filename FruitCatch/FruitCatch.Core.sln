@@ -11,6 +11,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FruitCatch.Installer", "Fru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitCatch.Desktop", "FruitCatch.Desktop\FruitCatch.Desktop\FruitCatch.Desktop.csproj", "{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitCatch.Andriod", "FruitCatch.Andriod\FruitCatch.Andriod.csproj", "{C9802943-5245-4A4E-AFEE-66DA6FB45117}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D82BD8BD-BCFF-4CA7-A51F-127F4DB6C57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9802943-5245-4A4E-AFEE-66DA6FB45117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9802943-5245-4A4E-AFEE-66DA6FB45117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9802943-5245-4A4E-AFEE-66DA6FB45117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9802943-5245-4A4E-AFEE-66DA6FB45117}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

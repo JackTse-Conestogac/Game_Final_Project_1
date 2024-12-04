@@ -89,7 +89,7 @@ namespace FruitCatch.Core
             
 
             // Menu
-            screen = new StartScreen(new Sprite("icons8-spider-96"));
+            screen = new StartScreen(new Sprite("cave1"));
            
         }
 
@@ -125,10 +125,10 @@ namespace FruitCatch.Core
             switch (menu)
             {
                 case MenuState.StartScreen:
-                    this.screen = new StartScreen(new Sprite("icons8-spider-96"));
+                    this.screen = new StartScreen(new Sprite("cave1"));
                     break;
                 case MenuState.PlayScreen:
-                    this.screen = new PlayScreen(new Sprite("icons8-stone-48"));
+                    this.screen = new PlayScreen(new Sprite("cave3"));
                     break;
                 case MenuState.HelpScreen:
                     this.screen = new HelpScreen(new Sprite("cave3"));

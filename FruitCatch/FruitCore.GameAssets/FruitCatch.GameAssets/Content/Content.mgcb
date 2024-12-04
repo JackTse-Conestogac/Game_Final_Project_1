@@ -19,6 +19,42 @@
 /processorParam:Quality=Best
 /build:Audio/jingle-bells.mp3
 
+#begin Audio/Player_GainCoin.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Player_GainCoin.wav
+
+#begin Audio/UI_Back.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_Back.wav
+
+#begin Audio/UI_Button_Click.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_Button_Click.wav
+
+#begin Audio/UI_Button_HighLight.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_Button_HighLight.wav
+
+#begin Audio/UI_GameEnd.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_GameEnd.wav
+
+#begin Audio/UI_HighLight.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/UI_HighLight.wav
+
 #begin Audio/UI_StartGame.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

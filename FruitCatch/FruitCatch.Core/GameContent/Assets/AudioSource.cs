@@ -23,6 +23,11 @@ namespace FruitCatch.Core.GameContent.Assets
 
             List<string> soundList = new List<string>() {
                "UI_StartGame",
+               "UI_Back",
+               "UI_Button_Click",
+               "UI_Button_HighLight",
+               "UI_GameEnd",
+               "Player_GainCoin",
             };
 
             foreach(string sfx in soundList)

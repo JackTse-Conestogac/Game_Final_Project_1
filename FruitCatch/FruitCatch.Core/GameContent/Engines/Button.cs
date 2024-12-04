@@ -1,4 +1,5 @@
-﻿using FruitCatch.Core.GameContent.Globals;
+﻿using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -119,7 +120,13 @@ namespace FruitCatch.Core.GameContent.Engines
                 else
                 {
                     sprite.SetColor(Color.LightGray);
+                    if(hover == false)
+                    {
+                        AudioSource.Sounds["UI_Button_HighLight"].Play();
+                    }
+                   
                     Console.WriteLine("Hovering but not clicked.");
+                    
                 }
                 hover = true;
             }

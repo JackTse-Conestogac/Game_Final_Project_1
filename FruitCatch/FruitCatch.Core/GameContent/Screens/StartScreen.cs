@@ -76,17 +76,20 @@ namespace FruitCatch.Core.GameContent.Screens
             if (helpButton.IsPressed())
             {
                 Console.WriteLine("Help selected.");
+                AudioSource.Sounds["UI_Button_Click"].Play();
                 game.ChangeMenu(MenuState.HelpScreen);
             }
             if (aboutButton.IsPressed())
             {
                 Console.WriteLine("About selected.");
+                AudioSource.Sounds["UI_Button_Click"].Play();
                 game.ChangeMenu(MenuState.AboutScreen);
             }
 
             if (quitButton.IsPressed())
             {
                 Console.WriteLine("Quit selected.");
+                AudioSource.Sounds["UI_Button_Click"].Play();
                 game.ChangeMenu(MenuState.Quit);
             }
 
