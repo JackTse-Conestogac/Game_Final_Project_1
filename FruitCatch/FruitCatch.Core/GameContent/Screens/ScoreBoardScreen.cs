@@ -32,14 +32,14 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.RegularFont;
 
             // Button parameters
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
+            int buttonWidth = 50; //  button width
+            int buttonHeight = 50; //  button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
             //Table
-            table = new Table(textFont, new Vector2(startX - 470, startY - 700), new int[] {300, 300, 300, 400}, 50, Color.White );
+            table = new Table(textFont, new Vector2(startX - 470, startY - 700), new int[] {200, 300, 300, 400}, 50, Color.White );
             this.table.AddRow("Top","Name", "Level", "Score");
 
             // Create Button

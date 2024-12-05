@@ -10,17 +10,11 @@ namespace FruitCatch.Core.GameContent.Globals
     public class Settings
     {
         // Set Window size
-
         public static int PIXEL_RATIO = 2;
-        //public static int SCREEN_WIDTH = 950;
-        //public static int SCREEN_HEIGHT = 650;
         public static int SCREEN_WIDTH = 1920;
         public static int SCREEN_HEIGHT = 1080;
-
         public static bool IS_FULLSCREEN = false;
-
         public static Color BACKGROUND_COLOR = Color.CornflowerBlue;
-
 
     }
 }

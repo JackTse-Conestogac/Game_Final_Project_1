@@ -52,7 +52,6 @@ namespace FruitCatch.Core
             }
             else
             {
- 
                 IsMouseVisible = true;
             }
         }
@@ -82,8 +81,8 @@ namespace FruitCatch.Core
 
             // TODO: use this.Content to load your game content here
 
-            // LoadRecordList assets content
 
+            // Load assets content
             ArtSource.Load(Content);
             AudioSource.Load(Content);
             Fonts.Load(Content);

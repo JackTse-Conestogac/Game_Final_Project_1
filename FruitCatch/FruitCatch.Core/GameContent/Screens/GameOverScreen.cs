@@ -58,7 +58,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 AudioSource.Sounds["UI_Back"].Play();
                 
                 Global.InitialProperties(); // Initilizae Gobal Properties
-
+                
                 
                 game.ChangeMenu(MenuState.StartScreen); // Change Menu to Start Screen
             }
@@ -71,7 +71,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 {
 
                     Global.CurrentLevel = Levels.Level1;
-                    Global.InitialProperties();
+                    Global.InitialForReplay();
                 }
                
                 game.ChangeMenu(MenuState.PlayScreen);

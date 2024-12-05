@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FruitCatch.Desktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58c4a61493e30f7c3cff827e330949543cf03d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+965fd6db4208cd3524431420859b64e6d8bb0703")]
 [assembly: System.Reflection.AssemblyProductAttribute("FruitCatch.Desktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FruitCatch.Desktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

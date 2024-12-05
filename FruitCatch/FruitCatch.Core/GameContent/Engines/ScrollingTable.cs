@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Assets;
 
 namespace FruitCatch.Core.GameContent.Engines
 {
@@ -23,7 +24,6 @@ namespace FruitCatch.Core.GameContent.Engines
         private int scrollOffset;     // Current scroll offset
         private int selectedIndex;    // Index of the selected row (-1 if none)
         private Rectangle tableBounds;
-
 
         public Action<int> OnRowClick;
 
@@ -44,8 +44,8 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public void AddRow(params string[] columns)
         {
-            //if (columns.Length != columnWidths.Length)
-            //    throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
+            if (columns.Length != columnWidths.Length)
+                throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
             rows.Add(columns);
         }
 
@@ -66,8 +66,13 @@ namespace FruitCatch.Core.GameContent.Engines
 
                 if (hoveredRow >= 0 && hoveredRow < rows.Count)
                 {
-                    selectedIndex = hoveredRow;
-
+                    if (selectedIndex != hoveredRow) // Trigger sound only if hovering a new row
+                    {
+                        selectedIndex = hoveredRow;
+                        AudioSource.Sounds["UI_Button_HighLight"].Play();
+                    }
+                    
+                   
                     if (input.IsLeftMouseButtonClicked())
                     {
                         Console.WriteLine($"Row clicked: {string.Join(", ", GetSelectedRow())}");
@@ -76,7 +81,6 @@ namespace FruitCatch.Core.GameContent.Engines
                 }
             }
         }
-
 
         public void Draw(SpriteBatch spriteBatch)
         {
