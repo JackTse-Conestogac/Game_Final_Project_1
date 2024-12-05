@@ -21,7 +21,7 @@ namespace FruitCatch.Andriod
     {
         private FruitCatchGame _game;
         private View _view;
-
+        
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

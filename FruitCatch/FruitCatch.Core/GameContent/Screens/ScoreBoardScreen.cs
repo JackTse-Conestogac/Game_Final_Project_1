@@ -18,18 +18,24 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button backButton;
         private SpriteFont textFont;
         private const string backButtonText = "BACK";
+        private Table table;
+        
 
-
-        public ScoreBoardScreen(Sprite background) : base(background)
+        public ScoreBoardScreen(Sprite background ) : base(background)
         {
             //Text
             textFont = Fonts.RegularFont;
 
+            // Button parameters
             int buttonWidth = 50; // Example button width
             int buttonHeight = 50; // Example button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
+
+            //Table
+            table = new Table(textFont, new Vector2(startX - 400, startY - 700), new int[] {400, 300, 400}, 50, Color.White );
+            this.table.AddRow("Name", "Level", "Score");
 
 
             // Create Button
@@ -41,6 +47,11 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             base.Update(gameTime, input, game);
 
+
+            this.table.Clear();
+            this.table.AddRow("Name", "Level", "Score");
+            this.table.AddRow("Jack", Global.CurrentLevel.ToString(), Global.Score.ToString()); // For Debug
+            this.table.Update(gameTime);
             this.backButton.Update(gameTime, input);
 
             if (backButton.IsPressed())
@@ -53,6 +64,7 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            this.table.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
         }
     }
