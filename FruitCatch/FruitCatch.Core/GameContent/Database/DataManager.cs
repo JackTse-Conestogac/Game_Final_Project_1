@@ -20,9 +20,7 @@ namespace FruitCatch.Core.GameContent.Database
         public DataManager() 
         {
             _records = LoadRecordList();
-
         }
-
 
         public List<Data> LoadRecordList()
         {
@@ -55,6 +53,7 @@ namespace FruitCatch.Core.GameContent.Database
             Data record = _records.FirstOrDefault(r => r.playerName == name);
             if (record != null)
             {
+                record.playerName = name;
                 record.currentLevel = currentLevel;
                 record.score = score;
                 SaveAll(); // Re-save the updated list
@@ -71,7 +70,6 @@ namespace FruitCatch.Core.GameContent.Database
         {
             return _records.Count > 0 ? _records.Max(r => r.recordId) + 1 : 1;
         }
-
 
         public List<Data> GetTopScores()
         {

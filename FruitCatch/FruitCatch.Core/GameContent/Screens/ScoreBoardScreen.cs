@@ -26,6 +26,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public ScoreBoardScreen(Sprite background ) : base(background)
         {
+            dataManager = new DataManager();
+
             //Text
             textFont = Fonts.RegularFont;
 
@@ -37,9 +39,8 @@ namespace FruitCatch.Core.GameContent.Screens
             int startY = 900; // Starting Y-coordinate
 
             //Table
-            table = new Table(textFont, new Vector2(startX - 400, startY - 700), new int[] {400, 300, 400}, 50, Color.White );
-            this.table.AddRow("Name", "Level", "Score");
-
+            table = new Table(textFont, new Vector2(startX - 470, startY - 700), new int[] {300, 300, 300, 400}, 50, Color.White );
+            this.table.AddRow("Top","Name", "Level", "Score");
 
             // Create Button
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
@@ -50,11 +51,9 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             
             base.Update(gameTime, input, game);
+            UpdateScoreBoard(this.table);
 
-            
-            this.table.Clear();
-            this.table.AddRow("Name", "Level", "Score");
-            this.table.AddRow("Jack", Global.CurrentLevel.ToString(), Global.Score.ToString()); // For Debug
+
             this.table.Update(gameTime);
             this.backButton.Update(gameTime, input);
 
@@ -74,14 +73,16 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public void UpdateScoreBoard(Table table)
         {
-            dataManager = new DataManager();
+            // Fetch the top scores from the data manager
             var topScores = dataManager.GetTopScores();
-
+            int num = 0;
+            // Clear and populate the table
             table.Clear();
-            table.AddRow("Name", "Level", "Score");
+            table.AddRow("Top","Name", "Level", "Score");
             foreach (var score in topScores)
             {
-                table.AddRow(score.playerName, score.currentLevel, score.score.ToString());
+                num++;
+                table.AddRow(num.ToString(),score.playerName, score.currentLevel, score.score.ToString());
             }
         }
 

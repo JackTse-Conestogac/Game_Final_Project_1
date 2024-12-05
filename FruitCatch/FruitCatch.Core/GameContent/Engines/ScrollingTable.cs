@@ -78,9 +78,6 @@ namespace FruitCatch.Core.GameContent.Engines
         }
 
 
-
-
-
         public void Draw(SpriteBatch spriteBatch)
         {
             Vector2 currentPosition = position;
@@ -88,7 +85,9 @@ namespace FruitCatch.Core.GameContent.Engines
             for (int i = scrollOffset; i < Math.Min(rows.Count, scrollOffset + visibleRows); i++)
             {
                 var row = rows[i];
-                Color rowColor = (i == selectedIndex) ? highlightColor : textColor;
+
+                //Color rowColor = (i == selectedIndex) ? highlightColor : textColor;
+                Color rowColor = (i == selectedIndex && i > 0) ? highlightColor : textColor;
 
                 for (int j = 0; j < row.Length; j++)
                 {

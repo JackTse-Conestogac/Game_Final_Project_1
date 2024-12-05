@@ -89,9 +89,13 @@ namespace FruitCatch.Core.GameContent.Screens
                 timer = 0;
                 loadGameTable.OnRowClick += (rowIndex) =>
                 {
-                    LoadSelectedGame(rowIndex);// Pass the clicked row index to LoadSelectedGame
-                    AudioSource.Sounds["UI_StartGame"].Play();
-                    game.ChangeMenu(MenuState.PlayScreen);
+                    if(rowIndex != 0)
+                    {
+                        LoadSelectedGame(rowIndex);// Pass the clicked row index to LoadSelectedGame
+                        AudioSource.Sounds["UI_StartGame"].Play();
+                        game.ChangeMenu(MenuState.PlayScreen);
+                    }
+                    
                 };
 
 
