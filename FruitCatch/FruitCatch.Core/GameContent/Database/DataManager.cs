@@ -15,24 +15,16 @@ namespace FruitCatch.Core.GameContent.Database
     public class DataManager
     {
         private  List<Data> _records;
-        private const string PATH = "../../playerRecord.json";
-
+        private const string PATH = "playerRecord.json";
 
         public DataManager() 
         {
-            _records = new List<Data>();
+            _records = LoadRecordList();
 
         }
 
-        public void Save(Data newRecord)
-        {
-            _records = Load();
-            _records.Add(newRecord);
-            string serializedData = JsonSerializer.Serialize(_records);
-            File.WriteAllText(PATH, serializedData);
-        }
 
-        public List<Data> Load()
+        public List<Data> LoadRecordList()
         {
             if (File.Exists(PATH))
             {
@@ -44,7 +36,6 @@ namespace FruitCatch.Core.GameContent.Database
         }
 
         
-
         public void AddRecord(string name, Levels currentLevel, int score)
         {
             Data newRecord = new Data()
@@ -56,6 +47,7 @@ namespace FruitCatch.Core.GameContent.Database
 
             };
             _records.Add(newRecord);
+            SaveAll();
         }
 
         public void UpdateRecord(string name, string currentLevel, int score)

@@ -26,7 +26,7 @@ namespace FruitCatch.Core.GameContent.Screens
         Levels setRecordLevel;
 
         // Button Cooldown 
-        private double cooldown = 100;
+        private double cooldown = 200;
         private double timer = 0;
 
         public LoadGameScreen(Sprite background) :base(background) 
@@ -62,7 +62,8 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton.Update(gameTime, input);
             this.loadGameTable.Update(gameTime, input);
 
-            var savedGames = dataManager.Load();
+            var savedGames = dataManager.LoadRecordList();
+            Console.WriteLine(savedGames);
             this.loadGameTable.Clear();
             if (savedGames.Count > 0)
             {
@@ -92,15 +93,19 @@ namespace FruitCatch.Core.GameContent.Screens
                     AudioSource.Sounds["UI_StartGame"].Play();
                     game.ChangeMenu(MenuState.PlayScreen);
                 };
+
+
+                if (backButton.IsPressed())
+                {
+                    AudioSource.Sounds["UI_Back"].Play();
+                    game.ChangeMenu(MenuState.StartScreen);
+                }
+
             }
             
 
 
-            if (backButton.IsPressed())
-            {
-                AudioSource.Sounds["UI_Back"].Play();
-                game.ChangeMenu(MenuState.StartScreen);
-            }
+           
 
         }
 
@@ -119,7 +124,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 var selectedRow = loadGameTable.GetRow(rowIndex);
                 if (selectedRow != null && selectedRow.Length >= 1 && int.TryParse(selectedRow[0], out int recordId))
                 {
-                    var record = dataManager.Load().FirstOrDefault(r => r.recordId == recordId);
+                    var record = dataManager.LoadRecordList().FirstOrDefault(r => r.recordId == recordId);
 
                     if (record != null)
                     {
@@ -141,10 +146,10 @@ namespace FruitCatch.Core.GameContent.Screens
         switch (record.currentLevel)
         {
                 case "Level1":
-                    setRecordLevel = Levels.Level1;
+                    setRecordLevel = Levels.Level2;
                     break;
                 case "Level2":
-                    setRecordLevel = Levels.Level2;
+                    setRecordLevel = Levels.Level3;
                     break;
                 case "Level3":
                     setRecordLevel = Levels.Level3;

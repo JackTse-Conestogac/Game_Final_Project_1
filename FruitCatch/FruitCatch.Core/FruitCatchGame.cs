@@ -82,7 +82,7 @@ namespace FruitCatch.Core
 
             // TODO: use this.Content to load your game content here
 
-            // Load assets content
+            // LoadRecordList assets content
 
             ArtSource.Load(Content);
             AudioSource.Load(Content);

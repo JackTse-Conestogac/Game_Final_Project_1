@@ -80,7 +80,7 @@ namespace FruitCatch.Core.GameContent.Screens
             }
             if (loadGameButton.IsPressed())
             {
-                Console.WriteLine("Load Game selected.");
+                Console.WriteLine("LoadRecordList Game selected.");
                 AudioSource.Sounds["UI_Button_Click"].Play();
                 game.ChangeMenu(MenuState.LoadGameScreen);
             }

@@ -38,6 +38,9 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public PlayerInfoScreen(Sprite background) : base(background)
         {
+
+            dataManager = new DataManager();
+
             //Text
             textFont = Fonts.RegularFont;
             textFontBold = Fonts.HilightFont;
@@ -62,17 +65,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.error = new Text(errorText, textFont, errortextPosition, Color.Red);
 
 
-            // Data Storage
-             dataManager = new DataManager();
             
-            Data newPlayer = new Data()
-            {
-                recordId = dataManager.GenerateId(),
-                playerName = Global.CurrentPlayName,
-                currentLevel = Global.CurrentLevel.ToString(),
-                score = Global.Score
-            };
-            dataManager.Save(newPlayer);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -99,6 +92,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 {
                     Global.CurrentPlayName = playerName;
 
+                    // Save to database 
                     dataManager.AddRecord(Global.CurrentPlayName, Global.CurrentLevel, Global.Score);
 
                     AudioSource.Sounds["UI_StartGame"].Play();
@@ -113,7 +107,6 @@ namespace FruitCatch.Core.GameContent.Screens
             if (backButton.IsPressed())
             {
                
-
                 AudioSource.Sounds["UI_Back"].Play();
                 game.ChangeMenu(MenuState.StartScreen);
             }
