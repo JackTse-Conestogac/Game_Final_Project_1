@@ -78,27 +78,12 @@ namespace FruitCatch.Core.GameContent.Engines
 
         private void Initialize(string img, int x, int y, SpriteEffects imgOrientation)
         {
-            //this.texture = Arts.IMAGES[img];
-            //this.color = Color.White;
-            //this.rotation = 0f;
-            //this.imgOrientation = imgOrientation;
-            //this._position = new Vector2(0, 0);
-            //this.destinationRectangle = new Rectangle((x + (int)this._position.X) * Settings.PIXEL_RATIO,
-            //    (y + (int)this._position.Y) * Settings.PIXEL_RATIO,
-            //    this.texture.Width * Settings.PIXEL_RATIO,
-            //    this.texture.Height * Settings.PIXEL_RATIO);
 
             this.texture = ArtSource.IMAGES[img];
             this.color = Color.White;
             this.rotation = 0f;
             this.imgOrientation = imgOrientation;
 
-            //this.destinationRectangle = new Rectangle(
-            //    x * Settings.PIXEL_RATIO,
-            //    y * Settings.PIXEL_RATIO,
-            //    this.texture.Width * Settings.PIXEL_RATIO,
-            //    this.texture.Height * Settings.PIXEL_RATIO
-            //);
 
             this.destinationRectangle = new Rectangle(
                 x ,
@@ -110,15 +95,6 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public virtual void Update(int x, int y)
         {
-            //this.destinationRectangle.X = (x + (int)this._position.X) * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Y = (y + (int)this._position.Y) * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
-
-            //this.destinationRectangle.X = x * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Y = y * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Width = this.texture.Width * Settings.PIXEL_RATIO;
-            //this.destinationRectangle.Height = this.texture.Height * Settings.PIXEL_RATIO;
 
             this.destinationRectangle.X = x;
             this.destinationRectangle.Y = y;
@@ -128,7 +104,7 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            //spriteBatch.Draw(this.texture, this.destinationRectangle, null, this.color, this.rotation, this.position, this.imgOrientation, 0f);
+           
             spriteBatch.Draw(this.texture, this.position, null, this.color, this.rotation, Vector2.Zero, 1f, this.imgOrientation, 0f);
         }
 

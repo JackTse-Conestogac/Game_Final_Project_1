@@ -150,6 +150,9 @@ namespace FruitCatch.Core
                 case MenuState.StartScreen:
                     this.screen = new StartScreen(new Sprite("cave1"));
                     break;
+                case MenuState.LoadGameScreen:
+                    this.screen = new LoadGameScreen(new Sprite("cave2"));
+                    break;
                 case MenuState.PlayerInfoScreen:
                     this.screen = new PlayerInfoScreen(new Sprite("cave1"));
                     break;

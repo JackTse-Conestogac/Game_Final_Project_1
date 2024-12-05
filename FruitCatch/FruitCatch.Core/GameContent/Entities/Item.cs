@@ -1,5 +1,5 @@
 ﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Data;
+using FruitCatch.Core.GameContent.Database;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;

@@ -17,6 +17,7 @@ namespace FruitCatch.Core.GameContent.Screens
     {
 
         private Button startGameButton;
+        private Button loadGameButton;
         private Button helpButton;
         private Button aboutButton;
         private Button quitButton;
@@ -30,6 +31,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
         private const string gameTitleText = "GAME TITLE";
         private const string startButtonText = "START GAME";
+        private const string loadGameButtonText = "LOAD GAME";
         private const string helpButtonText = "HELP";
         private const string aboutButtonText = "ABOUT";
         private const string gameEndButtonText = "HIGHEST SCORE";
@@ -51,11 +53,12 @@ namespace FruitCatch.Core.GameContent.Screens
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
 
             
-            startGameButton = new Button(centerX, centerY - 100, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
-            helpButton = new Button(centerX, centerY, buttonWidth, buttonHeight, textFont, helpButtonText, Color.Cyan);
-            aboutButton = new Button(centerX, centerY + 100, buttonWidth, buttonHeight, textFont, aboutButtonText, Color.Cyan);
-            scoreBoardButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Cyan);
-            quitButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
+            this.startGameButton = new Button(centerX, centerY - 200, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
+            this.loadGameButton = new Button(centerX, centerY - 100, buttonWidth, buttonHeight, textFont, loadGameButtonText, Color.Cyan);
+            this.helpButton = new Button(centerX, centerY, buttonWidth, buttonHeight, textFont, helpButtonText, Color.Cyan);
+            this.aboutButton = new Button(centerX, centerY + 100, buttonWidth, buttonHeight, textFont, aboutButtonText, Color.Cyan);
+            this.scoreBoardButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, textFont, gameEndButtonText, Color.Cyan);
+            this.quitButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -63,6 +66,7 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Update(gameTime, input, game);
 
             this.startGameButton.Update(gameTime, input);
+            this.loadGameButton.Update(gameTime, input);
             this.helpButton.Update(gameTime, input);
             this.aboutButton.Update(gameTime, input);
             this.quitButton.Update(gameTime, input);
@@ -73,6 +77,12 @@ namespace FruitCatch.Core.GameContent.Screens
                 Console.WriteLine("Start Game selected.");
                 AudioSource.Sounds["UI_Button_Click"].Play();
                 game.ChangeMenu(MenuState.PlayerInfoScreen);
+            }
+            if (loadGameButton.IsPressed())
+            {
+                Console.WriteLine("Load Game selected.");
+                AudioSource.Sounds["UI_Button_Click"].Play();
+                game.ChangeMenu(MenuState.LoadGameScreen);
             }
             if (helpButton.IsPressed())
             {
@@ -109,6 +119,7 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Draw(spriteBatch);
             this.gameTitle.Draw(spriteBatch);
             this.startGameButton.Draw(spriteBatch);
+            this.loadGameButton.Draw(spriteBatch);
             this.helpButton.Draw(spriteBatch);
             this.aboutButton.Draw(spriteBatch); 
             this.quitButton.Draw(spriteBatch);

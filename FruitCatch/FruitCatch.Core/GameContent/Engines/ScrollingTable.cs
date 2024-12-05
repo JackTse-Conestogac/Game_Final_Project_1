@@ -24,6 +24,9 @@ namespace FruitCatch.Core.GameContent.Engines
         private int selectedIndex;    // Index of the selected row (-1 if none)
         private Rectangle tableBounds;
 
+
+        public Action<int> OnRowClick;
+
         public ScrollingTable(SpriteFont font, Vector2 position, int[] columnWidths, int rowHeight, Color textColor, Color highlightColor, int visibleRows = 10)
         {
             this.font = font;
@@ -41,14 +44,13 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public void AddRow(params string[] columns)
         {
-            if (columns.Length != columnWidths.Length)
-                throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
+            //if (columns.Length != columnWidths.Length)
+            //    throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
             rows.Add(columns);
         }
 
         public void Update(GameTime gameTime, InputHandler input)
         {
-            // Handle scrolling
             int scrollDelta = input.GetScrollWheelDelta();
             if (scrollDelta != 0)
             {
@@ -56,19 +58,28 @@ namespace FruitCatch.Core.GameContent.Engines
                 scrollOffset = Math.Clamp(scrollOffset, 0, Math.Max(0, rows.Count - visibleRows));
             }
 
-            // Handle mouse interaction
             Point mousePosition = input.GetMousePosition();
             if (tableBounds.Contains(mousePosition))
             {
                 int relativeY = mousePosition.Y - (int)position.Y;
                 int hoveredRow = (relativeY / rowHeight) + scrollOffset;
 
-                if (hoveredRow >= 0 && hoveredRow < rows.Count && input.IsLeftMouseButtonClicked())
+                if (hoveredRow >= 0 && hoveredRow < rows.Count)
                 {
                     selectedIndex = hoveredRow;
+
+                    if (input.IsLeftMouseButtonClicked())
+                    {
+                        Console.WriteLine($"Row clicked: {string.Join(", ", GetSelectedRow())}");
+                        OnRowClick?.Invoke(selectedIndex); // Notify the click with the row index
+                    }
                 }
             }
         }
+
+
+
+
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -104,9 +115,14 @@ namespace FruitCatch.Core.GameContent.Engines
             rows.Clear();
         }
 
-        public int GetSelectedIndex()
+        public string[] GetRow(int rowIndex)
         {
-            return selectedIndex;
+            return (rowIndex >= 0 && rowIndex < rows.Count) ? rows[rowIndex] : null;
+        }
+
+        public int GetRowCount()
+        {
+            return rows.Count;
         }
 
         public string[] GetSelectedRow()

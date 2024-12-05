@@ -10,11 +10,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Database;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
     public class ScoreBoardScreen : GameScreen
     {
+        private DataManager dataManager;
+
         private Button backButton;
         private SpriteFont textFont;
         private const string backButtonText = "BACK";
@@ -45,9 +48,10 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
         {
+            
             base.Update(gameTime, input, game);
 
-
+            
             this.table.Clear();
             this.table.AddRow("Name", "Level", "Score");
             this.table.AddRow("Jack", Global.CurrentLevel.ToString(), Global.Score.ToString()); // For Debug
@@ -67,5 +71,19 @@ namespace FruitCatch.Core.GameContent.Screens
             this.table.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
         }
+
+        public void UpdateScoreBoard(Table table)
+        {
+            dataManager = new DataManager();
+            var topScores = dataManager.GetTopScores();
+
+            table.Clear();
+            table.AddRow("Name", "Level", "Score");
+            foreach (var score in topScores)
+            {
+                table.AddRow(score.playerName, score.currentLevel, score.score.ToString());
+            }
+        }
+
     }
 }

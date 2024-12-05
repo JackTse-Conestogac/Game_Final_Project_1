@@ -49,9 +49,9 @@ namespace FruitCatch.Core.GameContent.Assets
                 { ItemType.Jewserly, "icons8-jewel-48" },
                 { ItemType.Stone, "icons8-stone-48" },
                 { ItemType.Spider, "icons8-spider-96" },
-                {ItemType.Silver, "icons8-silver-bars-48" },
+                { ItemType.Silver, "icons8-silver-bars-48" },
                 { ItemType.Snake, "icons8-snake-48" },
-                // Add other mappings as needed
+         
             };
 
         }

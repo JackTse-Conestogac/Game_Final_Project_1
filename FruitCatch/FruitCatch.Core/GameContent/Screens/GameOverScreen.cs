@@ -10,12 +10,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Database;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
     public class GameOverScreen : GameScreen
     {
-
+        private DataManager dataManager;
         private Button backButton;
         private Button contineGameButton;
         private SpriteFont textFont;
@@ -25,6 +26,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public GameOverScreen(Sprite background) : base(background)
         {
+             dataManager = new DataManager();
             //Text
             textFont = Fonts.RegularFont;
 
@@ -50,9 +52,15 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
+                // Update record in database
+                dataManager.UpdateRecord(Global.CurrentPlayName, Global.CurrentLevel.ToString(), Global.Score);
+
                 AudioSource.Sounds["UI_Back"].Play();
-                Global.InitialProperties();
-                game.ChangeMenu(MenuState.StartScreen);
+                
+                Global.InitialProperties(); // Initilizae Gobal Properties
+
+                
+                game.ChangeMenu(MenuState.StartScreen); // Change Menu to Start Screen
             }
 
             if (contineGameButton.IsPressed())

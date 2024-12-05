@@ -3,12 +3,11 @@ using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
+using FruitCatch.Core.GameContent.Database;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Audio;
 
@@ -16,6 +15,8 @@ namespace FruitCatch.Core.GameContent.Screens
 {
     public class PlayerInfoScreen : GameScreen
     {
+        private DataManager dataManager;
+
         private Button startGameButton;
         private Button backButton;
         private InputTextBox inputTextBox;
@@ -59,6 +60,19 @@ namespace FruitCatch.Core.GameContent.Screens
             this.caption = new Text(captionText, textFontBold, captionPosition, Color.Black);
             Vector2 errortextPosition = new Vector2(startX - 150, startY + 100);
             this.error = new Text(errorText, textFont, errortextPosition, Color.Red);
+
+
+            // Data Storage
+             dataManager = new DataManager();
+            
+            Data newPlayer = new Data()
+            {
+                recordId = dataManager.GenerateId(),
+                playerName = Global.CurrentPlayName,
+                currentLevel = Global.CurrentLevel.ToString(),
+                score = Global.Score
+            };
+            dataManager.Save(newPlayer);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -84,6 +98,9 @@ namespace FruitCatch.Core.GameContent.Screens
                 if (!string.IsNullOrEmpty(playerName))
                 {
                     Global.CurrentPlayName = playerName;
+
+                    dataManager.AddRecord(Global.CurrentPlayName, Global.CurrentLevel, Global.Score);
+
                     AudioSource.Sounds["UI_StartGame"].Play();
                     game.ChangeMenu(MenuState.PlayScreen);
                 }
