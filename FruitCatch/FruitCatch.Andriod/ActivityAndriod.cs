@@ -26,7 +26,7 @@ namespace FruitCatch.Andriod
         {
             base.OnCreate(bundle);
 
-            _game = new FruitCatchGame(Platform.ANDRIOD);
+            _game = new FruitCatchGame(Platform.ANDROID);
             _view = _game.Services.GetService(typeof(View)) as View;
 
             SetContentView(_view);

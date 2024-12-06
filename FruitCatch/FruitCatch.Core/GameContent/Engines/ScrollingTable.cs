@@ -44,8 +44,8 @@ namespace FruitCatch.Core.GameContent.Engines
 
         public void AddRow(params string[] columns)
         {
-            if (columns.Length != columnWidths.Length)
-                throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
+            //if (columns.Length != columnWidths.Length)
+                //throw new ArgumentException("Number of columns in the row must match the number of column widths defined.");
             rows.Add(columns);
         }
 

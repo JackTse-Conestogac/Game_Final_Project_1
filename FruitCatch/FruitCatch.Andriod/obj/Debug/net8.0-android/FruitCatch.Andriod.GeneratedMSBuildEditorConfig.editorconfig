@@ -12,6 +12,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FruitCatch.Andriod
-build_property.ProjectDir = C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\
+build_property.ProjectDir = C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

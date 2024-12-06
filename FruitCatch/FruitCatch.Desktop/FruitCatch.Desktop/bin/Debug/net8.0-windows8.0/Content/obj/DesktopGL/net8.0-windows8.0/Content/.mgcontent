@@ -4,26 +4,26 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Audio/jingle-bells.mp3</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/HilightFont.spritefont</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/RegularFont.spritefont</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/ScoreFont.spritefont</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave1.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave2.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave3.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-anaconda-85.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-crystal-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-emerald-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-gold-bars-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-jewel-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-mine-trolley-96.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-mouse-animal-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-ruby-64.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-silver-bars-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-snake-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-spider-96.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-stone-48.png</File>
-    <File>C:/Users/Jkt/OneDrive/桌面/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-topaz-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Audio/jingle-bells.mp3</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/HilightFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/RegularFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Fonts/ScoreFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave1.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave2.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/cave3.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-anaconda-85.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-crystal-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-emerald-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-gold-bars-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-jewel-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-mine-trolley-96.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-mouse-animal-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-ruby-64.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-silver-bars-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-snake-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-spider-96.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-stone-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCatch.Desktop/FruitCatch.Desktop/bin/Debug/net8.0-windows8.0/Content/Images/icons8-topaz-48.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

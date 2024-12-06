@@ -29,3 +29,19 @@ C:\Conestoga College\Sem3 - Game Programming Data Structure\Assignment\Final Pro
 C:\Conestoga College\Sem3 - Game Programming Data Structure\Assignment\Final Project\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\refint\FruitCatch.Core.dll
 C:\Conestoga College\Sem3 - Game Programming Data Structure\Assignment\Final Project\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.pdb
 C:\Conestoga College\Sem3 - Game Programming Data Structure\Assignment\Final Project\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\ref\FruitCatch.Core.dll
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\bin\Release\net8.0\FruitCatch.Core.deps.json
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\bin\Release\net8.0\FruitCatch.Core.dll
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\bin\Release\net8.0\FruitCatch.Core.pdb
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\bin\Release\net8.0\FruitCatch.GameAssets.dll
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\bin\Release\net8.0\FruitCatch.GameAssets.pdb
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.csproj.AssemblyReference.cache
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.AssemblyInfoInputs.cache
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.AssemblyInfo.cs
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.csproj.CoreCompileInputs.cache
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.sourcelink.json
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.csproj.CopyComplete
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.dll
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\refint\FruitCatch.Core.dll
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\FruitCatch.Core.pdb
+C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCatch.Core\obj\Release\net8.0\ref\FruitCatch.Core.dll

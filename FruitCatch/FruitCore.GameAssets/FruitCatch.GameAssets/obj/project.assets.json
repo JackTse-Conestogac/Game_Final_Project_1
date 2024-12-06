@@ -222,11 +222,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
+      "projectUniqueName": "C:\\Projects\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
       "projectName": "FruitCatch.GameAssets",
-      "projectPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
+      "projectPath": "C:\\Projects\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\FruitCatch.GameAssets.csproj",
       "packagesPath": "C:\\Users\\Jkt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jkt\\OneDrive\\桌面\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\obj\\",
+      "outputPath": "C:\\Projects\\Game_Final_Project_1\\FruitCatch\\FruitCore.GameAssets\\FruitCatch.GameAssets\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

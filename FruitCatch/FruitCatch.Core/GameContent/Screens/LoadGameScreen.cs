@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -26,7 +27,7 @@ namespace FruitCatch.Core.GameContent.Screens
         Levels setRecordLevel;
 
         // Button Cooldown 
-        private double cooldown = 200;
+        private double cooldown = 500;
         private double timer = 0;
 
         public LoadGameScreen(Sprite background) :base(background) 
@@ -84,7 +85,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 loadGameTable.AddRow("No saved games found.");
             }
 
-            if(timer >= cooldown)
+            if(timer > cooldown)
             {
                 timer = 0;
                 loadGameTable.OnRowClick += (rowIndex) =>
@@ -93,23 +94,20 @@ namespace FruitCatch.Core.GameContent.Screens
                     {
                         LoadSelectedGame(rowIndex);// Pass the clicked row index to LoadSelectedGame
                         AudioSource.Sounds["UI_StartGame"].Play();
+                        Debug.WriteLine("[AUDIO] UI_StartGame Trigger");
                         game.ChangeMenu(MenuState.PlayScreen);
                     }
                     
                 };
 
-
-                if (backButton.IsPressed())
-                {
-                    AudioSource.Sounds["UI_Back"].Play();
-                    game.ChangeMenu(MenuState.StartScreen);
-                }
-
             }
-            
 
 
-           
+            if (backButton.IsPressed())
+            {
+                AudioSource.Sounds["UI_Back"].Play();
+                game.ChangeMenu(MenuState.StartScreen);
+            }
 
         }
 

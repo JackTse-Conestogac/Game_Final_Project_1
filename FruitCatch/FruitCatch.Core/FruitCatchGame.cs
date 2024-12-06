@@ -34,6 +34,7 @@ namespace FruitCatch.Core
 
         public FruitCatchGame(Platform platform)
         {
+            Instance = this;
             _graphics = new GraphicsDeviceManager(this);
             _graphics.PreferredBackBufferWidth = Settings.SCREEN_WIDTH;
             _graphics.PreferredBackBufferHeight = Settings.SCREEN_HEIGHT;
@@ -45,8 +46,8 @@ namespace FruitCatch.Core
 
             _platform = platform;
 
-            // Platform
-            if (_platform == Platform.ANDRIOD)
+            // Show & Hiden Mouse base on platform
+            if (_platform == Platform.ANDROID)
             {
                 IsMouseVisible = false;
             }
@@ -60,9 +61,9 @@ namespace FruitCatch.Core
         {
             // TODO: Add your initialization logic here
 
-            if (_platform == Platform.ANDRIOD)
+            if (_platform == Platform.ANDROID)
             {
-                TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap | GestureType.Flick | GestureType.FreeDrag;
+                TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap | GestureType.Flick | GestureType.FreeDrag | GestureType.Hold;
             }
 
             base.Initialize();
@@ -100,15 +101,15 @@ namespace FruitCatch.Core
             //    Exit();
 
             // TODO: Add your update logic here
-            InputHandler.Instance.Update(); // VERIFIED
-            screen.Update(gameTime, InputHandler.Instance, this); // VERIFIED
+            InputHandler.Instance.Update(); 
+            screen.Update(gameTime, InputHandler.Instance, this); 
 
             // Check Game End 
             if (screen is PlayScreen playScreen)
             {
-                if (playScreen.CountDown == 0)
+                if (playScreen.CountDown == 0) // Transition to GameEndScreen when countdown is 0
                 {
-                    // Transition to GameEndScreen when countdown is 0
+                    
                     if(Global.CurrentLevel == Levels.Level3)
                     {
 

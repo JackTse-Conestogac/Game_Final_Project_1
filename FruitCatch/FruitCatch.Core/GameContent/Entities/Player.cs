@@ -38,14 +38,14 @@ namespace FruitCatch.Core.GameContent.Entities
             float movement = _speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // Use InputHandler for movement
-            if (input.IsKeyHeld(Keys.Right) || input.IsKeyHeld(Keys.D)) // CHANGED
+            if (input.IsKeyHeld(Keys.Right) || input.IsKeyHeld(Keys.D))
             {
                 _position.X += movement;
 
                 Console.WriteLine("Moving Right");
             }
 
-            if (input.IsKeyHeld(Keys.Left) || input.IsKeyHeld(Keys.A)) // CHANGED
+            if (input.IsKeyHeld(Keys.Left) || input.IsKeyHeld(Keys.A))
             {
                 _position.X -= movement;
 

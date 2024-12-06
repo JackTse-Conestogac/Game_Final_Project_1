@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Android</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/jingle-bells.mp3</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/Player_GainCoin.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_Back.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_Button_Click.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_Button_HighLight.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_GameEnd.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_HighLight.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/UI_StartGame.wav</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/GameTitleFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/HilightFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/RegularFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/ScoreFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/cave1.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/cave2.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/cave3.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-anaconda-85.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-crystal-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-emerald-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-gold-bars-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-jewel-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-mine-trolley-96.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-mouse-animal-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-ruby-64.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-silver-bars-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-snake-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-spider-96.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-stone-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-topaz-48.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

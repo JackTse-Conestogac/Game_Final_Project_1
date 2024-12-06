@@ -24,3 +24,16 @@ C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCore.GameAsset
 C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\refint\FruitCatch.GameAssets.dll
 C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.pdb
 C:\Users\Jkt\OneDrive\桌面\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\ref\FruitCatch.GameAssets.dll
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\bin\Debug\net8.0\FruitCatch.GameAssets.deps.json
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\bin\Debug\net8.0\FruitCatch.GameAssets.dll
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\bin\Debug\net8.0\FruitCatch.GameAssets.pdb
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.csproj.AssemblyReference.cache
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.AssemblyInfoInputs.cache
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.AssemblyInfo.cs
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.csproj.CoreCompileInputs.cache
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.sourcelink.json
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.dll
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\refint\FruitCatch.GameAssets.dll
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\FruitCatch.GameAssets.pdb
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCore.GameAssets\FruitCatch.GameAssets\obj\Debug\net8.0\ref\FruitCatch.GameAssets.dll

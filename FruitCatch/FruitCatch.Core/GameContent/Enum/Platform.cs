@@ -9,6 +9,6 @@ namespace FruitCatch.Core.GameContent.Enum
     public enum Platform
     {
         WINDOWS,
-        ANDRIOD
+        ANDROID
     }
 }

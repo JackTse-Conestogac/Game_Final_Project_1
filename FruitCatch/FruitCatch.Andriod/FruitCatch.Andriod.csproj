@@ -15,7 +15,7 @@
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\FruitCore.GameAssets\FruitCatch.GameAssets\Content\Content.mgcb" Link="Content\Content.mgcb" />
+    <MonoGameContentReference Include="..\FruitCore.GameAssets\FruitCatch.GameAssets\Content\Content.mgcb" Link="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FruitCatch.Core\FruitCatch.Core.csproj" />

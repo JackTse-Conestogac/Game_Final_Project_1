@@ -10,27 +10,67 @@ using System.Text.Json.Serialization;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Engines;
 
+
+
 namespace FruitCatch.Core.GameContent.Database
 {
     public class DataManager
     {
         private  List<Data> _records;
-        private const string PATH = "playerRecord.json";
-
+        //private const string PATH = "playerRecord.json";
+        private string _path;
         public DataManager() 
         {
+
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                // On Android, use internal storage directory.
+                // Personal folder typically maps to: /data/user/0/<your.package.name>/files/
+                //string personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                //_path = Path.Combine(personalFolder, "playerRecord.json");
+
+                string externalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FruitCatch");
+
+                if (!Directory.Exists(externalFolder))
+                {
+                    Directory.CreateDirectory(externalFolder);
+                }
+
+                _path = Path.Combine(externalFolder, "playerRecord.json");
+                Debug.WriteLine($"[Android] Data file path: {_path}");
+
+                // Use external files directory for easier debugging
+                //string externalFolder = Android.App.Application.Context.GetExternalFilesDir(null).AbsolutePath;
+                //string documentsFolder = Path.Combine(externalFolder, "Documents");
+
+                //if (!Directory.Exists(documentsFolder))
+                //{
+                //    Directory.CreateDirectory(documentsFolder);
+                //}
+
+                //_path = Path.Combine(documentsFolder, "playerRecord.json");
+
+            }
+            else
+            {
+                // On Windows (or other platforms), use a directory accessible on desktop
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                _path = Path.Combine(baseDir, "playerRecord.json");
+                Debug.WriteLine($"[Windows] Data file path: {_path}");
+            }
+
+
             _records = LoadRecordList();
         }
-
+            
         public List<Data> LoadRecordList()
         {
-            if (File.Exists(PATH))
+            if (File.Exists(_path))
             {
-                var fileData = File.ReadAllText(PATH);
+                var fileData = File.ReadAllText(_path);
                 return JsonSerializer.Deserialize<List<Data>>(fileData);
             }
             return new List<Data>();
-
         }
 
         
@@ -63,7 +103,7 @@ namespace FruitCatch.Core.GameContent.Database
         private void SaveAll()
         {
             string serializedData = JsonSerializer.Serialize(_records);
-            File.WriteAllText(PATH, serializedData);
+            File.WriteAllText(_path, serializedData);
         }
 
         public int GenerateId()
