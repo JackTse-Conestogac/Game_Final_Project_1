@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Engines;
+using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
 using Microsoft.Xna.Framework;
@@ -36,21 +37,26 @@ namespace FruitCatch.Core.GameContent.Entities
         public override void Update(GameTime gameTime, InputHandler input)
         {
             float movement = _speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //float horizontalInput = input.GetTouchHorizontalInput();
 
             // Use InputHandler for movement
-            if (input.IsKeyHeld(Keys.Right) || input.IsKeyHeld(Keys.D))
-            {
-                _position.X += movement;
 
-                Console.WriteLine("Moving Right");
-            }
+            
+                if (input.IsKeyHeld(Keys.Right) || input.IsKeyHeld(Keys.D))
+                {
+                    _position.X += movement;
 
-            if (input.IsKeyHeld(Keys.Left) || input.IsKeyHeld(Keys.A))
-            {
-                _position.X -= movement;
+                    Console.WriteLine("Moving Right");
+                }
 
-                Console.WriteLine("Moving Left");
-            }
+                if (input.IsKeyHeld(Keys.Left) || input.IsKeyHeld(Keys.A))
+                {
+                    _position.X -= movement;
+
+                    Console.WriteLine("Moving Left");
+                }
+            
+            
 
             // Set Bounds
             int playerWidth = sprite.GetTextureOriginalSize().X;

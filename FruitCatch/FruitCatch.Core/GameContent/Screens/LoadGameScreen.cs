@@ -27,7 +27,7 @@ namespace FruitCatch.Core.GameContent.Screens
         Levels setRecordLevel;
 
         // Button Cooldown 
-        private double cooldown = 500;
+        private double cooldown = 700;
         private double timer = 0;
 
         public LoadGameScreen(Sprite background) :base(background) 

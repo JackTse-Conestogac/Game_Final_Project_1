@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Input.Touch;
 using FruitCatch.Core.GameContent.Enum;
 using System.Reflection.Metadata.Ecma335;
+using FruitCatch.Core.GameContent.Database;
+using System.Text.RegularExpressions;
+using FruitCatch.Core.GameContent.Globals;
 
 namespace FruitCatch.Core.GameContent.Input
 {
@@ -29,8 +32,10 @@ namespace FruitCatch.Core.GameContent.Input
         private TouchLocation? currentPrimaryTouch;
         private TouchLocation? previousPrimaryTouch;
 
-        
-        
+        // damping for android touch control
+        //private Vector2 smoothedDragDelta = Vector2.Zero;
+        //private const float SmoothFactor = 0.1f;
+
 
         public void Update()
         {
@@ -49,6 +54,7 @@ namespace FruitCatch.Core.GameContent.Input
             previousPrimaryTouch = currentPrimaryTouch;
             currentPrimaryTouch = currentTouchCollection.FirstOrDefault();
 
+
         }
 
 
@@ -60,12 +66,13 @@ namespace FruitCatch.Core.GameContent.Input
 
         public bool IsKeyHeld(Keys key)
         {
-            if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
             {
-                return IsTouchTap(); 
+                
+                return IsTouchDragging(key);
             }
 
-             return currentKeyState.IsKeyDown(key);
+            return currentKeyState.IsKeyDown(key);
             
         }
         public Keys[] GetPressedKeys()
@@ -177,23 +184,21 @@ namespace FruitCatch.Core.GameContent.Input
 
         public bool IsTouchPressed()
         {
-            // Equivalent to a "touch down" event: current is pressed, previous wasn't present or wasn't pressed
+            
             if (!currentPrimaryTouch.HasValue)
                 return false;
 
             var currentState = currentPrimaryTouch.Value.State;
 
-            // For a "pressed" event, we want to see if it just started this frame.
+            
             bool wasTouchedBefore = previousPrimaryTouch.HasValue && previousPrimaryTouch.Value.State != TouchLocationState.Released;
             return currentState == TouchLocationState.Pressed && !wasTouchedBefore;
         }
 
         public bool IsTouchReleased()
         {
-            // Equivalent to a "touch up" event
             if (!currentPrimaryTouch.HasValue && previousPrimaryTouch.HasValue)
             {
-                // No current touch, but previously we had one, so it ended this frame.
                 return true;
             }
 
@@ -222,6 +227,7 @@ namespace FruitCatch.Core.GameContent.Input
             return currentPrimaryTouch.HasValue ? currentPrimaryTouch.Value.Position : Vector2.Zero;
         }
 
+
         public bool IsTouchOverArea(Rectangle area)
         {
             if (!currentPrimaryTouch.HasValue)
@@ -233,15 +239,45 @@ namespace FruitCatch.Core.GameContent.Input
 
         public bool IsTouchTap()
         {
-            // A "tap" can be interpreted as a touch that went pressed -> released quickly and didn't move much.
-            // We can store some info when touch pressed to check how far it traveled, but let's do a simple check:
-            // If we detect a release and previously there was a pressed state, consider it a tap.
+
             if (IsTouchReleased() && previousPrimaryTouch.HasValue)
             {
-                // If you want to add some distance or time checks for a "true" tap, do so here.
                 return true;
             }
             return false;
+        }
+
+        private bool IsTouchDragging(Keys key)
+        {
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID && HasTouch())
+            {
+                Vector2 dragDelta = GetDragDelta();
+
+                // Check direction of drag
+                if (dragDelta.X > 0 && (key == Keys.Right || key == Keys.D))
+                {
+                    return true; 
+                }
+                else if (dragDelta.X < 0 && (key == Keys.Left || key == Keys.A))
+                {
+                    return true; 
+                }
+            }
+
+            return false; // No drag or invalid key
+        }
+
+        private Vector2 GetDragDelta()
+        {
+            if (currentPrimaryTouch.HasValue && previousPrimaryTouch.HasValue)
+            {
+                Vector2 currentPos = currentPrimaryTouch.Value.Position;
+                Vector2 previousPos = previousPrimaryTouch.Value.Position;
+
+                return currentPos - previousPos;
+            }
+
+            return Vector2.Zero;
         }
     }
 }

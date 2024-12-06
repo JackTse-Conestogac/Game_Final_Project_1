@@ -56,7 +56,8 @@ namespace FruitCatch.Core.GameContent.Screens
             // Initialize Player
             
             playerSpeed = 1800f; // Pixels per second
-            playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975);
+            //playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975); // Player initial position
+            playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 700);
             player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
 
             // Item Spawn
