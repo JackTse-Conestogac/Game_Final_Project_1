@@ -14,11 +14,10 @@ namespace FruitCatch.Core.GameContent.Menu
 {
     internal class ScoreBoardMenu : GameObject
     {
-        private static Sprite _background = new Sprite("icons8-emerald-48");
+        private static Sprite _background = new Sprite("panel_score_board_02");
         private SpriteFont _textFont;
         private Vector2 _position;
         private Table _scoreTable;
-
 
         public ScoreBoardMenu(int startX, int startY) :base(startX, startY, _background) // scoreboard UI background
         {

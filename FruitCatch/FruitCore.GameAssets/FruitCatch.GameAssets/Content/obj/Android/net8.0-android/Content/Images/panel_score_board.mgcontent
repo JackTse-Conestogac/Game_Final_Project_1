@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_score_board.png</SourceFile>
-  <SourceTime>2024-12-06T16:03:38.0948478-05:00</SourceTime>
+  <SourceTime>2024-12-06T23:34:57.3026869-05:00</SourceTime>
   <DestFile>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/bin/Android/Content/Images/panel_score_board.xnb</DestFile>
-  <DestTime>2024-12-06T16:11:54.1120026-05:00</DestTime>
+  <DestTime>2024-12-06T23:55:14.9369565-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

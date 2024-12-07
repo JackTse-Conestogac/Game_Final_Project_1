@@ -25,14 +25,12 @@ namespace FruitCatch.Core
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-
         //Platform
         private Platform _platform;
         public Platform Platform { get { return _platform; } }
 
         // Current Screen
         GameScreen screen;
-
 
         public FruitCatchGame(Platform platform)
         {
@@ -192,12 +190,9 @@ namespace FruitCatch.Core
                     this.screen = new GameEndScreen(new Sprite("bg_play_screen"));
                     break;
                 case MenuState.GameOverScreen:
-                    //AudioSource.StopMusic(2.0f);
                     this.screen = new GameOverScreen(new Sprite("bg_game_over"));
                     AudioSource.PlayMusic("Mus_Stinger_Victory");
-
-                    //AudioSource.PlayMusicWithDelay("Mus_GameOver", 4500, 1000, 1.0f);
-                    AudioSource.PlayMusicWithDelay("Mus_GameOver", 4800, 5.0f, 0.8f);
+                    AudioSource.PlayMusicWithDelay("Mus_GameOver", 4800, 3.0f, 1.0f);
                     break;
                 case MenuState.Quit:
                     Exit();

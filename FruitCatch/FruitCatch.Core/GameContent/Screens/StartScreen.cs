@@ -25,12 +25,13 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button scoreBoardButton;
 
         private Text gameTitle;
-
-        private SpriteFont textFont;
         private SpriteFont gameTitleFont;
         private Vector2 gameTitlePosition;
 
-        private const string gameTitleText = "GAME TITLE";
+        private SpriteFont textFont;
+        
+
+        private const string gameTitleText = "MINING TREASURE HUNT";
         private const string startButtonText = "START GAME";
         private const string loadGameButtonText = "LOAD GAME";
         private const string helpButtonText = "HELP";
@@ -48,7 +49,7 @@ namespace FruitCatch.Core.GameContent.Screens
             int centerX = (Settings.SCREEN_WIDTH - buttonWidth) / 2 ; // Centered horizontally
             int centerY = (Settings.SCREEN_HEIGHT - buttonHeight) / 2;
 
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 300, 30);
+            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 600, 30);
             textFont = Fonts.RegularFont;
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);

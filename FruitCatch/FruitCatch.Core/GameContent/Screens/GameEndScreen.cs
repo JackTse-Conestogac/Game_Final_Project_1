@@ -28,6 +28,12 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string restartGameButtonText = "CONTINUE GAME";
 
 
+        private Text gameTitle;
+        private SpriteFont gameTitleFont;
+        private Vector2 gameTitlePosition;
+        private const string gameTitleText = "SCORE";
+
+
         public GameEndScreen(Sprite background) : base(background)
         {
             _global = new Global();
@@ -36,6 +42,12 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
+            // Title
+            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 200, 30);
+            gameTitleFont = Fonts.GameTitleFont;
+            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+            //Button
             int buttonWidth = 100; // Example button width
             int buttonHeight = 80; // Example button height
             int buttonSpacing = 500; // Space between buttons
@@ -50,6 +62,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Score Board
             this.scoreMenu = new ScoreBoardMenu(startX, startY - 700);
+
+
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -98,6 +112,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton.Draw(spriteBatch);
             this.contineGameButton.Draw(spriteBatch);
             this.scoreMenu.Draw(spriteBatch);
+            this.gameTitle.Draw(spriteBatch);
         }
     }
 }

@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -21,25 +17,37 @@ namespace FruitCatch.Core.GameContent.Screens
     {
         private Button backButton;
         private SpriteFont textFont;
+        private Sprite panelBoard;
+
+        private Text gameTitle;
+        private SpriteFont gameTitleFont;
+        private Vector2 gameTitlePosition;
+        private const string gameTitleText = "HELP";
         private const string backButtonText = "BACK";
-
-
         public HelpScreen(Sprite background) : base(background)
         {
             //Text
             textFont = Fonts.RegularFont;
 
+            // Title
+            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 100, 30);
+            gameTitleFont = Fonts.GameTitleFont;
+            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+            // Buttons
             int buttonWidth = 100; // Example button width
             int buttonHeight = 80; // Example button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
-
             // Create Button
             //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
+            // Panel Background
+            panelBoard = new Sprite("panel_score_board");
+            panelBoard.SetPosition(startX - 470, startY - 800);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -58,7 +66,9 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            this.panelBoard.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
+            this.gameTitle.Draw(spriteBatch);
         }
     }
 }

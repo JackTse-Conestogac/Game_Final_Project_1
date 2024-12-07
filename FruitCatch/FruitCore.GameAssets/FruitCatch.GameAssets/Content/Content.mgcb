@@ -461,6 +461,18 @@
 /processorParam:TextureFormat=Color
 /build:Images/icons8-topaz-48.png
 
+#begin Images/panel_score_board_02.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Images/panel_score_board_02.png
+
 #begin Images/panel_score_board.png
 /importer:TextureImporter
 /processor:TextureProcessor

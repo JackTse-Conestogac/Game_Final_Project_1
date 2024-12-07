@@ -50,9 +50,11 @@
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-spider-96.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-stone-48.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-topaz-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_score_board_02.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_score_board.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

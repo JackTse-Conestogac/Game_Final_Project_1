@@ -49,6 +49,7 @@ namespace FruitCatch.Core.GameContent.Assets
                 "btn_restart",
                 "btn_start_game",
                 "panel_score_board",
+                "panel_score_board_02",
             };
 
             foreach (string image in images)

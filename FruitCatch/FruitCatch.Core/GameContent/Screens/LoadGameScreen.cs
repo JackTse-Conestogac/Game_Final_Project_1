@@ -24,8 +24,15 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button backButton;
         private SpriteFont textFont;
         private const string backButtonText = "BACK";
+        private Sprite panelBoard;
 
         Levels setRecordLevel;
+
+        private Text gameTitle;
+        private SpriteFont gameTitleFont;
+        private Vector2 gameTitlePosition;
+        private const string gameTitleText = "LOAD GAME";
+
 
         // Button Cooldown 
         private double cooldown = 700;
@@ -33,10 +40,18 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public LoadGameScreen(Sprite background) :base(background) 
         {
+            // Manager
             dataManager = new DataManager();
 
+            //Text
             textFont = Fonts.RegularFont;
 
+            // Title
+            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 300, 30);
+            gameTitleFont = Fonts.GameTitleFont;
+            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+            // Button
             int buttonWidth = 100; // Example button width
             int buttonHeight = 80; // Example button height
             int buttonSpacing = 200; // Space between buttons
@@ -52,7 +67,9 @@ namespace FruitCatch.Core.GameContent.Screens
             loadGameTable = new ScrollingTable(textFont, tablePosition, new int[]{300, 400, 200, 300}, 50, Color.Cyan, Color.Gray, 10);
             loadGameTable.AddRow("Record Id", "Player Name", "Level", "Score");
 
-           
+            // Panel Background
+            panelBoard = new Sprite("panel_score_board");
+            panelBoard.SetPosition(startX - 470, startY - 800);
         }
 
 
@@ -117,8 +134,10 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            this.panelBoard.Draw(spriteBatch);
             this.loadGameTable.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
+            this.gameTitle.Draw(spriteBatch);
 
         }
 

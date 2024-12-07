@@ -44,7 +44,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr null; uint8_t* java_map (0x0)
 	}, ; 0
 	%struct.TypeMapModule {
-		[16 x i8] c"[\01\9E\DE\C1\A7\E6F\AD\AEx\C5R\E2\E2\8B", ; module_uuid: de9e015b-a7c1-46e6-adae-78c552e2e28b
+		[16 x i8] c"\177\22\D3\B2\B4&F\94\B9IU\1Eef\A0", ; module_uuid: d3223717-b4b2-4626-94b9-49551e6566a0
 		i32 1, ; uint32_t entry_count (0x1)
 		i32 0, ; uint32_t duplicate_count (0x0)
 		ptr @module1_managed_to_java, ; TypeMapModuleEntry* map

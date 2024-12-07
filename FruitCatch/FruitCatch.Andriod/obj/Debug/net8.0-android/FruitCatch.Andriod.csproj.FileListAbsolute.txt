@@ -565,3 +565,4 @@ C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\obj\Debug\net8.0-
 C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\obj\Debug\net8.0-android\app_shared_libraries\armeabi-v7a\libxamarin-app.so
 C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\obj\Debug\net8.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
 C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\obj\Debug\net8.0-android\app_shared_libraries\x86\libxamarin-app.so
+C:\Projects\Game_Final_Project_1\FruitCatch\FruitCatch.Andriod\obj\Debug\net8.0-android\libraryprojectimports.cache
