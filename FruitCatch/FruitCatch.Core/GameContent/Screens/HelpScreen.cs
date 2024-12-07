@@ -35,7 +35,8 @@ namespace FruitCatch.Core.GameContent.Screens
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
 
-            
+            title = new Sprite("text_help");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
 
             // Buttons
             int buttonWidth = 100; // Example button width
@@ -49,9 +50,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Panel Background
-            title = new Sprite("text_help");
-            //title.SetPosition(Settings.SCREEN_WIDTH -500, Settings.SCREEN_HEIGHT);
-            title.SetPosition(Settings.SCREEN_WIDTH /2 - 890, -410);
+            
             panelBoard = new Sprite("panel_help_board");
             panelBoard.SetPosition(startX - 900, startY - 900);
         }

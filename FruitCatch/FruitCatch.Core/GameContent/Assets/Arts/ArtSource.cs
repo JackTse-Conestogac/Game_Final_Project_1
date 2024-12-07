@@ -51,6 +51,7 @@ namespace FruitCatch.Core.GameContent.Assets.Arts
                 "panel_score_board",
                 "panel_score_board_02",
                 "panel_help_board",
+                "panel_about_board",
                 "text_help",
                 "text_about",
                 "text_game_title",

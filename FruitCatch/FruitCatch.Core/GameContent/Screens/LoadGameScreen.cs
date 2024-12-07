@@ -32,7 +32,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private SpriteFont gameTitleFont;
         private Vector2 gameTitlePosition;
         private const string gameTitleText = "LOAD GAME";
-
+        private Sprite title;
 
         // Button Cooldown 
         private double cooldown = 300;
@@ -52,6 +52,9 @@ namespace FruitCatch.Core.GameContent.Screens
             gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 300, 30);
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.White);
+
+            title = new Sprite("text_load_game");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -470);
 
             // Button
             int buttonWidth = 100; // Example button width
@@ -141,8 +144,8 @@ namespace FruitCatch.Core.GameContent.Screens
             this.panelBoard.Draw(spriteBatch);
             this.loadGameTable.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
-
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
         }
 
         public void LoadSelectedGame(int rowIndex)

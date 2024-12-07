@@ -30,6 +30,8 @@ namespace FruitCatch.Core.GameContent.Screens
         private Vector2 gameTitlePosition;
         private const string gameTitleText = "HIGHEST SCORE";
 
+        private Sprite title;
+
         public ScoreBoardScreen(Sprite background ) : base(background)
         {
             dataManager = new DataManager();
@@ -38,9 +40,13 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.ScoreBoardFont;
 
             // Title
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 400, 30);
-            gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 400, 30);
+            //gameTitleFont = Fonts.GameTitleFont;
+            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+
+            title = new Sprite("text_highest_score");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, - 460);
 
             // Button parameters
             int buttonWidth = 100; //  button width
@@ -86,7 +92,8 @@ namespace FruitCatch.Core.GameContent.Screens
             this.scoreBoard.Draw(spriteBatch);
             this.table.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
         }
 
         public void UpdateScoreBoard(Table table)

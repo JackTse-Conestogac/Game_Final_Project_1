@@ -26,6 +26,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private ScoreBoardMenu scoreMenu;
         private const string backButtonText = "BACK TO Menu";
         private const string restartGameButtonText = "CONTINUE GAME";
+        private Sprite title;
 
         private Text gameTitle;
         private SpriteFont gameTitleFont;
@@ -42,9 +43,12 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.RegularFont;
 
             // Title
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 200, 30);
-            gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 700, 100);
+            //gameTitleFont = Fonts.GameTitleFont;
+            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+            title = new Sprite("text_score");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 930, - 450);
 
             //Button
             int buttonWidth = 100; // Example button width
@@ -60,7 +64,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, new Sprite("btn_continue"));
 
             // Score Board
-            this.scoreMenu = new ScoreBoardMenu(startX, startY - 700);
+            this.scoreMenu = new ScoreBoardMenu(startX- 650, startY - 900);
 
         }
 
@@ -107,10 +111,11 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            this.scoreMenu.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
             this.contineGameButton.Draw(spriteBatch);
-            this.scoreMenu.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
         }
     }
 }

@@ -24,6 +24,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private Text gameTitle;
         private SpriteFont gameTitleFont;
         private Vector2 gameTitlePosition;
+        private Sprite title;
 
         private const string gameTitleText = "ABOUT";
         private const string backButtonText = "BACK";
@@ -36,6 +37,8 @@ namespace FruitCatch.Core.GameContent.Screens
             gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 200, 30);
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+            title = new Sprite("text_about");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
 
             // Buttons
             int buttonWidth = 100; // Example button width
@@ -50,7 +53,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Panel Background
-            panelBoard = new Sprite("panel_score_board");
+            panelBoard = new Sprite("panel_about_board");
             panelBoard.SetPosition(startX - 900, startY - 900);
 
         }
@@ -73,7 +76,8 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Draw(spriteBatch);
             this.panelBoard.Draw(spriteBatch);  
             this.backButton?.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
         }
     }
 }

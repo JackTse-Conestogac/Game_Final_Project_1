@@ -47,7 +47,6 @@ namespace FruitCatch.Core.GameContent.Screens
             this.restartButton = new Button(startX + 300, startY, buttonWidth, buttonHeight, new Sprite("btn_restart"));
             this.quitButton = new Button(startX + 600, startY, buttonWidth, buttonHeight, new Sprite("btn_quit"));
 
-
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
