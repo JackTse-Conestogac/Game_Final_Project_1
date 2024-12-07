@@ -8,7 +8,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FruitCatch.Core.GameContent.Assets
+namespace FruitCatch.Core.GameContent.Assets.Fonts
 {
     public class Fonts
     {

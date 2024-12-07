@@ -1,5 +1,5 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Assets.Audio;
+﻿using FruitCatch.Core.GameContent.Assets.Audio;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 using FruitCatch.Core.GameContent.Database;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
@@ -35,13 +35,15 @@ namespace FruitCatch.Core.GameContent.Screens
 
 
         // Button Cooldown 
-        private double cooldown = 700;
+        private double cooldown = 300;
         private double timer = 0;
+        private bool isAudioTrigger;
 
         public LoadGameScreen(Sprite background) :base(background) 
         {
             // Manager
             dataManager = new DataManager();
+            isAudioTrigger = false;
 
             //Text
             textFont = Fonts.RegularFont;
@@ -112,8 +114,13 @@ namespace FruitCatch.Core.GameContent.Screens
                     if(rowIndex != 0)
                     {
                         LoadSelectedGame(rowIndex);// Pass the clicked row index to LoadSelectedGame
-                        AudioSource.PlaySound("UI_StartGame");
-                        Debug.WriteLine("[AUDIO] UI_StartGame Trigger");
+                        if(isAudioTrigger == false)
+                        {
+                            AudioSource.PlaySound("UI_StartGame");
+                            Debug.WriteLine("[AUDIO] UI_StartGame Trigger");
+                            isAudioTrigger = true;
+                        }
+                        
                         game.ChangeMenu(MenuState.PlayScreen);
                     }
                     

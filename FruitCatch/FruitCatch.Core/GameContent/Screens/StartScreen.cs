@@ -9,8 +9,8 @@ using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
 using FruitCatch.Core.GameContent.Enum;
-using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 
 namespace FruitCatch.Core.GameContent.Screens
 {

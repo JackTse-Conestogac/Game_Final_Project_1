@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Database;
-using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
 using System.Threading;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 
 namespace FruitCatch.Core.GameContent.Screens
 {

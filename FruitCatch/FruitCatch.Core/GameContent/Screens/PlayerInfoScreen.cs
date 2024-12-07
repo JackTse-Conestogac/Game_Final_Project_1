@@ -9,8 +9,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Audio;
-using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 
 namespace FruitCatch.Core.GameContent.Screens
 {

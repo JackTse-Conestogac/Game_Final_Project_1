@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
-using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 
 namespace FruitCatch.Core.GameContent.Menu
 {

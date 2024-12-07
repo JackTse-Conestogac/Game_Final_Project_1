@@ -11,9 +11,10 @@ using FruitCatch.Core.GameContent.Screens;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Engines;
 using System.Threading.Tasks;
-using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
 using System.Threading;
+using FruitCatch.Core.GameContent.Assets.Arts;
+using FruitCatch.Core.GameContent.Assets.Fonts;
 
 
 namespace FruitCatch.Core

@@ -12,8 +12,6 @@ namespace FruitCatch.Core.GameContent.Screens
 {
     public abstract class GameScreen 
     {
-        //public List<GameComponent> Components { get; set; }
-
         protected Sprite background;
 
         protected GameScreen(Sprite background)

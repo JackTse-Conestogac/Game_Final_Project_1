@@ -7,7 +7,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
-using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Arts;
 
 namespace FruitCatch.Core.GameContent.Engines
 {
