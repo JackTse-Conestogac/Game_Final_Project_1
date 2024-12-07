@@ -11,6 +11,7 @@ using System.Threading;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
 using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Enum;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -55,10 +56,20 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             // Initialize Player
             
-            playerSpeed = 1800f; // Pixels per second
-            //playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975); // Player initial position
-            playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 700);
-            player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                playerSpeed = 1800f; // Pixels per second
+                                     //playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975); // Player initial position
+                playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 800);
+                player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
+            }
+            else
+            {
+                playerSpeed = 1800f; // Pixels per second
+                playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975); // Player initial position
+                player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
+            }
+            
 
             // Item Spawn
             itemGenerator = new ItemGeneretor(player);

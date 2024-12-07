@@ -11,7 +11,7 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
     public class AudioMixer
     {
         public static float MasterVolume { get; set; } = 1.0f;
-        public static float MusicVolume { get; set; } = 1.0f;
+        public static float MusicVolume { get; set; } = 1.5f;
         public static float SFXVolume { get; set; } = 0.2f;
 
         public static void SetMasterVolume(float volume)

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Database;
 using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
+using System.Threading;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -46,6 +47,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.restartButton = new Button(startX + 300, startY, buttonWidth, buttonHeight, new Sprite("btn_restart"));
             this.quitButton = new Button(startX + 600, startY, buttonWidth, buttonHeight, new Sprite("btn_quit"));
 
+
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -62,6 +64,7 @@ namespace FruitCatch.Core.GameContent.Screens
                 dataManager.UpdateRecord(Global.CurrentPlayName, Global.CurrentLevel.ToString(), Global.Score);
 
                 AudioSource.PlaySound("UI_Back");
+                AudioSource.PlayMusic("Mus_Lobby");
 
                 Global.InitialProperties(); // Initilizae Gobal Properties
                 
@@ -85,9 +88,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (quitButton.IsPressed())
             {
-
                 AudioSource.PlaySound("UI_Click");
-                //game.ChangeMenu(MenuState.PlayScreen);
                 FruitCatchGame.Instance.Exit();
             }
         }

@@ -51,89 +51,7 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
         private static SoundEffectInstance fadingOutSoundInstance = null;
 
 
-        public static void Update(GameTime gameTime)
-        {
-             // Update fade in
-            if (isFadingIn)
-            {
-                // Accumulate elapsed time
-                fadeInTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-                if (fadeInTimer >= 10.0f) // Process every 10ms
-                {
-                    fadeInTimer -= 10.0f; // Reset timer for the next step
-
-                    // Increase volume
-                    MediaPlayer.Volume = MathHelper.Clamp(MediaPlayer.Volume + fadeInStep * 10, 0.0f, targetVolume);
-
-                    // Stop fading if volume reaches the target
-                    if (MediaPlayer.Volume >= targetVolume)
-                    {
-                        isFadingIn = false;
-                    }
-                }
-            }
-
-            // Update fade out
-            if (isFadingOut)
-            {
-                // Accumulate time
-                fadeOutTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-                if (fadeOutTimer >= 10.0f) // Process every 10ms
-                {
-                    fadeOutTimer -= 10.0f; // Reset timer for next step
-
-                    // Decrease volume
-                    MediaPlayer.Volume = MathHelper.Clamp(MediaPlayer.Volume - fadeOutStep * 10, 0.0f, 1.0f);
-
-                    // Stop music if volume reaches zero
-                    if (MediaPlayer.Volume <= 0.0f)
-                    {
-                        MediaPlayer.Stop();
-                        isFadingOut = false;
-                    }
-                }
-            }
-
-            // Update sound effect fade-in
-            if (isSoundFadingIn && fadingSoundInstance != null)
-            {
-                soundFadeInTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-                if (soundFadeInTimer >= 10.0f) // Process every 10ms
-                {
-                    soundFadeInTimer -= 10.0f;
-
-                    fadingSoundInstance.Volume = MathHelper.Clamp(fadingSoundInstance.Volume + soundFadeInStep * 10, 0.0f, soundTargetVolume);
-
-                    if (fadingSoundInstance.Volume >= soundTargetVolume)
-                    {
-                        isSoundFadingIn = false;
-                        fadingSoundInstance = null; // Reset instance after fade-in completes
-                    }
-                }
-            }
-
-            if (isSoundFadingOut && fadingOutSoundInstance != null)
-            {
-                soundFadeOutTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-                if (soundFadeOutTimer >= 10.0f)
-                {
-                    soundFadeOutTimer -= 10.0f;
-
-                    fadingOutSoundInstance.Volume = MathHelper.Clamp(fadingOutSoundInstance.Volume - soundFadeOutStep * 10, 0.0f, 1.0f);
-
-                    if (fadingOutSoundInstance.Volume <= 0.0f)
-                    {
-                        fadingOutSoundInstance.Stop();
-                        isSoundFadingOut = false;
-                        fadingOutSoundInstance = null; // Reset instance
-                    }
-                }
-            }
-        }
+        
         public static void Load(ContentManager content)
         {
             Music = new Dictionary<string, Song>();
@@ -182,6 +100,86 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
 
         }
 
+        public static void Update(GameTime gameTime)
+        {
+            // Update fade in
+            if (isFadingIn)
+            {
+                // Accumulate elapsed time
+                fadeInTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                if (fadeInTimer >= 10.0f) // Process every 10ms for smoother fade-in
+                {
+                    fadeInTimer -= 10.0f; // Reset timer for next fade step
+
+                    // Increase volume incrementally based on the fade-in step
+                    MediaPlayer.Volume = MathHelper.Clamp(MediaPlayer.Volume + fadeInStep * 10, 0.0f, targetVolume);
+
+                    // Stop fading when target volume is reached
+                    if (MediaPlayer.Volume >= targetVolume)
+                    {
+                        isFadingIn = false;
+                    }
+                }
+            }
+
+            // Update fade out
+            fadeOutTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (fadeOutTimer >= 10.0f) // Process every 10ms
+            {
+                fadeOutTimer -= 10.0f; // Reset timer for the next step
+
+                // Decrease volume incrementally
+                MediaPlayer.Volume = MathHelper.Clamp(MediaPlayer.Volume - fadeOutStep * 10, 0.0f, 1.0f);
+
+                // Stop music if volume reaches zero
+                if (MediaPlayer.Volume <= 0.0f)
+                {
+                    MediaPlayer.Volume = 0.0f; // Ensure exact 0 volume
+                    MediaPlayer.Stop();
+                    isFadingOut = false; // Stop fade-out process
+                }
+            }
+
+            // Update sound effect fade-in
+            if (isSoundFadingIn && fadingSoundInstance != null)
+            {
+                soundFadeInTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                if (soundFadeInTimer >= 10.0f) // Process every 10ms
+                {
+                    soundFadeInTimer -= 10.0f;
+
+                    fadingSoundInstance.Volume = MathHelper.Clamp(fadingSoundInstance.Volume + soundFadeInStep * 10, 0.0f, soundTargetVolume);
+
+                    if (fadingSoundInstance.Volume >= soundTargetVolume)
+                    {
+                        isSoundFadingIn = false;
+                        fadingSoundInstance = null; // Reset instance after fade-in completes
+                    }
+                }
+            }
+
+            if (isSoundFadingOut && fadingOutSoundInstance != null)
+            {
+                soundFadeOutTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                if (soundFadeOutTimer >= 10.0f)
+                {
+                    soundFadeOutTimer -= 10.0f;
+
+                    fadingOutSoundInstance.Volume = MathHelper.Clamp(fadingOutSoundInstance.Volume - soundFadeOutStep * 10, 0.0f, 1.0f);
+
+                    if (fadingOutSoundInstance.Volume <= 0.0f)
+                    {
+                        fadingOutSoundInstance.Stop();
+                        isSoundFadingOut = false;
+                        fadingOutSoundInstance = null; // Reset instance
+                    }
+                }
+            }
+        }
         public static string GetSoundEffectForItemType(ItemType itemType)
         {
             return itemTypeSounds.ContainsKey(itemType) ? itemTypeSounds[itemType] : null;
@@ -207,6 +205,20 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
             MediaPlayer.Volume = 0.0f;
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(Music[music]);
+
+
+        }
+
+        public static async void PlayMusicWithDelay(string music, int delay)
+        {
+            await Task.Delay(delay); // Delay for the specified time
+            AudioSource.PlayMusic(music);
+        }
+
+        public static async void PlayMusicWithDelay(string music, int delay, float duration, float targetVolume)
+        {
+            await Task.Delay(delay); // Delay for the specified time
+            AudioSource.PlayMusic(music, duration, targetVolume);
         }
 
         public static void StopMusic()
@@ -216,12 +228,17 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
 
         public static void StopMusic(float duration)
         {
-            isFadingOut = true;
-            fadeOutDuration = duration;
-            fadeOutStep = MediaPlayer.Volume / (duration * 1000); // Step size per millisecond
-            fadeOutTimer = 0.0f;
-
-            MediaPlayer.Stop();
+            if (MediaPlayer.Volume > 0.0f) // Ensure there's something to fade out
+            {
+                isFadingOut = true;
+                fadeOutDuration = duration; // Total fade-out duration in seconds
+                fadeOutStep = MediaPlayer.Volume / (duration * 1000); // Step size per millisecond
+                fadeOutTimer = 0.0f;
+            }
+            else
+            {
+                MediaPlayer.Stop(); // If already at 0 volume, stop immediately
+            }
         }
 
         public static void PlaySound(string sfx)
@@ -253,8 +270,6 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
         public static void StopSound(string sfx, float duration)
         {
             SoundEffectInstance soundInstance = AudioSource.Sounds[sfx].CreateInstance();
-            //soundInstance.Volume = 1.0f; // Set initial volume
-            //soundInstance.Play();
 
             // Initialize fade-out state
             isSoundFadingOut = true;
@@ -264,5 +279,7 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
             fadingOutSoundInstance = soundInstance;
             
         }
+
+       
     }
 }

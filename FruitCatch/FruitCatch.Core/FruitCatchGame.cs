@@ -13,6 +13,7 @@ using FruitCatch.Core.GameContent.Engines;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Assets.Audio;
+using System.Threading;
 
 
 namespace FruitCatch.Core
@@ -68,12 +69,12 @@ namespace FruitCatch.Core
             }
 
             base.Initialize();
-
+            
             InputHandler.Instance = new InputHandler();
 
-            // Play Music
-            
-            
+            // Inital Play Music
+            AudioSource.PlayMusic("Mus_Lobby");
+
         }
 
         protected override void LoadContent()
@@ -92,7 +93,7 @@ namespace FruitCatch.Core
             // Menu
             screen = new StartScreen(new Sprite("bg_play_screen"));
 
-            AudioSource.PlayMusic("Mus_Lobby");
+            //AudioSource.PlayMusic("Mus_Lobby");
         }
 
 
@@ -163,8 +164,20 @@ namespace FruitCatch.Core
                     this.screen = new PlayerInfoScreen(new Sprite("bg_start_screen"));
                     break;
                 case MenuState.PlayScreen:
+                    if (Global.CurrentLevel == Levels.Level1)
+                    {
+                        AudioSource.PlayMusic("Mus_Battle_01");
+                    }
+                    else if(Global.CurrentLevel == Levels.Level2)
+                    {
+                        AudioSource.PlayMusic("Mus_Battle_02");
+                    }
+                    else if (Global.CurrentLevel == Levels.Level3)
+                    {
+                        AudioSource.PlayMusic("Mus_Battle_03");
+                    }
                     this.screen = new PlayScreen(new Sprite("bg_play_screen"));
-                    break;
+                        break;
                 case MenuState.HelpScreen:
                     this.screen = new HelpScreen(new Sprite("bg_start_screen"));
                     break;
@@ -175,10 +188,16 @@ namespace FruitCatch.Core
                     this.screen = new ScoreBoardScreen(new Sprite("bg_start_screen"));
                     break;
                 case MenuState.GameEndScreen:
+                    AudioSource.PlayMusic("Mus_Lobby");
                     this.screen = new GameEndScreen(new Sprite("bg_play_screen"));
                     break;
                 case MenuState.GameOverScreen:
+                    //AudioSource.StopMusic(2.0f);
                     this.screen = new GameOverScreen(new Sprite("bg_game_over"));
+                    AudioSource.PlayMusic("Mus_Stinger_Victory");
+
+                    //AudioSource.PlayMusicWithDelay("Mus_GameOver", 4500, 1000, 1.0f);
+                    AudioSource.PlayMusicWithDelay("Mus_GameOver", 4800, 5.0f, 0.8f);
                     break;
                 case MenuState.Quit:
                     Exit();
