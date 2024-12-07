@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -11,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Database;
+using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -22,7 +23,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private SpriteFont textFont;
         private const string backButtonText = "BACK";
         private Table table;
-        
+        private Sprite scoreBoard;
 
         public ScoreBoardScreen(Sprite background ) : base(background)
         {
@@ -32,19 +33,23 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.RegularFont;
 
             // Button parameters
-            int buttonWidth = 50; //  button width
-            int buttonHeight = 50; //  button height
+            int buttonWidth = 100; //  button width
+            int buttonHeight = 80; //  button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
-
+            
             //Table
             table = new Table(textFont, new Vector2(startX - 470, startY - 700), new int[] {200, 300, 300, 400}, 50, Color.White );
             this.table.AddRow("Top","Name", "Level", "Score");
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
+            // Score board background
+            scoreBoard = new Sprite("panel_score_board");
+            scoreBoard.SetPosition(startX - 470, startY - 600);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -59,7 +64,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
-                AudioSource.Sounds["UI_Back"].Play();
+                
+                AudioSource.PlaySound("UI_Back");
                 game.ChangeMenu(MenuState.StartScreen);
             }
         }
@@ -69,6 +75,7 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Draw(spriteBatch);
             this.table.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
+            this.scoreBoard.Draw(spriteBatch);  
         }
 
         public void UpdateScoreBoard(Table table)

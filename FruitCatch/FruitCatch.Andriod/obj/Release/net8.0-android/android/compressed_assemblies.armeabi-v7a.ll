@@ -26,7 +26,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr @__compressedAssemblyData_0; uint8_t* data (0x0)
 	}, ; 0
 	%struct.CompressedAssemblyDescriptor {
-		i32 38400, ; uint32_t uncompressed_file_size (0x9600)
+		i32 46080, ; uint32_t uncompressed_file_size (0xb400)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_1; uint8_t* data (0x0)
 	}, ; 1
@@ -176,7 +176,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr @__compressedAssemblyData_30; uint8_t* data (0x0)
 	}, ; 30
 	%struct.CompressedAssemblyDescriptor {
-		i32 1594880, ; uint32_t uncompressed_file_size (0x185600)
+		i32 1605120, ; uint32_t uncompressed_file_size (0x187e00)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_31; uint8_t* data (0x0)
 	}, ; 31
@@ -201,7 +201,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr @__compressedAssemblyData_35; uint8_t* data (0x0)
 	}, ; 35
 	%struct.CompressedAssemblyDescriptor {
-		i32 1578496, ; uint32_t uncompressed_file_size (0x181600)
+		i32 1589248, ; uint32_t uncompressed_file_size (0x184000)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_36; uint8_t* data (0x0)
 	}, ; 36
@@ -226,7 +226,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr @__compressedAssemblyData_40; uint8_t* data (0x0)
 	}, ; 40
 	%struct.CompressedAssemblyDescriptor {
-		i32 1578496, ; uint32_t uncompressed_file_size (0x181600)
+		i32 1589248, ; uint32_t uncompressed_file_size (0x184000)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_41; uint8_t* data (0x0)
 	}, ; 41
@@ -251,7 +251,7 @@ target triple = "armv7-unknown-linux-android21"
 		ptr @__compressedAssemblyData_45; uint8_t* data (0x0)
 	}, ; 45
 	%struct.CompressedAssemblyDescriptor {
-		i32 1638912, ; uint32_t uncompressed_file_size (0x190200)
+		i32 1649664, ; uint32_t uncompressed_file_size (0x192c00)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_46; uint8_t* data (0x0)
 	}, ; 46
@@ -268,7 +268,7 @@ target triple = "armv7-unknown-linux-android21"
 ], align 4
 
 @__compressedAssemblyData_0 = internal dso_local global [5632 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_1 = internal dso_local global [38400 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_1 = internal dso_local global [46080 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_2 = internal dso_local global [3584 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_3 = internal dso_local global [144384 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_4 = internal dso_local global [18976 x i8] zeroinitializer, align 1
@@ -298,22 +298,22 @@ target triple = "armv7-unknown-linux-android21"
 @__compressedAssemblyData_28 = internal dso_local global [2560 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_29 = internal dso_local global [18944 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_30 = internal dso_local global [11776 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_31 = internal dso_local global [1594880 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_31 = internal dso_local global [1605120 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_32 = internal dso_local global [31232 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_33 = internal dso_local global [316928 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_34 = internal dso_local global [18944 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_35 = internal dso_local global [11264 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_36 = internal dso_local global [1578496 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_36 = internal dso_local global [1589248 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_37 = internal dso_local global [28160 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_38 = internal dso_local global [317440 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_39 = internal dso_local global [18944 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_40 = internal dso_local global [11264 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_41 = internal dso_local global [1578496 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_41 = internal dso_local global [1589248 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_42 = internal dso_local global [28160 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_43 = internal dso_local global [317440 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_44 = internal dso_local global [18944 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_45 = internal dso_local global [12288 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_46 = internal dso_local global [1638912 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_46 = internal dso_local global [1649664 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_47 = internal dso_local global [30208 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_48 = internal dso_local global [316928 x i8] zeroinitializer, align 1
 

@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FruitCatch.Core.GameContent.Assets;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Entities;
 using System.Threading;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
+using FruitCatch.Core.GameContent.Assets;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -49,7 +49,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private SpriteFont timerFont;
         private SpriteFont levelFont;
         private SpriteFont scoreFont;
-        private SpriteFont HealthBarFont;
+        //private SpriteFont HealthBarFont;
 
         public PlayScreen(Sprite background) : base(background)
         {
@@ -75,10 +75,10 @@ namespace FruitCatch.Core.GameContent.Screens
 
             timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
-            hb_Text = $"Health: {player.HealthBar}";
-            HealthBarFont = Fonts.ScoreFont;
-            HealthBarPosition = new Vector2(10, 90);
-            HealthBarText = new Text(hb_Text, HealthBarFont, HealthBarPosition, Color.Cyan);
+            //hb_Text = $"Health: {player.HealthBar}";
+            //HealthBarFont = Fonts.ScoreFont;
+            //HealthBarPosition = new Vector2(10, 90);
+            //HealthBarText = new Text(hb_Text, HealthBarFont, HealthBarPosition, Color.Cyan);
 
             l_Text = $"{Global.CurrentLevel}";
             levelFont = Fonts.ScoreFont;
@@ -124,7 +124,7 @@ namespace FruitCatch.Core.GameContent.Screens
             }
 
             this.timerText.Update(gameTime, $"Timer: {countDown}");
-            this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar}");
+            //this.HealthBarText.Update(gameTime, $"Health: {player.HealthBar}");
             this.levelText.Update(gameTime, $"{Global.CurrentLevel}");
             this.scoreText.Update(gameTime, $"Score: {Global.Score}");
 
@@ -140,7 +140,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Text Draw
             this.timerText.Draw(spriteBatch);
-            this.HealthBarText.Draw(spriteBatch);
+            //this.HealthBarText.Draw(spriteBatch);
             this.levelText.Draw(spriteBatch);
             this.scoreText.Draw(spriteBatch);
 

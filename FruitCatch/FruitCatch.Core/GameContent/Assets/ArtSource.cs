@@ -12,7 +12,7 @@ namespace FruitCatch.Core.GameContent.Assets
 {
     public class ArtSource
     {
-        public static Dictionary<string, Texture2D> IMAGES {  get; set; }
+        public static Dictionary<string, Texture2D> IMAGES { get; set; }
         public static Dictionary<ItemType, string> ITEM_SPRITES { get; private set; }
 
         public static void Load(ContentManager content)
@@ -36,11 +36,24 @@ namespace FruitCatch.Core.GameContent.Assets
                 "icons8-spider-96",
                 "icons8-stone-48",
                 "icons8-topaz-48",
+                "bg_game_over",
+                "bg_play_screen",
+                "bg_start_screen",
+                "btn_about",
+                "btn_back",
+                "btn_continue",
+                "btn_help",
+                "btn_highest_score",
+                "btn_load_game",
+                "btn_quit",
+                "btn_restart",
+                "btn_start_game",
+                "panel_score_board",
             };
 
             foreach (string image in images)
             {
-                IMAGES.Add(image, content.Load<Texture2D>("Images/"+image));
+                IMAGES.Add(image, content.Load<Texture2D>("Images/" + image));
             }
 
             ITEM_SPRITES = new Dictionary<ItemType, string>
@@ -51,7 +64,7 @@ namespace FruitCatch.Core.GameContent.Assets
                 { ItemType.Spider, "icons8-spider-96" },
                 { ItemType.Silver, "icons8-silver-bars-48" },
                 { ItemType.Snake, "icons8-snake-48" },
-         
+
             };
 
         }

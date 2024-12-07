@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Globals;
+﻿using FruitCatch.Core.GameContent.Globals;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Assets;
 
 namespace FruitCatch.Core.GameContent.Engines
 {

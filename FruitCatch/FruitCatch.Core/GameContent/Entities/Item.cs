@@ -1,4 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
+﻿using FruitCatch.Core.GameContent.Assets.Audio;
 using FruitCatch.Core.GameContent.Database;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
@@ -61,7 +61,7 @@ namespace FruitCatch.Core.GameContent.Entities
             string soundEffect = AudioSource.GetSoundEffectForItemType(_type);
             if (!string.IsNullOrEmpty(soundEffect))
             {
-                AudioSource.Sounds[soundEffect].Play();
+                AudioSource.PlaySound(soundEffect);
             }
 
 

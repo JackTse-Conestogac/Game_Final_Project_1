@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -10,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -25,15 +26,16 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
+            int buttonWidth = 100; // Example button width
+            int buttonHeight = 80; // Example button height
             int buttonSpacing = 20; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
         }
 
@@ -45,7 +47,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
-                AudioSource.Sounds["UI_Back"].Play();
+                AudioSource.PlaySound("UI_Back");
                 game.ChangeMenu(MenuState.StartScreen);
             }
         }

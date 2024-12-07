@@ -1,4 +1,5 @@
 ﻿using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 using FruitCatch.Core.GameContent.Database;
 using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
@@ -36,14 +37,15 @@ namespace FruitCatch.Core.GameContent.Screens
 
             textFont = Fonts.RegularFont;
 
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
+            int buttonWidth = 100; // Example button width
+            int buttonHeight = 80; // Example button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Table
             Vector2 tablePosition = new Vector2(startX- 520, startY -750);
@@ -93,7 +95,7 @@ namespace FruitCatch.Core.GameContent.Screens
                     if(rowIndex != 0)
                     {
                         LoadSelectedGame(rowIndex);// Pass the clicked row index to LoadSelectedGame
-                        AudioSource.Sounds["UI_StartGame"].Play();
+                        AudioSource.PlaySound("UI_StartGame");
                         Debug.WriteLine("[AUDIO] UI_StartGame Trigger");
                         game.ChangeMenu(MenuState.PlayScreen);
                     }
@@ -105,7 +107,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
-                AudioSource.Sounds["UI_Back"].Play();
+                
+                AudioSource.PlaySound("UI_Back");
                 game.ChangeMenu(MenuState.StartScreen);
             }
 

@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -12,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Database;
+using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -35,15 +36,17 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
+            int buttonWidth = 100; // Example button width
+            int buttonHeight = 80; // Example button height
             int buttonSpacing = 500; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - 550) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Cyan);
+            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Cyan);
             this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Cyan);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, new Sprite("btn_continue"));
 
             // Score Board
             this.scoreMenu = new ScoreBoardMenu(startX, startY - 700);
@@ -62,8 +65,8 @@ namespace FruitCatch.Core.GameContent.Screens
                 // Update Record in database
                 dataManager.UpdateRecord(Global.CurrentPlayName, Global.CurrentLevel.ToString(), Global.Score);
 
-                AudioSource.Sounds["UI_Back"].Play();
-                
+                AudioSource.PlaySound("UI_Back");
+
                 Global.InitialProperties();
                 
                 game.ChangeMenu(MenuState.StartScreen);
@@ -71,9 +74,10 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (contineGameButton.IsPressed())
             {
-                AudioSource.Sounds["UI_StartGame"].Play();
+             
+                AudioSource.PlaySound("UI_StartGame");
 
-                if(Global.CurrentLevel == Levels.Level1)
+                if (Global.CurrentLevel == Levels.Level1)
                 {
                     Global.CurrentLevel = Levels.Level2;
                 }

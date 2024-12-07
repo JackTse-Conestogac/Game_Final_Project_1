@@ -14,7 +14,7 @@ namespace FruitCatch.Core.GameContent.Engines
         private int[] columnWidths;        // Width of each column
         private int rowHeight;             // Height of each row
         private Color textColor;           // Text color
-
+        
         public Table(SpriteFont font, Vector2 position, int[] columnWidths, int rowHeight, Color textColor)
         {
             this.font = font;

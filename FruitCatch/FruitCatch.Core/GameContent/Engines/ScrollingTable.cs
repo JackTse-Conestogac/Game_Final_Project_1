@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Engines
 {
@@ -69,7 +69,7 @@ namespace FruitCatch.Core.GameContent.Engines
                     if (selectedIndex != hoveredRow) // Trigger sound only if hovering a new row
                     {
                         selectedIndex = hoveredRow;
-                        AudioSource.Sounds["UI_Button_HighLight"].Play();
+                        AudioSource.PlaySound("UI_Button_HighLight");
                     }
                     
                    

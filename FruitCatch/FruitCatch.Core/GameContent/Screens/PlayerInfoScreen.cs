@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -10,6 +9,8 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Audio;
+using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -45,8 +46,8 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.RegularFont;
             textFontBold = Fonts.HilightFont;
 
-            int buttonWidth = 50; //  button width
-            int buttonHeight = 50; //  button height
+            int buttonWidth = 100; //  button width
+            int buttonHeight = 80; //  button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 650; // Starting Y-coordinate
@@ -55,8 +56,10 @@ namespace FruitCatch.Core.GameContent.Screens
             Vector2 inputPosition = new Vector2(startX -260, startY - 100);
             this.inputTextBox = new InputTextBox(textFont, inputPosition, 600, 50, Color.Black, Color.White);
             
-            this.startGameButton = new Button(startX +150, startY, buttonWidth, buttonHeight, textFont, startButtonText, Color.Black);
-            this.backButton = new Button(startX - 150, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            //this.startGameButton = new Button(startX +150, startY, buttonWidth, buttonHeight, textFont, startButtonText, Color.Black);
+            //this.backButton = new Button(startX - 150, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            this.startGameButton = new Button(startX + 100, startY, buttonWidth, buttonHeight, new Sprite("btn_start_game"));
+            this.backButton = new Button(startX -200, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Text
             Vector2 captionPosition = new Vector2(startX - 260, startY - 150);
@@ -95,7 +98,7 @@ namespace FruitCatch.Core.GameContent.Screens
                     // Save to database 
                     dataManager.AddRecord(Global.CurrentPlayName, Global.CurrentLevel, Global.Score);
 
-                    AudioSource.Sounds["UI_StartGame"].Play();
+                    AudioSource.PlaySound("UI_StartGame");
                     game.ChangeMenu(MenuState.PlayScreen);
                 }
                 else
@@ -106,8 +109,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
-               
-                AudioSource.Sounds["UI_Back"].Play();
+
+                AudioSource.PlaySound("UI_Back");
                 game.ChangeMenu(MenuState.StartScreen);
             }
         }

@@ -1,5 +1,4 @@
-﻿using FruitCatch.Core.GameContent.Assets;
-using FruitCatch.Core.GameContent.Engines;
+﻿using FruitCatch.Core.GameContent.Engines;
 using FruitCatch.Core.GameContent.Enum;
 using FruitCatch.Core.GameContent.Globals;
 using FruitCatch.Core.GameContent.Input;
@@ -11,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FruitCatch.Core.GameContent.Database;
+using FruitCatch.Core.GameContent.Assets;
+using FruitCatch.Core.GameContent.Assets.Audio;
 
 namespace FruitCatch.Core.GameContent.Screens
 {
@@ -18,10 +19,12 @@ namespace FruitCatch.Core.GameContent.Screens
     {
         private DataManager dataManager;
         private Button backButton;
-        private Button contineGameButton;
+        private Button restartButton;
+        private Button quitButton;
         private SpriteFont textFont;
         private const string backButtonText = "BACK TO Menu";
-        private const string restartGameButtonText = "RESTART GAME";
+        private const string restartGameButtonText = "RESTART";
+        private const string quitButtonText = "QUIT";
 
 
         public GameOverScreen(Sprite background) : base(background)
@@ -30,16 +33,18 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
-            int buttonWidth = 50; // Example button width
-            int buttonHeight = 50; // Example button height
-            int buttonSpacing = 500; // Space between buttons
-            int startX = (Settings.SCREEN_WIDTH - 550) / 2; // Horizontal center
-            int startY = 900; // Starting Y-coordinate
+            int buttonWidth = 100; // Example button width
+            int buttonHeight = 80; // Example button height
+            int startX = (Settings.SCREEN_WIDTH - 660) / 2; // Horizontal center
+            int startY = 500; // Starting Y-coordinate
 
 
             // Create Button
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
-            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Black);
+            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+            //this.restartButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Black);
+            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+            this.restartButton = new Button(startX + 300, startY, buttonWidth, buttonHeight, new Sprite("btn_restart"));
+            this.quitButton = new Button(startX + 600, startY, buttonWidth, buttonHeight, new Sprite("btn_quit"));
 
         }
 
@@ -48,25 +53,26 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Update(gameTime, input, game);
 
             this.backButton.Update(gameTime, input);
-            this.contineGameButton.Update(gameTime, input);
+            this.restartButton.Update(gameTime, input);
+            this.quitButton.Update(gameTime, input);
 
             if (backButton.IsPressed())
             {
                 // Update record in database
                 dataManager.UpdateRecord(Global.CurrentPlayName, Global.CurrentLevel.ToString(), Global.Score);
 
-                AudioSource.Sounds["UI_Back"].Play();
-                
+                AudioSource.PlaySound("UI_Back");
+
                 Global.InitialProperties(); // Initilizae Gobal Properties
                 
                 
                 game.ChangeMenu(MenuState.StartScreen); // Change Menu to Start Screen
             }
 
-            if (contineGameButton.IsPressed())
+            if (restartButton.IsPressed())
             {
-                AudioSource.Sounds["UI_StartGame"].Play();
-
+             
+                AudioSource.PlaySound("UI_StartGame");
                 if (Global.CurrentLevel == Levels.Level3)
                 {
 
@@ -75,16 +81,23 @@ namespace FruitCatch.Core.GameContent.Screens
                 }
                
                 game.ChangeMenu(MenuState.PlayScreen);
-
             }
 
+            if (quitButton.IsPressed())
+            {
+
+                AudioSource.PlaySound("UI_Click");
+                //game.ChangeMenu(MenuState.PlayScreen);
+                FruitCatchGame.Instance.Exit();
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
-            this.contineGameButton.Draw(spriteBatch);
+            this.restartButton.Draw(spriteBatch);
+            this.quitButton.Draw(spriteBatch);
         }
     }
 }
