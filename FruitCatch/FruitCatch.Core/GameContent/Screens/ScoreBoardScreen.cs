@@ -35,7 +35,7 @@ namespace FruitCatch.Core.GameContent.Screens
             dataManager = new DataManager();
 
             //Text
-            textFont = Fonts.RegularFont;
+            textFont = Fonts.ScoreBoardFont;
 
             // Title
             gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 400, 30);
@@ -50,7 +50,7 @@ namespace FruitCatch.Core.GameContent.Screens
             int startY = 900; // Starting Y-coordinate
             
             //Table
-            table = new Table(textFont, new Vector2(startX - 470, startY - 700), new int[] {200, 300, 300, 400}, 50, Color.White );
+            table = new Table(textFont, new Vector2(startX - 230, startY - 500), new int[] {100, 200, 200, 300}, 50, Color.Wheat);
             this.table.AddRow("Top","Name", "Level", "Score");
 
             // Create Button
@@ -59,7 +59,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Score board background
             scoreBoard = new Sprite("panel_score_board");
-            scoreBoard.SetPosition(startX - 470, startY - 800);
+            scoreBoard.SetPosition(startX - 900, startY - 900);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)

@@ -18,6 +18,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button backButton;
         private SpriteFont textFont;
         private Sprite panelBoard;
+        private Sprite title;
 
         private Text gameTitle;
         private SpriteFont gameTitleFont;
@@ -34,6 +35,8 @@ namespace FruitCatch.Core.GameContent.Screens
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
 
+            
+
             // Buttons
             int buttonWidth = 100; // Example button width
             int buttonHeight = 80; // Example button height
@@ -46,8 +49,11 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Panel Background
-            panelBoard = new Sprite("panel_score_board");
-            panelBoard.SetPosition(startX - 470, startY - 800);
+            title = new Sprite("text_help");
+            //title.SetPosition(Settings.SCREEN_WIDTH -500, Settings.SCREEN_HEIGHT);
+            title.SetPosition(Settings.SCREEN_WIDTH /2 - 890, -410);
+            panelBoard = new Sprite("panel_help_board");
+            panelBoard.SetPosition(startX - 900, startY - 900);
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -68,7 +74,8 @@ namespace FruitCatch.Core.GameContent.Screens
             base.Draw(spriteBatch);
             this.panelBoard.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
         }
     }
 }

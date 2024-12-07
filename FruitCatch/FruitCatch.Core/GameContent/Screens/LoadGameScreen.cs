@@ -46,12 +46,12 @@ namespace FruitCatch.Core.GameContent.Screens
             isAudioTrigger = false;
 
             //Text
-            textFont = Fonts.RegularFont;
+            textFont = Fonts.ScoreBoardFont;
 
             // Title
             gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 300, 30);
             gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.White);
 
             // Button
             int buttonWidth = 100; // Example button width
@@ -65,19 +65,18 @@ namespace FruitCatch.Core.GameContent.Screens
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 
             // Table
-            Vector2 tablePosition = new Vector2(startX- 520, startY -750);
-            loadGameTable = new ScrollingTable(textFont, tablePosition, new int[]{300, 400, 200, 300}, 50, Color.Cyan, Color.Gray, 10);
-            loadGameTable.AddRow("Record Id", "Player Name", "Level", "Score");
+            Vector2 tablePosition = new Vector2(startX- 230, startY - 500);
+            loadGameTable = new ScrollingTable(textFont, tablePosition, new int[]{100, 200, 200, 300}, 50, Color.Wheat, Color.Gray, 6);
+            loadGameTable.AddRow("Id", "Player Name", "Level", "Score");
 
             // Panel Background
             panelBoard = new Sprite("panel_score_board");
-            panelBoard.SetPosition(startX - 470, startY - 800);
+            panelBoard.SetPosition(startX - 900, startY - 900);
         }
 
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
         {
-
             timer += gameTime.ElapsedGameTime.TotalMilliseconds;
 
             base.Update(gameTime, input, game);
@@ -89,7 +88,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.loadGameTable.Clear();
             if (savedGames.Count > 0)
             {
-                loadGameTable.AddRow("Record Id", "Player Name", "Level", "Score");
+                loadGameTable.AddRow("Id", "Player Name", "Level", "Score");
                 foreach (var gameData in savedGames)
                 {
                     loadGameTable.AddRow(
@@ -122,10 +121,8 @@ namespace FruitCatch.Core.GameContent.Screens
                         }
                         
                         game.ChangeMenu(MenuState.PlayScreen);
-                    }
-                    
+                    }  
                 };
-
             }
 
 

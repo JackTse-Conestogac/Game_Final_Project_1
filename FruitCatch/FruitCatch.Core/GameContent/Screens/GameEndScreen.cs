@@ -27,7 +27,6 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string backButtonText = "BACK TO Menu";
         private const string restartGameButtonText = "CONTINUE GAME";
 
-
         private Text gameTitle;
         private SpriteFont gameTitleFont;
         private Vector2 gameTitlePosition;

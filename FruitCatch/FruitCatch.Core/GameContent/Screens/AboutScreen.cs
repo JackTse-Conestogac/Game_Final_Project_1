@@ -51,7 +51,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Panel Background
             panelBoard = new Sprite("panel_score_board");
-            panelBoard.SetPosition(startX - 470, startY - 800);
+            panelBoard.SetPosition(startX - 900, startY - 900);
 
         }
 

@@ -50,6 +50,15 @@ namespace FruitCatch.Core.GameContent.Assets.Arts
                 "btn_start_game",
                 "panel_score_board",
                 "panel_score_board_02",
+                "panel_help_board",
+                "text_help",
+                "text_about",
+                "text_game_title",
+                "text_highest_score",
+                "text_load_game",
+                "text_ready",
+                "text_score",
+
             };
 
             foreach (string image in images)

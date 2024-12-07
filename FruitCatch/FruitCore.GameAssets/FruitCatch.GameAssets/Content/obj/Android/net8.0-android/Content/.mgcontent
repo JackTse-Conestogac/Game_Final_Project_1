@@ -4,6 +4,7 @@
   <Platform>Android</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/../../../../../../Users/Jkt/OneDrive/桌面/Audio Assets/panel_score_board.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/jingle-bells.mp3</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/Mus_Battle_01.mp3</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/Mus_Battle_02.mp3</File>
@@ -21,6 +22,7 @@
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/GameTitleFont.spritefont</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/HilightFont.spritefont</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/RegularFont.spritefont</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/ScoreBoardFont.spritefont</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Fonts/ScoreFont.spritefont</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/bg_game_over.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/bg_play_screen.png</File>
@@ -50,10 +52,30 @@
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-spider-96.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-stone-48.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/icons8-topaz-48.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_about_board.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_help_board.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_score_board_02.png</File>
     <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/panel_score_board.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_about.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_game_title.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_help.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_highest_score.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_load_game.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_ready.png</File>
+    <File>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Images/text_score.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Images/panel_score_board.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

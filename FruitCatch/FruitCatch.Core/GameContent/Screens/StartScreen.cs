@@ -29,8 +29,8 @@ namespace FruitCatch.Core.GameContent.Screens
         private Vector2 gameTitlePosition;
 
         private SpriteFont textFont;
-        
 
+        private Sprite title;
         private const string gameTitleText = "MINING TREASURE HUNT";
         private const string startButtonText = "START GAME";
         private const string loadGameButtonText = "LOAD GAME";
@@ -39,8 +39,6 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string gameEndButtonText = "HIGHEST SCORE";
         private const string quitButtonText = "QUIT";
         
-
-
         public StartScreen(Sprite bg) :base(bg)
         {
 
@@ -53,6 +51,9 @@ namespace FruitCatch.Core.GameContent.Screens
             textFont = Fonts.RegularFont;
             gameTitleFont = Fonts.GameTitleFont;
             gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
+            title = new Sprite("text_game_title");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
 
             // With text
             //this.startGameButton = new Button(centerX, centerY - 200, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
@@ -127,13 +128,13 @@ namespace FruitCatch.Core.GameContent.Screens
                 game.ChangeMenu(MenuState.Quit);
             }
 
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.gameTitle.Draw(spriteBatch);
+            //this.gameTitle.Draw(spriteBatch);
+            this.title.Draw(spriteBatch);
             this.startGameButton.Draw(spriteBatch);
             this.loadGameButton.Draw(spriteBatch);
             this.helpButton.Draw(spriteBatch);

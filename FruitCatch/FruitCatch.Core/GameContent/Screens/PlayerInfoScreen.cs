@@ -33,7 +33,7 @@ namespace FruitCatch.Core.GameContent.Screens
 
 
         // Button Cooldown 
-        private double ButtonCooldown = 200; 
+        private double ButtonCooldown = 180; 
         private double ButtonTimer = 0;
 
 
@@ -43,7 +43,7 @@ namespace FruitCatch.Core.GameContent.Screens
             dataManager = new DataManager();
 
             //Text
-            textFont = Fonts.RegularFont;
+            textFont = Fonts.HilightFont;
             textFontBold = Fonts.HilightFont;
 
             int buttonWidth = 100; //  button width
@@ -64,7 +64,7 @@ namespace FruitCatch.Core.GameContent.Screens
             // Text
             Vector2 captionPosition = new Vector2(startX - 260, startY - 150);
             this.caption = new Text(captionText, textFontBold, captionPosition, Color.Black);
-            Vector2 errortextPosition = new Vector2(startX - 150, startY + 100);
+            Vector2 errortextPosition = new Vector2(startX - 200, startY + 150);
             this.error = new Text(errorText, textFont, errortextPosition, Color.Red);
 
 
