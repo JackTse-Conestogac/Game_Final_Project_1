@@ -13,6 +13,7 @@ namespace FruitCatch.Core.GameContent.Enum
         Stone,
         Spider,
         Silver,
-        Snake
+        Snake,
+        Emerald
     }
 }

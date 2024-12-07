@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,6 +55,7 @@ namespace FruitCatch.Core.GameContent.Entities
                 ItemType.Spider => -10,
                 ItemType.Silver => 15,
                 ItemType.Snake => -30,
+                ItemType.Emerald => 20,
                 _ => 0
             };
 
@@ -63,7 +65,6 @@ namespace FruitCatch.Core.GameContent.Entities
             {
                 AudioSource.PlaySound(soundEffect);
             }
-
 
             return reward;
         }

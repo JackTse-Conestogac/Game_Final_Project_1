@@ -92,7 +92,6 @@ namespace FruitCatch.Core
             // Menu
             screen = new StartScreen(new Sprite("bg_play_screen"));
 
-            //AudioSource.PlayMusic("Mus_Lobby");
         }
 
 
@@ -104,8 +103,6 @@ namespace FruitCatch.Core
             // TODO: Add your update logic here
             InputHandler.Instance.Update(); 
             screen.Update(gameTime, InputHandler.Instance, this);
-
-
 
             // Check Game End 
             if (screen is PlayScreen playScreen)

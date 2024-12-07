@@ -23,6 +23,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private InputTextBox inputTextBox;
         private SpriteFont textFont;
         private SpriteFont textFontBold;
+        private Sprite title;
 
         private const string startButtonText = "START";
         private const string backButtonText = "BACK TO MENU";
@@ -45,6 +46,9 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.HilightFont;
             textFontBold = Fonts.HilightFont;
+
+            title = new Sprite("text_ready");
+            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 950, - 250);
 
             int buttonWidth = 100; //  button width
             int buttonHeight = 80; //  button height
@@ -125,7 +129,7 @@ namespace FruitCatch.Core.GameContent.Screens
             this.inputTextBox.Draw(spriteBatch);
             this.startGameButton.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
-
+            this.title.Draw(spriteBatch);
 
             if (!string.IsNullOrEmpty(errorText))
             {

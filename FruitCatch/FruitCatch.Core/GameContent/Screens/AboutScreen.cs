@@ -41,8 +41,8 @@ namespace FruitCatch.Core.GameContent.Screens
             title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
 
             // Buttons
-            int buttonWidth = 100; // Example button width
-            int buttonHeight = 80; // Example button height
+            int buttonWidth = 100; //  button width
+            int buttonHeight = 80; //  button height
             int buttonSpacing = 20; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate

@@ -93,9 +93,11 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
             { ItemType.Coin, "Player_GainCoin" },
             { ItemType.Silver, "Player_GainCoin" },
             { ItemType.Jewserly, "Player_GainCoin" },
+            { ItemType.Emerald, "Player_GainCoin" },
             { ItemType.Stone, "UI_GameEnd" },
             { ItemType.Snake, "UI_GameEnd" },
-            { ItemType.Spider, "UI_GameEnd" }
+            { ItemType.Spider, "UI_GameEnd" },
+                
             };
 
         }

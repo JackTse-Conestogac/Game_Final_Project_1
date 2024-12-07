@@ -53,7 +53,7 @@ namespace FruitCatch.Core.GameContent.Database
             }
             else
             {
-                // On Windows (or other platforms), use a directory accessible on desktop
+                // On Windows 
                 string baseDir = AppDomain.CurrentDomain.BaseDirectory;
                 _path = Path.Combine(baseDir, "playerRecord.json");
                 Debug.WriteLine($"[Windows] Data file path: {_path}");

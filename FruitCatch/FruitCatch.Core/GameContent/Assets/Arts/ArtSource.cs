@@ -75,6 +75,7 @@ namespace FruitCatch.Core.GameContent.Assets.Arts
                 { ItemType.Spider, "icons8-spider-96" },
                 { ItemType.Silver, "icons8-silver-bars-48" },
                 { ItemType.Snake, "icons8-snake-48" },
+                { ItemType.Emerald, "icons8-emerald-48" },
 
             };
 

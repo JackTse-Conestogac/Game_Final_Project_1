@@ -14,7 +14,6 @@ namespace FruitCatch.Core.GameContent.Globals
         public static Global INSTANCE { get; private set; }
         public static string CurrentPlayName { get; set; } = string.Empty;
 
-        //public static DateTime Time { get; set; } = DateTime.Now;
         
         public static int PlayTime;
 
