@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FruitCatch.Andriod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+da98b205455ff0d031f04b99bc12f4903ef77608")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6463406a5a800e77c323e996703cc41b0991420c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FruitCatch.Andriod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FruitCatch.Andriod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

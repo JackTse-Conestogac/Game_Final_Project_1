@@ -33,13 +33,6 @@ namespace FruitCatch.Core.GameContent.Screens
             // Text
             textFont = Fonts.RegularFont;
 
-            // Title
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 200, 30);
-            gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
-            title = new Sprite("text_about");
-            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
-
             // Buttons
             int buttonWidth = 100; //  button width
             int buttonHeight = 80; //  button height
@@ -49,12 +42,32 @@ namespace FruitCatch.Core.GameContent.Screens
 
 
             // Create Button
-            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                // Title
+                title = new Sprite("text_about");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 800, - 370);
 
-            // Panel Background
-            panelBoard = new Sprite("panel_about_board");
-            panelBoard.SetPosition(startX - 900, startY - 900);
+                this.backButton = new Button(startX, startY - 100, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Panel Background
+                panelBoard = new Sprite("panel_about_board");
+                panelBoard.SetPosition(startX - 800, startY - 900);
+            }
+            else
+            {
+                // Title
+                title = new Sprite("text_about");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, - 410);
+
+                this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Panel Background
+                panelBoard = new Sprite("panel_about_board");
+                panelBoard.SetPosition(startX - 900, startY - 900);
+            } 
+
+            
 
         }
 
@@ -74,10 +87,18 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.panelBoard.Draw(spriteBatch);  
-            this.backButton?.Draw(spriteBatch);
-            //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch);
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                this.panelBoard.Draw(spriteBatch, 0.9f);
+                this.backButton.Draw(spriteBatch);
+                this.title.Draw(spriteBatch, 0.9f);
+            }
+            else
+            {
+                this.panelBoard.Draw(spriteBatch);
+                this.backButton?.Draw(spriteBatch);
+                this.title.Draw(spriteBatch);
+            }
         }
     }
 }

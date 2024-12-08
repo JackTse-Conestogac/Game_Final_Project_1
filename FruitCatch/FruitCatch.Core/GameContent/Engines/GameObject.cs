@@ -72,5 +72,10 @@ namespace FruitCatch.Core.GameContent.Engines
         {
             this.sprite.Draw(spriteBatch);
         }
+
+        public virtual void Draw(SpriteBatch spriteBatch, float scale)
+        {
+            this.sprite.Draw(spriteBatch, scale);
+        }
     }
 }

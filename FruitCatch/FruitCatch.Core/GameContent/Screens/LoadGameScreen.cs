@@ -25,13 +25,8 @@ namespace FruitCatch.Core.GameContent.Screens
         private SpriteFont textFont;
         private const string backButtonText = "BACK";
         private Sprite panelBoard;
-
         Levels setRecordLevel;
 
-        private Text gameTitle;
-        private SpriteFont gameTitleFont;
-        private Vector2 gameTitlePosition;
-        private const string gameTitleText = "LOAD GAME";
         private Sprite title;
 
         // Button Cooldown 
@@ -48,33 +43,56 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.ScoreBoardFont;
 
-            // Title
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 300, 30);
-            gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.White);
+            
 
-            title = new Sprite("text_load_game");
-            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -470);
-
-            // Button
-            int buttonWidth = 100; // Example button width
-            int buttonHeight = 80; // Example button height
+            // Button Size
+            int buttonWidth = 100; //  button width
+            int buttonHeight = 80; //  button height
             int buttonSpacing = 200; // Space between buttons
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
-            // Create Button
-            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+           
 
-            // Table
-            Vector2 tablePosition = new Vector2(startX- 230, startY - 500);
-            loadGameTable = new ScrollingTable(textFont, tablePosition, new int[]{100, 200, 200, 300}, 50, Color.Wheat, Color.Gray, 6);
-            loadGameTable.AddRow("Id", "Player Name", "Level", "Score");
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                // Title
+                title = new Sprite("text_load_game");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
 
-            // Panel Background
-            panelBoard = new Sprite("panel_score_board");
-            panelBoard.SetPosition(startX - 900, startY - 900);
+                // Button
+                this.backButton = new Button(startX - 50, startY - 100, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Table
+                Vector2 tablePosition = new Vector2(startX - 260, startY - 550);
+                loadGameTable = new ScrollingTable(textFont, tablePosition, new int[] { 100, 200, 150, 300 }, 50, Color.Wheat, Color.Gray, 6);
+                loadGameTable.AddRow("Id", "Player Name", "Level", "Score");
+
+                // Panel Background
+                panelBoard = new Sprite("panel_score_board");
+                panelBoard.SetPosition(startX - 850, startY - 900);
+            }
+            else
+            {
+                // Title
+                title = new Sprite("text_load_game");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -470);
+
+                // Button
+                this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Table
+                Vector2 tablePosition = new Vector2(startX - 230, startY - 500);
+                loadGameTable = new ScrollingTable(textFont, tablePosition, new int[] { 100, 200, 200, 300 }, 50, Color.Wheat, Color.Gray, 6);
+                loadGameTable.AddRow("Id", "Player Name", "Level", "Score");
+
+                // Panel Background
+                panelBoard = new Sprite("panel_score_board");
+                panelBoard.SetPosition(startX - 900, startY - 900);
+            }
+                
+
+
         }
 
 
@@ -141,11 +159,21 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.panelBoard.Draw(spriteBatch);
-            this.loadGameTable.Draw(spriteBatch);
-            this.backButton.Draw(spriteBatch);
-            //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch);
+
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                this.panelBoard.Draw(spriteBatch,0.9f);
+                this.loadGameTable.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch);
+                this.title.Draw(spriteBatch,0.9f);
+            }
+            else
+            {
+                this.panelBoard.Draw(spriteBatch);
+                this.loadGameTable.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch);
+                this.title.Draw(spriteBatch);
+            }
         }
 
         public void LoadSelectedGame(int rowIndex)

@@ -60,8 +60,7 @@ namespace FruitCatch.Core.GameContent.Screens
             Vector2 inputPosition = new Vector2(startX -260, startY - 100);
             this.inputTextBox = new InputTextBox(textFont, inputPosition, 600, 50, Color.Black, Color.White);
             
-            //this.startGameButton = new Button(startX +150, startY, buttonWidth, buttonHeight, textFont, startButtonText, Color.Black);
-            //this.backButton = new Button(startX - 150, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
+           
             this.startGameButton = new Button(startX + 100, startY, buttonWidth, buttonHeight, new Sprite("btn_start_game"));
             this.backButton = new Button(startX -200, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
 

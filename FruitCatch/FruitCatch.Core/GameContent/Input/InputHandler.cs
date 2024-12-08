@@ -54,7 +54,6 @@ namespace FruitCatch.Core.GameContent.Input
             previousPrimaryTouch = currentPrimaryTouch;
             currentPrimaryTouch = currentTouchCollection.FirstOrDefault();
 
-
         }
 
 

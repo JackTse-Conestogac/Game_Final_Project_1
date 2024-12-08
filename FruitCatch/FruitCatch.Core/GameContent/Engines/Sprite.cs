@@ -106,6 +106,20 @@ namespace FruitCatch.Core.GameContent.Engines
         {
            
             spriteBatch.Draw(this.texture, this.position, null, this.color, this.rotation, Vector2.Zero, 1f, this.imgOrientation, 0f);
+
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, float scale = 1)
+        {
+            if (FruitCatchGame.Instance.Platform == Enum.Platform.ANDROID)
+            {
+                spriteBatch.Draw(this.texture, this.position, null, this.color, this.rotation, Vector2.Zero, scale, this.imgOrientation, 0f);
+            }
+            else
+            {
+                spriteBatch.Draw(this.texture, this.position, null, this.color, this.rotation, Vector2.Zero, scale, this.imgOrientation, 0f);
+
+            }
         }
 
     }

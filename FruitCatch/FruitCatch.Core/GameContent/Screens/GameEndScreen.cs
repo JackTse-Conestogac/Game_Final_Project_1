@@ -28,10 +28,6 @@ namespace FruitCatch.Core.GameContent.Screens
         private const string restartGameButtonText = "CONTINUE GAME";
         private Sprite title;
 
-        private Text gameTitle;
-        private SpriteFont gameTitleFont;
-        private Vector2 gameTitlePosition;
-        private const string gameTitleText = "SCORE";
 
 
         public GameEndScreen(Sprite background) : base(background)
@@ -42,13 +38,8 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.RegularFont;
 
-            // Title
-            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 700, 100);
-            //gameTitleFont = Fonts.GameTitleFont;
-            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
 
-            title = new Sprite("text_score");
-            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 930, - 450);
+            
 
             //Button
             int buttonWidth = 100; // Example button width
@@ -57,14 +48,33 @@ namespace FruitCatch.Core.GameContent.Screens
             int startX = (Settings.SCREEN_WIDTH - 550) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
 
-            // Create Button
-            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Cyan);
-            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Cyan);
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
-            this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, new Sprite("btn_continue"));
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                // title
+                title = new Sprite("text_score");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 930, - 415);
 
-            // Score Board
-            this.scoreMenu = new ScoreBoardMenu(startX- 650, startY - 900);
+                // Button
+                this.backButton = new Button(startX - 100, startY - 100, buttonWidth, buttonHeight, new Sprite("btn_back"));
+                this.contineGameButton = new Button(startX - 100 + buttonSpacing, startY - 100, buttonWidth, buttonHeight, new Sprite("btn_continue"));
+
+                // Score Board
+                this.scoreMenu = new ScoreBoardMenu(startX - 650, startY - 900);
+            }
+            else
+            {
+                // title
+                title = new Sprite("text_score");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 930, -450);
+
+                // Button
+                this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+                this.contineGameButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, new Sprite("btn_continue"));
+
+                // Score Board
+                this.scoreMenu = new ScoreBoardMenu(startX - 650, startY - 900);
+            }
+            
 
         }
 
@@ -110,12 +120,12 @@ namespace FruitCatch.Core.GameContent.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+
             base.Draw(spriteBatch);
             this.scoreMenu.Draw(spriteBatch);
             this.backButton.Draw(spriteBatch);
             this.contineGameButton.Draw(spriteBatch);
-            //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch);
+            this.title.Draw(spriteBatch, 0.9f);
         }
     }
 }

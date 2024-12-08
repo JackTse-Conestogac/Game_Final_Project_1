@@ -39,14 +39,10 @@ namespace FruitCatch.Core.GameContent.Screens
             int startX = (Settings.SCREEN_WIDTH - 660) / 2; // Horizontal center
             int startY = 500; // Starting Y-coordinate
 
-
             // Create Button
-            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
-            //this.restartButton = new Button(startX + buttonSpacing, startY, buttonWidth, buttonHeight, textFont, restartGameButtonText, Color.Black);
             this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
             this.restartButton = new Button(startX + 300, startY, buttonWidth, buttonHeight, new Sprite("btn_restart"));
             this.quitButton = new Button(startX + 600, startY, buttonWidth, buttonHeight, new Sprite("btn_quit"));
-
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)

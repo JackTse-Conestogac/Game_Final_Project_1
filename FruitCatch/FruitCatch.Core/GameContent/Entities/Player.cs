@@ -31,7 +31,6 @@ namespace FruitCatch.Core.GameContent.Entities
             _speed = speed;
             _healthBar = 100;
             
-
         }
 
         public override void Update(GameTime gameTime, InputHandler input)

@@ -42,15 +42,15 @@ namespace FruitCatch.Core.GameContent.Screens
         private Text timerText;
         private Text levelText;
         private Text scoreText;
-        private Text HealthBarText;
+
         private Vector2 timerTextPosition;
         private Vector2 levelTextPosition;
         private Vector2 scoreTextPosition;
-        private Vector2 HealthBarPosition;
+
         private SpriteFont timerFont;
         private SpriteFont levelFont;
         private SpriteFont scoreFont;
-        //private SpriteFont HealthBarFont;
+
 
         public PlayScreen(Sprite background) : base(background)
         {
@@ -59,8 +59,7 @@ namespace FruitCatch.Core.GameContent.Screens
             if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
             {
                 playerSpeed = 1800f; // Pixels per second
-                                     //playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 975); // Player initial position
-                playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 800);
+                playerStartPosition = new Vector2(Settings.SCREEN_WIDTH / 2, 850);
                 player = new Player((int)playerStartPosition.X, (int)playerStartPosition.Y, playerSpeed);
             }
             else
@@ -83,23 +82,36 @@ namespace FruitCatch.Core.GameContent.Screens
             t_Text = $"Timer: {countDown}";
             timerFont = Fonts.ScoreFont;
             timerTextPosition = new Vector2(10, 15);
+            timerText = new Text(t_Text, timerFont, timerTextPosition, Color.White);
 
-            timerText = new Text(t_Text, timerFont, timerTextPosition, Color.Cyan);
 
-            //hb_Text = $"Health: {player.HealthBar}";
-            //HealthBarFont = Fonts.ScoreFont;
-            //HealthBarPosition = new Vector2(10, 90);
-            //HealthBarText = new Text(hb_Text, HealthBarFont, HealthBarPosition, Color.Cyan);
+            
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
 
-            l_Text = $"{Global.CurrentLevel}";
-            levelFont = Fonts.ScoreFont;
-            levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 50, 10);
-            levelText = new Text(l_Text, levelFont, levelTextPosition, Color.Cyan);
+                l_Text = $"{Global.CurrentLevel}";
+                levelFont = Fonts.ScoreFont;
+                levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 100, 10);
+                levelText = new Text(l_Text, levelFont, levelTextPosition, Color.White);
 
-            s_Text = $"Score: {Global.Score}";
-            scoreFont = Fonts.ScoreFont;
-            scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 300, 10);
-            scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.Cyan);
+                s_Text = $"Score: {Global.Score}";
+                scoreFont = Fonts.ScoreFont;
+                scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 550, 10);
+                scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.White);
+            }
+            else
+            {
+
+                l_Text = $"{Global.CurrentLevel}";
+                levelFont = Fonts.ScoreFont;
+                levelTextPosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 50, 10);
+                levelText = new Text(l_Text, levelFont, levelTextPosition, Color.White);
+
+                s_Text = $"Score: {Global.Score}";
+                scoreFont = Fonts.ScoreFont;
+                scoreTextPosition = new Vector2(Settings.SCREEN_WIDTH - 300, 10);
+                scoreText = new Text(s_Text, scoreFont, scoreTextPosition, Color.White);
+            }
 
         }
 

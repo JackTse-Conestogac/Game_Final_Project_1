@@ -24,9 +24,9 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button quitButton;
         private Button scoreBoardButton;
 
-        private Text gameTitle;
-        private SpriteFont gameTitleFont;
-        private Vector2 gameTitlePosition;
+        //private Text gameTitle;
+        //private SpriteFont gameTitleFont;
+        //private Vector2 gameTitlePosition;
 
         private SpriteFont textFont;
 
@@ -47,13 +47,20 @@ namespace FruitCatch.Core.GameContent.Screens
             int centerX = (Settings.SCREEN_WIDTH - buttonWidth) / 2 ; // Centered horizontally
             int centerY = (Settings.SCREEN_HEIGHT - buttonHeight) / 2;
 
-            gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 600, 30);
-            textFont = Fonts.RegularFont;
-            gameTitleFont = Fonts.GameTitleFont;
-            gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
-
-            title = new Sprite("text_game_title");
-            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
+            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 600, 30);
+            //textFont = Fonts.RegularFont;
+            //gameTitleFont = Fonts.GameTitleFont;
+            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID) 
+            {
+                title = new Sprite("text_game_title");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 800, -300);
+            }
+            else
+            {
+                title = new Sprite("text_game_title");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -410);
+            }
 
             // With text
             //this.startGameButton = new Button(centerX, centerY - 200, buttonWidth, buttonHeight, textFont, startButtonText, Color.Cyan);
@@ -134,7 +141,7 @@ namespace FruitCatch.Core.GameContent.Screens
         {
             base.Draw(spriteBatch);
             //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch);
+            this.title.Draw(spriteBatch, 0.8f);
             this.startGameButton.Draw(spriteBatch);
             this.loadGameButton.Draw(spriteBatch);
             this.helpButton.Draw(spriteBatch);

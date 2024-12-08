@@ -39,14 +39,7 @@ namespace FruitCatch.Core.GameContent.Screens
             //Text
             textFont = Fonts.ScoreBoardFont;
 
-            // Title
-            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH / 2 - 400, 30);
-            //gameTitleFont = Fonts.GameTitleFont;
-            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
 
-
-            title = new Sprite("text_highest_score");
-            title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, - 460);
 
             // Button parameters
             int buttonWidth = 100; //  button width
@@ -55,17 +48,45 @@ namespace FruitCatch.Core.GameContent.Screens
             int startX = (Settings.SCREEN_WIDTH - buttonWidth) / 2; // Horizontal center
             int startY = 900; // Starting Y-coordinate
             
-            //Table
-            table = new Table(textFont, new Vector2(startX - 230, startY - 500), new int[] {100, 200, 200, 300}, 50, Color.Wheat);
-            this.table.AddRow("Top","Name", "Level", "Score");
+            
 
             // Create Button
-            //this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, textFont, backButtonText, Color.Black);
-            this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                // Title
+                title = new Sprite("text_highest_score");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 800, - 410);
 
-            // Score board background
-            scoreBoard = new Sprite("panel_score_board");
-            scoreBoard.SetPosition(startX - 900, startY - 900);
+                //Table
+                table = new Table(textFont, new Vector2(startX - 230, startY - 550), new int[] { 100, 150, 150, 300 }, 50, Color.Wheat);
+                this.table.AddRow("Top", "Name", "Level", "Score");
+
+                // Button
+                this.backButton = new Button(startX - 55, startY - 100, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Score board background
+                scoreBoard = new Sprite("panel_score_board");
+                scoreBoard.SetPosition(startX - 850, startY - 900);
+            }
+            else
+            {
+                // Title
+                title = new Sprite("text_highest_score");
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 890, -460);
+
+                //Table
+                table = new Table(textFont, new Vector2(startX - 230, startY - 500), new int[] { 100, 200, 200, 300 }, 50, Color.Wheat);
+                this.table.AddRow("Top", "Name", "Level", "Score");
+
+                // Button
+                this.backButton = new Button(startX , startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
+
+                // Score board background
+                scoreBoard = new Sprite("panel_score_board");
+                scoreBoard.SetPosition(startX - 900, startY - 900);
+            }
+               
+
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -80,7 +101,6 @@ namespace FruitCatch.Core.GameContent.Screens
 
             if (backButton.IsPressed())
             {
-                
                 AudioSource.PlaySound("UI_Back");
                 game.ChangeMenu(MenuState.StartScreen);
             }
@@ -89,11 +109,20 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.scoreBoard.Draw(spriteBatch);
-            this.table.Draw(spriteBatch);
-            this.backButton.Draw(spriteBatch);
-            //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch);
+            if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+                this.scoreBoard.Draw(spriteBatch, 0.9f);
+                this.table.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch);
+                this.title.Draw(spriteBatch, 0.9f);
+            }
+            else
+            {
+                this.scoreBoard.Draw(spriteBatch);
+                this.table.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch);
+                this.title.Draw(spriteBatch);
+            }
         }
 
         public void UpdateScoreBoard(Table table)
