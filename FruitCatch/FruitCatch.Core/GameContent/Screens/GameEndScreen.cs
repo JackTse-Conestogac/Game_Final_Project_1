@@ -29,7 +29,6 @@ namespace FruitCatch.Core.GameContent.Screens
         private Sprite title;
 
 
-
         public GameEndScreen(Sprite background) : base(background)
         {
             _global = new Global();
@@ -37,9 +36,6 @@ namespace FruitCatch.Core.GameContent.Screens
 
             //Text
             textFont = Fonts.RegularFont;
-
-
-            
 
             //Button
             int buttonWidth = 100; // Example button width
@@ -123,8 +119,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             base.Draw(spriteBatch);
             this.scoreMenu.Draw(spriteBatch);
-            this.backButton.Draw(spriteBatch);
-            this.contineGameButton.Draw(spriteBatch);
+            this.backButton.Draw(spriteBatch , 0.2f);
+            this.contineGameButton.Draw(spriteBatch, 0.2f);
             this.title.Draw(spriteBatch, 0.9f);
         }
     }

@@ -91,9 +91,9 @@ namespace FruitCatch.Core.GameContent.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.backButton.Draw(spriteBatch);
-            this.restartButton.Draw(spriteBatch);
-            this.quitButton.Draw(spriteBatch);
+            this.backButton.Draw(spriteBatch, 0.2f);
+            this.restartButton.Draw(spriteBatch, 0.2f);
+            this.quitButton.Draw(spriteBatch, 0.2f);
         }
     }
 }

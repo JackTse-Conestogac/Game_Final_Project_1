@@ -90,13 +90,13 @@ namespace FruitCatch.Core.GameContent.Screens
             if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
             {
                 this.panelBoard.Draw(spriteBatch, 0.9f);
-                this.backButton.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch, 0.2f);
                 this.title.Draw(spriteBatch, 0.9f);
             }
             else
             {
                 this.panelBoard.Draw(spriteBatch);
-                this.backButton?.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch, 0.2f);
                 this.title.Draw(spriteBatch);
             }
         }

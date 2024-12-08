@@ -17,7 +17,6 @@ namespace FruitCatch.Core.GameContent.Entities
     public class Player : GameObject
     {
         private Vector2 _position;
-        //private static Sprite _sprite;
         private float _speed;
         private int _healthBar;
         public int HealthBar { get { return _healthBar; } }
@@ -58,15 +57,30 @@ namespace FruitCatch.Core.GameContent.Entities
             
 
             // Set Bounds
-            int playerWidth = sprite.GetTextureOriginalSize().X;
-            int playerHeight = sprite.GetTextureOriginalSize().Y;
-            _position.X = MathHelper.Clamp(_position.X, 0, Settings.SCREEN_WIDTH - playerWidth);
-            _position.Y = MathHelper.Clamp(_position.Y, 0, Settings.SCREEN_HEIGHT - playerHeight);
-            logicalX = (int)_position.X;
-            logicalY = (int)_position.Y;
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID) 
+            {
+                int playerWidth = sprite.GetTextureOriginalSize().X;
+                int playerHeight = sprite.GetTextureOriginalSize().Y;
+                _position.X = MathHelper.Clamp(_position.X, 0, Settings.SCREEN_WIDTH - playerWidth - 60);
+                _position.Y = MathHelper.Clamp(_position.Y, 0, Settings.SCREEN_HEIGHT - playerHeight);
+                logicalX = (int)_position.X;
+                logicalY = (int)_position.Y;
 
-            collision.X = logicalX; // Update collision rectangle
-            collision.Y = logicalY;
+                collision.X = logicalX; // Update collision rectangle
+                collision.Y = logicalY;
+            }
+            else
+            {
+                int playerWidth = sprite.GetTextureOriginalSize().X;
+                int playerHeight = sprite.GetTextureOriginalSize().Y;
+                _position.X = MathHelper.Clamp(_position.X, 0, Settings.SCREEN_WIDTH - playerWidth);
+                _position.Y = MathHelper.Clamp(_position.Y, 0, Settings.SCREEN_HEIGHT - playerHeight);
+                logicalX = (int)_position.X;
+                logicalY = (int)_position.Y;
+
+                collision.X = logicalX; // Update collision rectangle
+                collision.Y = logicalY;
+            }
 
             sprite.Position = _position;
 

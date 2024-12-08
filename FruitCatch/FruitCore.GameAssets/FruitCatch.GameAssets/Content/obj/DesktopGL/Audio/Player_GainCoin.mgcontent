@@ -3,7 +3,7 @@
   <SourceFile>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/Audio/Player_GainCoin.wav</SourceFile>
   <SourceTime>2024-12-03T19:40:41.4735576-05:00</SourceTime>
   <DestFile>C:/Projects/Game_Final_Project_1/FruitCatch/FruitCore.GameAssets/FruitCatch.GameAssets/Content/bin/DesktopGL/Audio/Player_GainCoin.xnb</DestFile>
-  <DestTime>2024-12-07T11:38:06.240107-05:00</DestTime>
+  <DestTime>2024-12-08T11:43:48.3418424-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

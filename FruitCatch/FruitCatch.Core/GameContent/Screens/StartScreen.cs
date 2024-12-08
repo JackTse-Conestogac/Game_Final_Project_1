@@ -24,9 +24,7 @@ namespace FruitCatch.Core.GameContent.Screens
         private Button quitButton;
         private Button scoreBoardButton;
 
-        //private Text gameTitle;
-        //private SpriteFont gameTitleFont;
-        //private Vector2 gameTitlePosition;
+
 
         private SpriteFont textFont;
 
@@ -47,10 +45,7 @@ namespace FruitCatch.Core.GameContent.Screens
             int centerX = (Settings.SCREEN_WIDTH - buttonWidth) / 2 ; // Centered horizontally
             int centerY = (Settings.SCREEN_HEIGHT - buttonHeight) / 2;
 
-            //gameTitlePosition = new Vector2(Settings.SCREEN_WIDTH /2 - 600, 30);
-            //textFont = Fonts.RegularFont;
-            //gameTitleFont = Fonts.GameTitleFont;
-            //gameTitle = new Text(gameTitleText, gameTitleFont, gameTitlePosition, Color.ForestGreen);
+
             if(FruitCatchGame.Instance.Platform == Platform.ANDROID) 
             {
                 title = new Sprite("text_game_title");
@@ -71,12 +66,12 @@ namespace FruitCatch.Core.GameContent.Screens
             //this.restartButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, textFont, quitButtonText, Color.Cyan);
 
             // Without text
-            this.startGameButton = new Button(centerX, centerY - 200, buttonWidth, buttonHeight, new Sprite("btn_start_game"));
-            this.loadGameButton = new Button(centerX, centerY - 100, buttonWidth, buttonHeight, new Sprite("btn_load_game"));
+            this.startGameButton = new Button(centerX, centerY - 200 , buttonWidth, buttonHeight, new Sprite("btn_start_game"));
+            this.loadGameButton = new Button(centerX, centerY - 100 , buttonWidth, buttonHeight, new Sprite("btn_load_game"));
             this.helpButton = new Button(centerX, centerY, buttonWidth, buttonHeight, new Sprite("btn_help"));
-            this.aboutButton = new Button(centerX, centerY + 100, buttonWidth, buttonHeight, new Sprite("btn_about"));
-            this.scoreBoardButton = new Button(centerX, centerY + 200, buttonWidth, buttonHeight, new Sprite("btn_highest_score"));
-            this.quitButton = new Button(centerX, centerY + 300, buttonWidth, buttonHeight, new Sprite("btn_quit"));
+            this.aboutButton = new Button(centerX, centerY + 100 , buttonWidth, buttonHeight, new Sprite("btn_about"));
+            this.scoreBoardButton = new Button(centerX, centerY + 200 , buttonWidth, buttonHeight, new Sprite("btn_highest_score"));
+            this.quitButton = new Button(centerX, centerY + 300 , buttonWidth, buttonHeight, new Sprite("btn_quit"));
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
@@ -93,28 +88,24 @@ namespace FruitCatch.Core.GameContent.Screens
             if (startGameButton.IsPressed())
             {
                 Console.WriteLine("Start Game selected.");
-                //AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.PlayerInfoScreen);
             }
             if (loadGameButton.IsPressed())
             {
                 Console.WriteLine("LoadRecordList Game selected.");
-               // AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.LoadGameScreen);
             }
             if (helpButton.IsPressed())
             {
                 Console.WriteLine("Help selected.");
-               // AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.HelpScreen);
             }
             if (aboutButton.IsPressed())
             {
                 Console.WriteLine("About selected.");
-               // AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.AboutScreen);
             }
@@ -122,7 +113,6 @@ namespace FruitCatch.Core.GameContent.Screens
             if (scoreBoardButton.IsPressed())
             {
                 Console.WriteLine("Score Board selected.");
-                // AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.ScoreBoardScreen);
             }
@@ -130,24 +120,35 @@ namespace FruitCatch.Core.GameContent.Screens
             if (quitButton.IsPressed())
             {
                 Console.WriteLine("Quit selected.");
-                //AudioSource.Sounds["UI_Button_Click"].Play();
                 AudioSource.PlaySound("UI_Button_Click");
                 game.ChangeMenu(MenuState.Quit);
             }
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            //this.gameTitle.Draw(spriteBatch);
-            this.title.Draw(spriteBatch, 0.8f);
-            this.startGameButton.Draw(spriteBatch);
-            this.loadGameButton.Draw(spriteBatch);
-            this.helpButton.Draw(spriteBatch);
-            this.aboutButton.Draw(spriteBatch); 
-            this.quitButton.Draw(spriteBatch);
-            this.scoreBoardButton.Draw(spriteBatch);
+            if(FruitCatchGame.Instance.Platform == Platform.ANDROID)
+            {
+
+                this.title.Draw(spriteBatch, 0.8f);
+                this.startGameButton.Draw(spriteBatch, 0.1f);
+                this.loadGameButton.Draw(spriteBatch, 0.2f);
+                this.helpButton.Draw(spriteBatch, 0.2f);
+                this.aboutButton.Draw(spriteBatch, 0.2f);
+                this.quitButton.Draw(spriteBatch, 0.2f);
+                this.scoreBoardButton.Draw(spriteBatch, 0.2f);
+            }
+            else
+            {
+                this.title.Draw(spriteBatch);
+                this.startGameButton.Draw(spriteBatch, 0.1f);
+                this.loadGameButton.Draw(spriteBatch, 0.2f);
+                this.helpButton.Draw(spriteBatch , 0.2f);
+                this.aboutButton.Draw(spriteBatch, 0.2f);
+                this.quitButton.Draw(spriteBatch, 0.2f);
+                this.scoreBoardButton.Draw(spriteBatch, 0.2f);
+            }
         }
     }
 }

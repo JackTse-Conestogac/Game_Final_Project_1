@@ -126,8 +126,8 @@ namespace FruitCatch.Core.GameContent.Screens
 
             // Button and input text box
             this.inputTextBox.Draw(spriteBatch);
-            this.startGameButton.Draw(spriteBatch);
-            this.backButton.Draw(spriteBatch);
+            this.startGameButton.Draw(spriteBatch, 0.1f);
+            this.backButton.Draw(spriteBatch, 0.2f);
             this.title.Draw(spriteBatch);
 
             if (!string.IsNullOrEmpty(errorText))

@@ -113,14 +113,14 @@ namespace FruitCatch.Core.GameContent.Screens
             {
                 this.scoreBoard.Draw(spriteBatch, 0.9f);
                 this.table.Draw(spriteBatch);
-                this.backButton.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch, 0.2f);
                 this.title.Draw(spriteBatch, 0.9f);
             }
             else
             {
                 this.scoreBoard.Draw(spriteBatch);
                 this.table.Draw(spriteBatch);
-                this.backButton.Draw(spriteBatch);
+                this.backButton.Draw(spriteBatch, 0.2f);
                 this.title.Draw(spriteBatch);
             }
         }
