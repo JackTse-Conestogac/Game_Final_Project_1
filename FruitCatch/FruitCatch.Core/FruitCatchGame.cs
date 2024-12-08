@@ -80,9 +80,6 @@ namespace FruitCatch.Core
         {
 
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            //MenuSprite = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
 
             // Load assets content
             ArtSource.Load(Content);
@@ -100,7 +97,6 @@ namespace FruitCatch.Core
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Exit();
 
-            // TODO: Add your update logic here
             InputHandler.Instance.Update(); 
             screen.Update(gameTime, InputHandler.Instance, this);
 

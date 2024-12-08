@@ -107,7 +107,6 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
             // Update fade in
             if (isFadingIn)
             {
-                // Accumulate elapsed time
                 fadeInTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (fadeInTimer >= 10.0f) // Process every 10ms for smoother fade-in
@@ -230,7 +229,7 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
 
         public static void StopMusic(float duration)
         {
-            if (MediaPlayer.Volume > 0.0f) // Ensure there's something to fade out
+            if (MediaPlayer.Volume > 0.0f)
             {
                 isFadingOut = true;
                 fadeOutDuration = duration; // Total fade-out duration in seconds
@@ -239,7 +238,7 @@ namespace FruitCatch.Core.GameContent.Assets.Audio
             }
             else
             {
-                MediaPlayer.Stop(); // If already at 0 volume, stop immediately
+                MediaPlayer.Stop(); 
             }
         }
 

@@ -32,10 +32,7 @@ namespace FruitCatch.Core.GameContent.Engines
             rows.Add(columns);
         }
 
-        public void Update(GameTime gameTime)
-        {
-            // Example: Add logic here if needed to update table content
-        }
+        public void Update(GameTime gameTime){}
 
         public void Draw(SpriteBatch spriteBatch)
         {

@@ -32,10 +32,6 @@ namespace FruitCatch.Core.GameContent.Input
         private TouchLocation? currentPrimaryTouch;
         private TouchLocation? previousPrimaryTouch;
 
-        // damping for android touch control
-        //private Vector2 smoothedDragDelta = Vector2.Zero;
-        //private const float SmoothFactor = 0.1f;
-
 
         public void Update()
         {
@@ -156,9 +152,6 @@ namespace FruitCatch.Core.GameContent.Input
                         return 0;
                     }
 
-                    // Convert the vertical movement to an integer scroll value.
-                    // You can invert this sign if you want the opposite scrolling direction.
-                    // Also, consider adding a scale factor if the movement is too sensitive or too sluggish.
                     int scrollDelta = (int)(-deltaY);
 
                     return scrollDelta;

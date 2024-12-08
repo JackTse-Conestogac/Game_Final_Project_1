@@ -21,7 +21,6 @@ namespace FruitCatch.Core.GameContent.Engines
         private string text = "";
         private SpriteFont font;
         private Color textColor;
-       // private static Sprite _sprite = new Sprite("icons8-ruby-64");
 
         private int width;  
         private int height;

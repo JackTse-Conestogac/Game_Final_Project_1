@@ -24,10 +24,6 @@ namespace FruitCatch.Core.GameContent.Database
 
             if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
             {
-                // On Android, use internal storage directory.
-                // Personal folder typically maps to: /data/user/0/<your.package.name>/files/
-                //string personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                //_path = Path.Combine(personalFolder, "playerRecord.json");
 
                 string externalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FruitCatch");
 
@@ -38,17 +34,6 @@ namespace FruitCatch.Core.GameContent.Database
 
                 _path = Path.Combine(externalFolder, "playerRecord.json");
                 Debug.WriteLine($"[Android] Data file path: {_path}");
-
-                // Use external files directory for easier debugging
-                //string externalFolder = Android.App.Application.Context.GetExternalFilesDir(null).AbsolutePath;
-                //string documentsFolder = Path.Combine(externalFolder, "Documents");
-
-                //if (!Directory.Exists(documentsFolder))
-                //{
-                //    Directory.CreateDirectory(documentsFolder);
-                //}
-
-                //_path = Path.Combine(documentsFolder, "playerRecord.json");
 
             }
             else
@@ -96,7 +81,7 @@ namespace FruitCatch.Core.GameContent.Database
                 record.playerName = name;
                 record.currentLevel = currentLevel;
                 record.score = score;
-                SaveAll(); // Re-save the updated list
+                SaveAll();
             }
         }
 
