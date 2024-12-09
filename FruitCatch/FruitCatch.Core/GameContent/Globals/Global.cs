@@ -25,14 +25,14 @@ namespace FruitCatch.Core.GameContent.Globals
         {
             CurrentPlayName = string.Empty;
             CurrentLevel = Levels.Level1;
-            PlayTime = 10;
+            PlayTime = 30;
             Score = 0;
         }
 
         public static void InitialForReplay()
         {
             CurrentLevel = Levels.Level1;
-            PlayTime = 10;
+            PlayTime = 30;
             Score = 0;
         }
     }

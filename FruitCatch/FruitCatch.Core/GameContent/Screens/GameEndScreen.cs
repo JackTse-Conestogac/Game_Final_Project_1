@@ -61,7 +61,7 @@ namespace FruitCatch.Core.GameContent.Screens
             {
                 // title
                 title = new Sprite("text_score");
-                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 930, -450);
+                title.SetPosition(Settings.SCREEN_WIDTH / 2 - 850, - 400);
 
                 // Button
                 this.backButton = new Button(startX, startY, buttonWidth, buttonHeight, new Sprite("btn_back"));
@@ -71,7 +71,6 @@ namespace FruitCatch.Core.GameContent.Screens
                 this.scoreMenu = new ScoreBoardMenu(startX - 650, startY - 900);
             }
             
-
         }
 
         public override void Update(GameTime gameTime, InputHandler input, FruitCatchGame game)
