@@ -24,7 +24,7 @@ namespace FruitCatch.Core.GameContent.Database
 
             if (FruitCatchGame.Instance.Platform == Platform.ANDROID)
             {
-
+                // On Android
                 string externalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FruitCatch");
 
                 if (!Directory.Exists(externalFolder))

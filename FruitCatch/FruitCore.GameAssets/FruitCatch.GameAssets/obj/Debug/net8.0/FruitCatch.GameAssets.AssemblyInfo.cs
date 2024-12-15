@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FruitCatch.GameAssets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51828c7f0c3bdb02156bed9223584cb1cd8a0a7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0635150e825aa3d086bbcd394a200328a86b25d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FruitCatch.GameAssets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FruitCatch.GameAssets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
